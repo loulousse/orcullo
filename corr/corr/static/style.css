@@ -14,16 +14,24 @@ margin-top: 4px;
 }
 .login-page .form .login{
   margin-top: -31px;
-margin-bottom: 26px;
+  margin-bottom: 26px;
+}
+.login-title {
+  width: 500px;
+  height: 500px;
+  margin-top: -20px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .form {
   position: relative;
   z-index: 1;
-  background: #201e1e5e;
+  background: #201e1e8c;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
