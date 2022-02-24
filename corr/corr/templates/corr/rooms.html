@@ -3,10 +3,44 @@
 
 
 {% block content %}
-        <img src="{% static 'corr/images/blue.jpg' %}">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<!--
+<img src="{% static 'corr/images/blue.jpg' %}">
 <img src="{% static 'corr/images/orange.jpg' %}">
 <img src="{% static 'corr/images/white.jpg' %}">
 <img src="{% static 'corr/images/black.jpg' %}">
-
+-->
+<body>
+<div class="gallery-slider swiper">
+    <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide">
+            <a href="{% static 'corr/images/blue.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'corr/images/blue.jpg' %}" class="img-fluid" alt="">
+            </a>
+        </div>
+        <br>
+        <div class="swiper-slide">
+            <a href="{% static 'corr/images/orange.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'corr/images/orange.jpg' %}" class="img-fluid" alt="">
+            </a>
+        </div>
+        <br>
+        <div class="swiper-slide">
+            <a href="{% static 'corr/images/white.jpg' %}" class="gallery-lightbox">
+                <img src="{% static 'corr/images/white.jpg' %}" class="img-fluid" alt="">
+            </a>
+        </div>
+        <br>
+        <div class="swiper-slide">
+            <a href="{% static 'corr/images/black.jpg' %}.jpg" class="gallery-lightbox">
+                <img src="{% static 'corr/images/black.jpg' %}" class="img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</body>
     
 {% endblock content %}
