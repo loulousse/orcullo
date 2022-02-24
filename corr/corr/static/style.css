@@ -115,6 +115,18 @@ margin-top: 4px;
   }
 }
 
+a {
+  color: #f82249;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover, a:active, a:focus {
+  color: #f8234a;
+  outline: none;
+  text-decoration: none;
+}
+
 /*
 body {
   background-color: #328f8a;
