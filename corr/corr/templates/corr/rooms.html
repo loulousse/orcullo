@@ -1,44 +1,162 @@
 {% extends 'corr/main.html' %}
 {% load static %}
 
-
 {% block content %}
 <head>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
+<body>
+<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Conference Rooms</h2>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Room B </li>
+            <li data-filter=".filter-card">Room O</li>
+            <li data-filter=".filter-web">Room W</li>
+            <li data-filter=".filter-color">Room BL</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{% static 'corr/images/blue.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Room B</h4>
+              <p>Blue Room</p>
+              <div class="portfolio-links">
+                <a href="{% static 'corr/images/blue.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Room B"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'corr/images/orange.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Room O</h4>
+              <p>Orange Room</p>
+              <div class="portfolio-links">
+                <a href="{% static 'corr/images/orange.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Room O"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'corr/images/white.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Room W</h4>
+              <p>White Room</p>
+              <div class="portfolio-links">
+                <a href="{% static 'corr/images/white.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Room W"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-color">
+          <div class="portfolio-wrap">
+            <img src="{% static 'corr/images/black.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Room BL</h4>
+              <p>Black Room</p>
+              <div class="portfolio-links">
+                <a href="{% static 'corr/images/black.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Room BL"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
 <!--
-<img src="{% static 'corr/images/blue.jpg' %}">
-<img src="{% static 'corr/images/orange.jpg' %}">
-<img src="{% static 'corr/images/white.jpg' %}">
-<img src="{% static 'corr/images/black.jpg' %}">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
 -->
-<div class="gallery-slider swiper">
-    <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide">
-            <a href="{% static 'corr/images/blue.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'corr/images/blue.jpg' %}" class="img-fluid" alt="">
-            </a>
-        </div>
-        <br>
-        <div class="swiper-slide">
-            <a href="{% static 'corr/images/orange.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'corr/images/orange.jpg' %}" class="img-fluid" alt="">
-            </a>
-        </div>
-        <br>
-        <div class="swiper-slide">
-            <a href="{% static 'corr/images/white.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'corr/images/white.jpg' %}" class="img-fluid" alt="">
-            </a>
-        </div>
-        <br>
-        <div class="swiper-slide">
-            <a href="{% static 'corr/images/black.jpg' %}.jpg" class="gallery-lightbox">
-                <img src="{% static 'corr/images/black.jpg' %}" class="img-fluid" alt="">
-            </a>
-        </div>
+      </div>
+
     </div>
-    <div class="swiper-pagination"></div>
-</div>
-    
+  </section>
+  <!-- End Portfolio Section -->
+</body>
 {% endblock content %}
