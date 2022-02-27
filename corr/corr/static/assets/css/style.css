@@ -315,54 +315,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.404);
+  background: rgba(0, 0, 0, 0);
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-#hero h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  color: #fff;
-}
-#hero h2 {
-  color: #fff;
-  margin: 10px 0 0 0;
-  font-size: 24px;
-}
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 30px;
-  border-radius: 4px;
-  transition: 0.5s;
-  margin-top: 30px;
-  color: #fff;
-  background: #e03a3c;
-  border: 2px solid #e03a3c;
-}
-#hero .btn-get-started:hover {
-  background: transparent;
-  border-color: #fff;
-}
-@media (max-width: 768px) {
-  #hero {
-    text-align: center;
-    padding-top: 58px;
-  }
-  #hero h1 {
-    font-size: 28px;
-  }
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
 }
 @media (max-height: 500px) {
   #hero {
@@ -1806,6 +1760,9 @@ section {
   color: #fff;
   text-decoration: none;
 }
+/*--------------------------------------------------------------
+# Menu Bar
+--------------------------------------------------------------*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -1844,4 +1801,15 @@ section {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+/*--------------------------------------------------------------
+# Transparent Box
+--------------------------------------------------------------*/
+.box1 {
+  background-color: #000;
+  color: #fff;
+  opacity: .4;
+  margin-top: -400px;
+  height: 55px;
+  width: 100%;
 }
