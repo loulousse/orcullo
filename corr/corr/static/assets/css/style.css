@@ -315,11 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero:before {
   content: "";
-<<<<<<< HEAD
   background: rgba(0, 0, 0, 0);
-=======
-  background: rgba(0, 0, 0, 0.6);
->>>>>>> f6bb9cb144cb9fd6cd721631d8eb700b185f65f8
   position: absolute;
 }
 @media (max-height: 500px) {
