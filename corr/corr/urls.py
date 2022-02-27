@@ -23,6 +23,7 @@ urlpatterns = [
     path('contact/', views.contact),
     path('index/', views.index),
     path('rooms/', views.rooms),
-    path('dashboard/', views.dashboard)
+    path('dashboard/', views.dashboard),
+    path('reservation/', views.reservation)
 ]
 

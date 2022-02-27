@@ -25,7 +25,8 @@ def signin(request):
 def index(request):
     return render(request, 'corr/index.html')
 
-
+def reservation(request):
+    return render(request, 'corr/reservation.html')
 
 
 
