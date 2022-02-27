@@ -22,6 +22,9 @@ def dashboard(request):
 def signin(request):
     return render(request, 'corr/signin.html')
 
+def index(request):
+    return render(request, 'corr/index.html')
+
 
 
 
