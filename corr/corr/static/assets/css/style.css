@@ -1807,12 +1807,12 @@ section {
 .box1 {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
   opacity: .6;
-  margin-top: -150px;
+  margin-top: -300px;
   font-size: 70px;
-  height: 200px;
+  height: 85px;
   padding: 20px 0;
   width: 100%;
 }
