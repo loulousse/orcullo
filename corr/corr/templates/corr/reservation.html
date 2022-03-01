@@ -132,13 +132,14 @@
         background-attachment: scroll;
         background-position: center top;
       }
+      
       .supernova {
         background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");
       }
       #stage {
         background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");
       }
-    
+      
       .form-all {
         background-image: url("//www.jotform.com/images/noises/noise.png");
         background-repeat: repeat;
@@ -220,6 +221,9 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         </div>
       </li>
       <li class="form-line jf-required" data-type="control_fullname" id="id_16" data-compound-hint=",,">
+        <div id="subHeader_14" class="form-subHeader">
+          Personal Information
+        </div>
         <label class="form-label form-label-top" id="label_16" for="prefix_16">
           Name
           <span class="form-required">
@@ -250,6 +254,31 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
           </div>
         </div>
       </li>
+    <li class="form-line form-line-column form-col-1 form-line-column-clear jf-required" data-type="control_spinner" id="id_31">
+      <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
+        Age
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <div id="cid_31" class="form-input-wide jf-required">
+        <span class="form-sub-label-container" style="vertical-align:top">
+          <input type="number" id="input_31" name="q31_Number" data-type="input-spinner" class="form-spinner-input  form-textbox validate[required]" data-spinnermin="0" data-spinnermax="6" data-defaultvalue="0" value="0" data-component="spinner" aria-labelledby="label_31 sublabel_input_31" required="" />
+          <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"> kindly enter the actual number</label>
+        </span>
+        <span class="form-sub-label-container" style="vertical-align:top">
+          <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
+            <option selected="" value="F"> F </option>
+            <option value="M"> M </option>
+          </select>
+          <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> F/M Option </label>
+        </span>
+      </div>
+    </li>
+<br>
+    <div id="subHeader_14" class="form-subHeader">
+        Contact Information
+    </div>
       <li class="form-line jf-required" data-type="control_email" id="id_17">
         <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17">
           E-mail Address
@@ -263,7 +292,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
       </li>
       <li class="form-line form-line-column form-col-1 form-line-column-clear jf-required" data-type="control_spinner" id="id_31">
         <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
-          ( Number of Childs ) عدد الصغار
+          ( Number of Childs ) 
           <span class="form-required">
             *
           </span>
@@ -572,7 +601,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         <div id="cid_2" class="form-input-wide">
           <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
             <button id="input_2" type="submit" class="form-submit-button form-submit-button-simple_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-              ( Confirm reservation ) تاكيد الحجز
+              ( Confirm reservation ) 
             </button>
           </div>
         </div>
