@@ -1,131 +1,602 @@
+{% load static %}
 
-<form method="post" action="//submit.form" onSubmit="return validateForm();">
-<div style="max-width: 400px;">
-</div>
-<div style="padding-bottom: 18px;font-size : 24px;">Reservation Details</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="supernova"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=https%3A%2F%2Fform.jotform.com%2F220587712224453" title="oEmbed Form">
+<link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F220587712224453" title="oEmbed Form">
+<meta property="og:title" content="Reservation Form" >
+<meta property="og:url" content="https://form.jotform.com/220587712224453" >
+<meta property="og:description" content="Please click the link to complete this form." >
+<meta name="slack-app-id" content="AHNMASS8M">
+<link href="{% static 'corr/images/alo.png' %}" rel="icon">
+<link rel="canonical" href="https://form.jotform.com/220587712224453" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+<meta name="HandheldFriendly" content="true" />
+<title>Reservation Form</title>
+<link href="https://cdn01.jotfor.ms/static/formCss.css?3.3.31421" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/pastel.css?3.3.31421" />
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/nova.css?3.3.31421" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/57dc7e749a11c7e0598b4567.css?themeRevisionID=58eff0c27dc758db6018c271"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.31421" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">new Pikaday({ field: document.getElementById('data_6') });</script>
-<div style="padding-bottom: 18px;">Date<span style="color: red;"> *</span><br>
-<input type="text" id="data_7" name="data_7" style="max-width : 100%;" class="form-control"/>
-</div>
-<!--
-    <div style="display: flex; padding-bottom: 18px;max-width : 450px;">
-<div style=" margin-left: 1%; margin-right: 0; width: 49%;">Last name<span style="color: red;"> *</span><br/>
-<input type="text" id="data_3" name="data_3" style="max-width: 100%;" class="form-control"/>
-</div>-->
-</div><div style="padding-bottom: 18px;">Start Time<span style="color: red;"> *</span><br/>
-<input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
-</div>
-</div><div style="padding-bottom: 18px;">End Time<span style="color: red;"> *</span><br/>
-<input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
-</div>
-<div style="padding-bottom: 18px;">Room Name<span style="color: red;"> *</span><br/>
-<input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control"/>
-</div>
-<br>
-<div style="padding-bottom: 18px;font-size : 24px;">Personal Information</div>
-<div style="display: flex; padding-bottom: 18px;max-width : 450px;">
-<div style=" margin-left: 0; margin-right: 1%; width: 49%;">First Name <span style="color: red;"> *</span><br/>
-<input type="text" id="data_2" name="data_2" style="max-width: 100%;" class="form-control"/>
-</div>
-<!--
-<div style=" margin-left: 1%; margin-right: 0; width: 49%;">Last name<span style="color: red;"> *</span><br/>
-<input type="text" id="data_3" name="data_3" style="max-width: 100%;" class="form-control"/>
-</div>-->
-</div><div style="padding-bottom: 18px;">Last Name<span style="color: red;"> *</span><br/>
-<input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
-</div>
-</div><div style="padding-bottom: 18px;">Age<span style="color: red;"> *</span><br/>
-<input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
-</div>
-<div style="padding-bottom: 18px;">Adress<span style="color: red;"> *</span><br/>
-<input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control"/>
-</div>
-<div style="padding-bottom: 18px;">Gender<span style="color: red;"> *</span><br/>
-<input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control"/>
-</div>
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: Trebuchet MS, sans-serif;
+    }
+    .form-all .qq-upload-button,
+    .form-all .form-submit-button,
+    .form-all .form-submit-reset,
+    .form-all .form-submit-print {
+      font-family: Trebuchet MS, sans-serif;
+    }
+    .form-all .form-pagebreak-back-container,
+    .form-all .form-pagebreak-next-container {
+      font-family: Trebuchet MS, sans-serif;
+    }
+    .form-header-group {
+      font-family: Trebuchet MS, sans-serif;
+    }
+    .form-label {
+      font-family: Trebuchet MS, sans-serif;
+    }
+  
+    .form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+  
+    }
+  
+    .form-line {
+      margin-top: 12px 36px 12px 36px px;
+      margin-bottom: 12px 36px 12px 36px px;
+    }
+  
+    .form-all {
+      width: 590px;
+    }
+  
+    .form-label-left,
+    .form-label-right,
+    .form-label-left.form-label-auto,
+    .form-label-right.form-label-auto {
+      width: 150px;
+    }
+  
+    .form-all {
+      font-size: 13px
+    }
+    .form-all .qq-upload-button,
+    .form-all .qq-upload-button,
+    .form-all .form-submit-button,
+    .form-all .form-submit-reset,
+    .form-all .form-submit-print {
+      font-size: 13px
+    }
+    .form-all .form-pagebreak-back-container,
+    .form-all .form-pagebreak-next-container {
+      font-size: 13px
+    }
+  
+    .supernova .form-all, .form-all {
+      background-color: rgba(248, 248, 248, 0.68);
+      border: 1px solid transparent;
+    }
+  
+    .form-all {
+      color: rgb(109, 77, 77);
+    }
+    .form-header-group .form-header {
+      color: rgb(109, 77, 77);
+    }
+    .form-header-group .form-subHeader {
+      color: rgb(109, 77, 77);
+    }
+    .form-label-top,
+    .form-label-left,
+    .form-label-right,
+    .form-html,
+    .form-checkbox-item label,
+    .form-radio-item label {
+      color: rgb(109, 77, 77);
+    }
+    .form-sub-label {
+      color: 1a1a1a;
+    }
+  
+    .supernova {
+      background-color: undefined;
+    }
+    .supernova body {
+      background: transparent;
+    }
+  
+    .form-textbox,
+    .form-textarea,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input {
+      background-color: rgba(255, 255, 255, 0.71);
+    }
+  
+      .supernova {
+        height: 100%;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: center top;
+      }
+      .supernova {
+        background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");
+      }
+      #stage {
+        background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");
+      }
+    
+      .form-all {
+        background-image: url("//www.jotform.com/images/noises/noise.png");
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: center top;
+      }
+    
+  .ie-8 .form-all:before { display: none; }
+  .ie-8 {
+    margin-top: auto;
+    margin-top: initial;
+  }
+  
+  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/.form-label.form-label-auto {
+        
+      display: block;
+      float: none;
+      text-align: left;
+      width: 100%;
+    
+      }
+    /* Injected CSS Code */
+</style>
 
-<br>
-<div style="padding-bottom: 18px;font-size : 24px;">Contact Information</div>
-<div style="display: flex; padding-bottom: 18px;max-width : 450px;">
-<div style=" margin-left: 0; margin-right: 1%; width: 49%;">Email Address<span style="color: red;"> *</span><br/>
-<input type="text" id="data_2" name="data_2" style="max-width: 100%;" class="form-control"/>
-</div>
-<!--
-<div style=" margin-left: 1%; margin-right: 0; width: 49%;">Last name<span style="color: red;"> *</span><br/>
-<input type="text" id="data_3" name="data_3" style="max-width: 100%;" class="form-control"/>
-</div>-->
-</div><div style="padding-bottom: 18px;">Mobile No.<span style="color: red;"> *</span><br/>
-<input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
-</div>
-<!--
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">new Pikaday({ field: document.getElementById('data_6') });</script>
-<div style="padding-bottom: 18px;">Departure date<span style="color: red;"> *</span><br/>
-<input type="text" id="data_7" name="data_7" style="max-width : 250px;" class="form-control"/>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">new Pikaday({ field: document.getElementById('data_7') });</script>
-<div style="padding-bottom: 18px;">Number of adults<span style="color: red;"> *</span><br/>
-<input type="number" id="data_8" name="data_8" style="max-width : 250px;" class="form-control"/>
-</div>
-<div style="padding-bottom: 18px;">Number of children<br/>
-<input type="number" id="data_9" name="data_9" style="max-width : 250px;" class="form-control"/>
-</div>-->
-<div style="padding-bottom: 18px;">Additional Inquiry<br/>
-<textarea id="data_10" false name="data_10" style="max-width : 450px;" rows="6" class="form-control"></textarea>
-</div>
-<div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit"/></div>
-<div>
-    <!--
-<div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div>
-<script src="https://www.100forms.com/js/FORMKEY:CF24W37MMXC7/SEND:my@email.com" type="text/javascript"></script>
-</div>-->
-</form>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/buttons/form-submit-button-simple_blue.css?3.3.31421"/>
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.31421" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = false;
+	JotForm.extendsNewTheme = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
 
-<script type="text/javascript">
-function validateForm() {
-if (isEmpty(document.getElementById('data_2').value.trim())) {
-alert('First name is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_3').value.trim())) {
-alert('Last name is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_4').value.trim())) {
-alert('Phone is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_5').value.trim())) {
-alert('Email is required!');
-return false;
-}
-if (!validateEmail(document.getElementById('data_5').value.trim())) {
-alert('Email must be a valid email address!');
-return false;
-}
-if (isEmpty(document.getElementById('data_6').value.trim())) {
-alert('Arrival date is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_7').value.trim())) {
-alert('Departure date is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_8').value.trim())) {
-alert('Number of adults is required!');
-return false;
-}
-return true;
-}
-function isEmpty(str) { return (str.length === 0 || !str.trim()); }
-function validateEmail(email) {
-var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
-return isEmpty(email) || re.test(email);
-}
+	JotForm.init(function(){
+	/*INIT-START*/
+JotForm.setFullNameAutoFocus(16)
+      JotForm.description('input_16', 'Kindly enter your full name correct');
+      setTimeout(function() {
+          $('input_17').hint('ex: myname@example.com');
+       }, 20);
+    if(typeof $('input_18').spinner !== 'undefined') {$('input_18').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '60', maxValue:'4', minValue:'1', allowNegative: false, addAmount: 1, value:'1' });}
+    $('input_18').up(2).setAttribute('tabindex','');
+    if(typeof $('input_31').spinner !== 'undefined') {$('input_31').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '60', maxValue:'6', minValue:'0', allowNegative: false, addAmount: 1, value:'0' });}
+    $('input_31').up(2).setAttribute('tabindex','');
+
+ JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarOther = {"today":"Today"};
+ var languageOptions = document.querySelectorAll('#langList li'); 
+ for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("22", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":false,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+ } 
+ JotForm.onTranslationsFetch(function() { JotForm.setCalendar("22", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":false,"custom":false,"ranges":false,"start":"","end":""}); });
+if (window.JotForm && JotForm.accessible) $('input_30').setAttribute('tabindex',0);
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"( Confirm reservation ) تاكيد الحجز ","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,{"name":"byotataAlarabia","qid":"14","text":"BYOTATA AL-ARABIA","type":"control_head"},null,{"description":"Kindly enter your full name correct","name":"adSoyad","qid":"16","text":" ( Name ) الاسم بالكامل","type":"control_fullname"},{"name":"email17","qid":"17","text":"E-mail","type":"control_email"},{"name":"input18","qid":"18","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Guests ) عدد الضيوف","type":"control_spinner"},null,{"name":"Departure20","qid":"20","text":"( Departure Date ) تاريخ المغادرة","type":"control_birthdate"},null,{"name":"Arrival date","qid":"22","text":"( Arrival Date &amp; Time ) تاريخ و ميعاد الوصول","type":"control_datetime"},null,null,null,null,null,null,null,{"name":"mesajinizspecial","qid":"30","text":"( Special Requests ) الطلبات الخاصه","type":"control_textarea"},{"name":"Number","qid":"31","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Childs ) عدد الصغار","type":"control_spinner"},{"name":"myProducts","qid":"32","text":"Payment الدفع","type":"control_payment"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"( Confirm reservation ) تاكيد الحجز ","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,{"name":"byotataAlarabia","qid":"14","text":"BYOTATA AL-ARABIA","type":"control_head"},null,{"description":"Kindly enter your full name correct","name":"adSoyad","qid":"16","text":" ( Name ) الاسم بالكامل","type":"control_fullname"},{"name":"email17","qid":"17","text":"E-mail","type":"control_email"},{"name":"input18","qid":"18","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Guests ) عدد الضيوف","type":"control_spinner"},null,{"name":"Departure20","qid":"20","text":"( Departure Date ) تاريخ المغادرة","type":"control_birthdate"},null,{"name":"Arrival date","qid":"22","text":"( Arrival Date &amp; Time ) تاريخ و ميعاد الوصول","type":"control_datetime"},null,null,null,null,null,null,null,{"name":"mesajinizspecial","qid":"30","text":"( Special Requests ) الطلبات الخاصه","type":"control_textarea"},{"name":"Number","qid":"31","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Childs ) عدد الصغار","type":"control_spinner"},{"name":"myProducts","qid":"32","text":"Payment الدفع","type":"control_payment"}]);}, 20); 
 </script>
+</head>
+<body>
+<form class="jotform-form" action="https://submit.jotform.com/submit/220587712224453/" method="post" name="form_220587712224453" id="220587712224453" accept-charset="utf-8" autocomplete="on">
+  <input type="hidden" name="formID" value="220587712224453" />
+  <input type="hidden" id="JWTContainer" value="" />
+  <input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_14" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-default">
+          <div class="header-text httal htvam">
+            <h2 id="header_14" class="form-header" data-component="header">
+            ALO Conference Room Reservation
+            </h2>
+            <div id="subHeader_14" class="form-subHeader">
+              Conference Room
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_fullname" id="id_16" data-compound-hint=",,">
+        <label class="form-label form-label-top" id="label_16" for="prefix_16">
+          Name
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_16" class="form-input-wide jf-required">
+          <div data-wrapper-react="true" class="extended">
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
+              <select data-component="prefix" name="q16_adSoyad[prefix]" id="prefix_16" class="dropdown-match-height form-dropdown validate[required]" aria-labelledby="label_16 sublabel_16_prefix" autoComplete="section-input_16 honorific-prefix">
+                <option value="Mr."> Mr. </option>
+                <option value="Mrs."> Mrs. </option>
+              </select>
+              <label class="form-sub-label" for="prefix_16" id="sublabel_16_prefix" style="min-height:13px" aria-hidden="false"> Prefix </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+              <input type="text" id="first_16" name="q16_adSoyad[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 given-name" size="10" value="" data-component="first" aria-labelledby="label_16 sublabel_16_first" required="" />
+              <label class="form-sub-label" for="first_16" id="sublabel_16_first" style="min-height:13px" aria-hidden="false"> First Name </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
+              <input type="text" id="middle_16" name="q16_adSoyad[middle]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_16 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_16 sublabel_16_middle" required="" />
+              <label class="form-sub-label" for="middle_16" id="sublabel_16_middle" style="min-height:13px" aria-hidden="false"> Middle Name </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+              <input type="text" id="last_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 family-name" size="15" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+              <label class="form-sub-label" for="last_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> Last Name </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_17">
+        <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17">
+          E-mail Address
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_17" class="form-input-wide jf-required">
+          <input type="email" id="input_17" name="q17_email17" class="form-textbox validate[required, Email]" data-defaultvalue="" size="32" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1 form-line-column-clear jf-required" data-type="control_spinner" id="id_31">
+        <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
+          ( Number of Childs ) عدد الصغار
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_31" class="form-input-wide jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" id="input_31" name="q31_Number" data-type="input-spinner" class="form-spinner-input  form-textbox validate[required]" data-spinnermin="0" data-spinnermax="6" data-defaultvalue="0" value="0" data-component="spinner" aria-labelledby="label_31 sublabel_input_31" required="" />
+            <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"> kindly enter the actual number رجاء ادخال العدد الصحيح </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required allowTime" data-type="control_datetime" id="id_22">
+        <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+          ( Arrival Date &amp; Time ) تاريخ و ميعاد الوصول
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_22" class="form-input-wide jf-required">
+          <div data-wrapper-react="true" class="extended notLiteMode">
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="day_22" name="q22_Arrival date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="04" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_day" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="day_22" id="sublabel_22_day" style="min-height:13px" aria-hidden="false"> Day </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="month_22" name="q22_Arrival date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="10" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_month" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="month_22" id="sublabel_22_month" style="min-height:13px" aria-hidden="false"> Month </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="year_22" name="q22_Arrival date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2017" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_year" />
+              <label class="form-sub-label" for="year_22" id="sublabel_22_year" style="min-height:13px" aria-hidden="false"> Year </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <img class="showAutoCalendar newDefaultTheme-dateIcon icon-seperatedMode" alt="Pick a Date" id="input_22_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="Yes" data-version="v1" />
+              <label class="form-sub-label" for="input_22_pick" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="true"> Date Picker Icon </label>
+            </span>
+            <span class="allowTime-container">
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="hour_22" name="q22_Arrival date[hour]" aria-labelledby="label_22 sublabel_22_hour">
+                  <option>  </option>
+                  <option value="1"> 1 </option>
+                  <option value="2"> 2 </option>
+                  <option value="3"> 3 </option>
+                  <option value="4"> 4 </option>
+                  <option value="5"> 5 </option>
+                  <option value="6"> 6 </option>
+                  <option value="7"> 7 </option>
+                  <option value="8"> 8 </option>
+                  <option value="9"> 9 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option>
+                  <option selected="" value="12"> 12 </option>
+                </select>
+                <span class="date-separate" aria-hidden="true">
+                   :
+                </span>
+                <label class="form-sub-label" for="hour_22" id="sublabel_22_hour" style="min-height:13px" aria-hidden="false"> Hour </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="min_22" name="q22_Arrival date[min]" aria-labelledby="label_22 sublabel_22_minutes">
+                  <option>  </option>
+                  <option selected="" value="00"> 00 </option>
+                  <option value="15"> 15 </option>
+                  <option value="30"> 30 </option>
+                  <option value="45"> 45 </option>
+                </select>
+                <label class="form-sub-label" for="min_22" id="sublabel_22_minutes" style="min-height:13px" aria-hidden="false"> Minutes </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
+                  <option selected="" value="AM"> AM </option>
+                  <option value="PM"> PM </option>
+                </select>
+                <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> AM/PM Option </label>
+              </span>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate" id="id_20">
+        <label class="form-label form-label-top" id="label_20" for="input_20">
+          ( Departure Date ) تاريخ المغادرة
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_20" class="form-input-wide jf-required">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <select name="q20_Departure20[day]" id="input_20_day" class="form-dropdown validate[required]" data-component="birthdate-day" aria-labelledby="label_20 sublabel_20_day">
+                <option>  </option>
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>
+                <option value="10"> 10 </option>
+                <option value="11"> 11 </option>
+                <option value="12"> 12 </option>
+                <option value="13"> 13 </option>
+                <option value="14"> 14 </option>
+                <option value="15"> 15 </option>
+                <option value="16"> 16 </option>
+                <option value="17"> 17 </option>
+                <option value="18"> 18 </option>
+                <option value="19"> 19 </option>
+                <option value="20"> 20 </option>
+                <option value="21"> 21 </option>
+                <option value="22"> 22 </option>
+                <option value="23"> 23 </option>
+                <option value="24"> 24 </option>
+                <option value="25"> 25 </option>
+                <option value="26"> 26 </option>
+                <option value="27"> 27 </option>
+                <option value="28"> 28 </option>
+                <option value="29"> 29 </option>
+                <option value="30"> 30 </option>
+                <option value="31"> 31 </option>
+              </select>
+              <label class="form-sub-label" for="input_20_day" id="sublabel_20_day" style="min-height:13px" aria-hidden="false"> Day </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <select name="q20_Departure20[month]" id="input_20_month" class="form-dropdown validate[required]" data-component="birthdate-month" aria-labelledby="label_20 sublabel_20_month">
+                <option>  </option>
+                <option value="January"> January </option>
+                <option value="February"> February </option>
+                <option value="March"> March </option>
+                <option value="April"> April </option>
+                <option value="May"> May </option>
+                <option value="June"> June </option>
+                <option value="July"> July </option>
+                <option value="August"> August </option>
+                <option value="September"> September </option>
+                <option value="October"> October </option>
+                <option value="November"> November </option>
+                <option value="December"> December </option>
+              </select>
+              <label class="form-sub-label" for="input_20_month" id="sublabel_20_month" style="min-height:13px" aria-hidden="false"> Month </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <select name="q20_Departure20[year]" id="input_20_year" class="form-dropdown validate[required]" data-component="birthdate-year" aria-labelledby="label_20 sublabel_20_year">
+                <option>  </option>
+                <option value="2022"> 2022 </option>
+                <option value="2021"> 2021 </option>
+                <option value="2020"> 2020 </option>
+                <option value="2019"> 2019 </option>
+                <option value="2018"> 2018 </option>
+                <option value="2017"> 2017 </option>
+                <option value="2016"> 2016 </option>
+                <option value="2015"> 2015 </option>
+                <option value="2014"> 2014 </option>
+                <option value="2013"> 2013 </option>
+                <option value="2012"> 2012 </option>
+                <option value="2011"> 2011 </option>
+                <option value="2010"> 2010 </option>
+                <option value="2009"> 2009 </option>
+                <option value="2008"> 2008 </option>
+                <option value="2007"> 2007 </option>
+                <option value="2006"> 2006 </option>
+                <option value="2005"> 2005 </option>
+                <option value="2004"> 2004 </option>
+                <option value="2003"> 2003 </option>
+                <option value="2002"> 2002 </option>
+                <option value="2001"> 2001 </option>
+                <option value="2000"> 2000 </option>
+                <option value="1999"> 1999 </option>
+                <option value="1998"> 1998 </option>
+                <option value="1997"> 1997 </option>
+                <option value="1996"> 1996 </option>
+                <option value="1995"> 1995 </option>
+                <option value="1994"> 1994 </option>
+                <option value="1993"> 1993 </option>
+                <option value="1992"> 1992 </option>
+                <option value="1991"> 1991 </option>
+                <option value="1990"> 1990 </option>
+                <option value="1989"> 1989 </option>
+                <option value="1988"> 1988 </option>
+                <option value="1987"> 1987 </option>
+                <option value="1986"> 1986 </option>
+                <option value="1985"> 1985 </option>
+                <option value="1984"> 1984 </option>
+                <option value="1983"> 1983 </option>
+                <option value="1982"> 1982 </option>
+                <option value="1981"> 1981 </option>
+                <option value="1980"> 1980 </option>
+                <option value="1979"> 1979 </option>
+                <option value="1978"> 1978 </option>
+                <option value="1977"> 1977 </option>
+                <option value="1976"> 1976 </option>
+                <option value="1975"> 1975 </option>
+                <option value="1974"> 1974 </option>
+                <option value="1973"> 1973 </option>
+                <option value="1972"> 1972 </option>
+                <option value="1971"> 1971 </option>
+                <option value="1970"> 1970 </option>
+                <option value="1969"> 1969 </option>
+                <option value="1968"> 1968 </option>
+                <option value="1967"> 1967 </option>
+                <option value="1966"> 1966 </option>
+                <option value="1965"> 1965 </option>
+                <option value="1964"> 1964 </option>
+                <option value="1963"> 1963 </option>
+                <option value="1962"> 1962 </option>
+                <option value="1961"> 1961 </option>
+                <option value="1960"> 1960 </option>
+                <option value="1959"> 1959 </option>
+                <option value="1958"> 1958 </option>
+                <option value="1957"> 1957 </option>
+                <option value="1956"> 1956 </option>
+                <option value="1955"> 1955 </option>
+                <option value="1954"> 1954 </option>
+                <option value="1953"> 1953 </option>
+                <option value="1952"> 1952 </option>
+                <option value="1951"> 1951 </option>
+                <option value="1950"> 1950 </option>
+                <option value="1949"> 1949 </option>
+                <option value="1948"> 1948 </option>
+                <option value="1947"> 1947 </option>
+                <option value="1946"> 1946 </option>
+                <option value="1945"> 1945 </option>
+                <option value="1944"> 1944 </option>
+                <option value="1943"> 1943 </option>
+                <option value="1942"> 1942 </option>
+                <option value="1941"> 1941 </option>
+                <option value="1940"> 1940 </option>
+                <option value="1939"> 1939 </option>
+                <option value="1938"> 1938 </option>
+                <option value="1937"> 1937 </option>
+                <option value="1936"> 1936 </option>
+                <option value="1935"> 1935 </option>
+                <option value="1934"> 1934 </option>
+                <option value="1933"> 1933 </option>
+                <option value="1932"> 1932 </option>
+                <option value="1931"> 1931 </option>
+                <option value="1930"> 1930 </option>
+                <option value="1929"> 1929 </option>
+                <option value="1928"> 1928 </option>
+                <option value="1927"> 1927 </option>
+                <option value="1926"> 1926 </option>
+                <option value="1925"> 1925 </option>
+                <option value="1924"> 1924 </option>
+                <option value="1923"> 1923 </option>
+                <option value="1922"> 1922 </option>
+                <option value="1921"> 1921 </option>
+                <option value="1920"> 1920 </option>
+              </select>
+              <label class="form-sub-label" for="input_20_year" id="sublabel_20_year" style="min-height:13px" aria-hidden="false"> Year </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_30">
+        <label class="form-label form-label-top form-label-auto" id="label_30" for="input_30"> ( Special Requests ) الطلبات الخاصه </label>
+        <div id="cid_30" class="form-input-wide">
+          <textarea id="input_30" class="form-textarea" name="q30_mesajinizspecial" cols="40" rows="6" data-component="textarea" aria-labelledby="label_30"></textarea>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_payment" id="id_32" data-payment="true">
+        <label class="form-label form-label-top form-label-auto" id="label_32" for="input_32">
+          Payment الدفع
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_32" class="form-input-wide jf-required">
+          <div data-wrapper-react="true" class="product-container-wrapper">
+            <div class="filter-container">
+            </div>
+            <input type="hidden" name="simple_fpc" data-payment_type="payment" data-component="payment1" value="32" />
+            <input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+            <div id="image-overlay" class="overlay-content" style="display:none">
+              <img id="current-image" />
+              <span class="lb-prev-button">
+                prev
+              </span>
+              <span class="lb-next-button">
+                next
+              </span>
+              <span class="lb-close-button">
+                ( X )
+              </span>
+              <span class="image-overlay-product-container">
+              </span>
+            </div>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="text" class="form-textbox validate[required, Numeric]" id="input_32_donation" name="q32_myProducts[price]" value="00.00" data-component="paymentDonation" aria-labelledby="label_32" />
+              <span class="donation_currency">
+                SAR
+              </span>
+              <label class="form-sub-label" for="input_32_donation" style="min-height:13px" aria-hidden="false"> Total amount اجمالى المبلغ </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+            <button id="input_2" type="submit" class="form-submit-button form-submit-button-simple_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              ( Confirm reservation ) تاكيد الحجز
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  
+  <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="220587712224453" />
+  <script type="text/javascript">
+  var all_spc = document.querySelectorAll("form[id='220587712224453'] .si" + "mple" + "_spc");
+for (var i = 0; i < all_spc.length; i++)
+{
+  all_spc[i].value = "220587712224453-220587712224453";
+}
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+</form></body>
+</html>
+<script type="text/javascript">JotForm.ownerView=true;</script>
