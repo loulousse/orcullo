@@ -44,3 +44,5 @@ def image_upload_view(request):
         form = ImageForm()
     return render(request, 'corr/upload.html', {'form': form})
 
+
+
