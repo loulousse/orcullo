@@ -20,6 +20,12 @@
 <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/nova.css?3.3.31421" />
 <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/57dc7e749a11c7e0598b4567.css?themeRevisionID=58eff0c27dc758db6018c271"/>
 <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.31421" />
+<!--<link href="{% static 'assets/css/pastel.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/calendar.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/form-submit.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/form.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/nova.css' %}" rel="stylesheet"> -->
+
 
 <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
@@ -104,10 +110,12 @@
     .form-html,
     .form-checkbox-item label,
     .form-radio-item label {
-      color: rgb(109, 77, 77);
+      color: rgb(5, 0, 0);
     }
     .form-sub-label {
-      color: 1a1a1a;
+      color: black;
+      font-weight: bold;
+      font-size: 12px;
     }
   
     .supernova {
@@ -220,11 +228,139 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         <div class="form-header-group  header-default">
           <div class="header-text httal htvam">
             <h2 id="header_14" class="form-header" data-component="header">
-            ALO Conference Room Reservation
+            ALO CONFERENCE ROOM RESERVATION
             </h2>
             <div id="subHeader_14" class="form-subHeader">
               Reservation Details
             </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required allowTime" data-type="control_datetime" id="id_22">
+        <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+          Date
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_22" class="form-input-wide jf-required">
+          <div data-wrapper-react="true" class="extended notLiteMode">
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="day_22" name="q22_Arrival date[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="04" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_day" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="day_22" id="sublabel_22_day" style="min-height:13px" aria-hidden="false"> Day </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="month_22" name="q22_Arrival date[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="10" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_month" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="month_22" id="sublabel_22_month" style="min-height:13px" aria-hidden="false"> Month </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[required, disallowPast, limitDate]" id="year_22" name="q22_Arrival date[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2017" required="" autoComplete="section-input_22 off" aria-labelledby="label_22 sublabel_22_year" />
+              <label class="form-sub-label" for="year_22" id="sublabel_22_year" style="min-height:13px" aria-hidden="false"> Year </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <img class="showAutoCalendar newDefaultTheme-dateIcon icon-seperatedMode" alt="Pick a Date" id="input_22_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="Yes" data-version="v1" />
+              <label class="form-sub-label" for="input_22_pick" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="true"> Date Picker Icon </label>
+            </span>
+            <br>
+            <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+              Start time
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <span class="allowTime-container">
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="hour_22" name="q22_Arrival date[hour]" aria-labelledby="label_22 sublabel_22_hour">
+                  <option>  </option>
+                  <option value="1"> 1 </option>
+                  <option value="2"> 2 </option>
+                  <option value="3"> 3 </option>
+                  <option value="4"> 4 </option>
+                  <option value="5"> 5 </option>
+                  <option value="6"> 6 </option>
+                  <option value="7"> 7 </option>
+                  <option value="8"> 8 </option>
+                  <option value="9"> 9 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option>
+                  <option selected="" value="12"> 12 </option>
+                </select>
+                <span class="date-separate" aria-hidden="true">
+                   :
+                </span>
+                <label class="form-sub-label" for="hour_22" id="sublabel_22_hour" style="min-height:13px" aria-hidden="false"> Hour </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="min_22" name="q22_Arrival date[min]" aria-labelledby="label_22 sublabel_22_minutes">
+                  <option>  </option>
+                  <option selected="" value="00"> 00 </option>
+                  <option value="15"> 15 </option>
+                  <option value="30"> 30 </option>
+                  <option value="45"> 45 </option>
+                </select>
+                <label class="form-sub-label" for="min_22" id="sublabel_22_minutes" style="min-height:13px" aria-hidden="false"> Minutes </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
+                  <option selected="" value="AM"> AM </option>
+                  <option value="PM"> PM </option>
+                </select>
+                <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> AM/PM Option </label>
+              </span>
+            </span>
+            <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+              End time
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <span class="allowTime-container">
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="hour_22" name="q22_Arrival date[hour]" aria-labelledby="label_22 sublabel_22_hour">
+                  <option>  </option>
+                  <option value="1"> 1 </option>
+                  <option value="2"> 2 </option>
+                  <option value="3"> 3 </option>
+                  <option value="4"> 4 </option>
+                  <option value="5"> 5 </option>
+                  <option value="6"> 6 </option>
+                  <option value="7"> 7 </option>
+                  <option value="8"> 8 </option>
+                  <option value="9"> 9 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option>
+                  <option selected="" value="12"> 12 </option>
+                </select>
+                <span class="date-separate" aria-hidden="true">
+                   :
+                </span>
+                <label class="form-sub-label" for="hour_22" id="sublabel_22_hour" style="min-height:13px" aria-hidden="false"> Hour </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="min_22" name="q22_Arrival date[min]" aria-labelledby="label_22 sublabel_22_minutes">
+                  <option>  </option>
+                  <option selected="" value="00"> 00 </option>
+                  <option value="15"> 15 </option>
+                  <option value="30"> 30 </option>
+                  <option value="45"> 45 </option>
+                </select>
+                <label class="form-sub-label" for="min_22" id="sublabel_22_minutes" style="min-height:13px" aria-hidden="false"> Minutes </label>
+              </span>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
+                  <option selected="" value="AM"> AM </option>
+                  <option value="PM"> PM </option>
+                </select>
+                <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> AM/PM Option </label>
+              </span>
+            </span>
+            
           </div>
         </div>
       </li>
@@ -251,7 +387,6 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
           <label class="form-sub-label" for="first_16" id="sublabel_16_first" style="min-height:13px" aria-hidden="false"> First Name </label>
               <input type="text" id="first_16" name="q16_adSoyad[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 given-name" size="10" value="" data-component="first" aria-labelledby="label_16 sublabel_16_first" required="" />
-              
             </span>
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
               <label class="form-sub-label" for="middle_16" id="sublabel_16_middle" style="min-height:13px" aria-hidden="false"> Middle Name </label>
@@ -262,18 +397,32 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
               <input type="text" id="last_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 family-name" size="10" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
             </span>
           <br>
-          <label class="form-sub-label" for="address_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> Address </label>
-          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="Address">
-            <input type="text" id="last_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 family-name" size="50" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <label class="form-sub-label" for="age_16" id="sublabel_16_age" style="min-height:13px" aria-hidden="false"> Age </label>
+              <input type="number" id="input_31" name="q31_Number" data-type="input-spinner" class="form-spinner-input  form-textbox validate[required]" data-spinnermin="0" data-spinnermax="6" data-defaultvalue="0" value="0" data-component="spinner" aria-labelledby="label_31 sublabel_input_31" required="" />
+              <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"> kindly enter the actual number</label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <label class="form-sub-label" for="gender_16" id="sublabel_16_gender" style="min-height:13px" aria-hidden="false"> Gender </label>
+              <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
+                <option selected="" value="F"> F </option>
+                <option value="M"> M </option>
+              </select>
+              <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> F/M Option </label>
+            </span>
+          <br>
+          <label class="form-sub-label" for="address_16" id="sublabel_16_address" style="min-height:13px" aria-hidden="false"> Address </label>
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="address">
+            <input type="text" id="country_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 address" size="51" value="" data-component="address" aria-labelledby="label_16 sublabel_16_address" required="" />
           </span>
           <br>
-          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="City">
-            <label class="form-sub-label" for="last_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> City </label>
-            <input type="text" id="last_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 family-name" size="22" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="city">
+            <label class="form-sub-label" for="last_16" id="sublabel_16_city" style="min-height:13px" aria-hidden="false"> City </label>
+            <input type="text" id="city_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 city" size="22" value="" data-component="city" aria-labelledby="label_16 sublabel_16_city" required="" />
           </span>
-          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="ZIP">
-            <label class="form-sub-label" for="last_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> ZIP/Postal Code </label>
-            <input type="text" id="last_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 family-name" size="23" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="zip">
+            <label class="form-sub-label" for="last_16" id="sublabel_16_zip" style="min-height:13px" aria-hidden="false"> ZIP/Postal Code </label>
+            <input type="text" id="zip_16" name="q16_adSoyad[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_16 zip" size="23" value="" data-component="zip" aria-labelledby="label_16 sublabel_16_zip" required="" />
           </span>
           <br>
           <span class="form-sub-label-container" style="vertical-align:top" data-input-type="country">
@@ -528,46 +677,22 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
            </select>
           </span>
           <br>
-            <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
-              Age
-              <span class="form-required">
-                *
-              </span>
-            </label>
-            <div id="cid_31" class="form-input-wide jf-required">
-              <span class="form-sub-label-container" style="vertical-align:top">
-                <input type="number" id="input_31" name="q31_Number" data-type="input-spinner" class="form-spinner-input  form-textbox validate[required]" data-spinnermin="0" data-spinnermax="6" data-defaultvalue="0" value="0" data-component="spinner" aria-labelledby="label_31 sublabel_input_31" required="" />
-                <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"> kindly enter the actual number</label>
-              </span>
-              <span class="form-sub-label-container" style="vertical-align:top">
-                <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
-                  Gender
-                  <span class="form-required">
-                    *
-                  </span>
-                </label>
-                <select class="time-dropdown form-dropdown validate[required, disallowPast, limitDate]" id="ampm_22" name="q22_Arrival date[ampm]" aria-labelledby="label_22 sublabel_22_ampm">
-                  <option selected="" value="F"> F </option>
-                  <option value="M"> M </option>
-                </select>
-                <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> F/M Option </label>
-              </span>
-            </div>
           </div>
         </div>
       </li>
       <li class="form-line jf-required" data-type="control_email" id="id_17">
-        <div id="subHeader_14" class="form-subHeader">
+        <div id="subHeader_14" class="form-subHeader" style="font-size: large; font-weight: bolder;">
           Contact Information
-      </div>
-        <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17">
-          E-mail Address
+        </div>
+        <br>
+        <label class="form-label form-label-top" id="label_16" for="prefix_16">
+          Email Address
           <span class="form-required">
             *
           </span>
         </label>
         <div id="cid_17" class="form-input-wide jf-required">
-          <input type="email" id="input_17" name="q17_email17" class="form-textbox validate[required, Email]" data-defaultvalue="" size="32" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
+          <input size="52px" type="email" id="input_17" name="q17_email17" class="form-textbox validate[required, Email]" data-defaultvalue="" size="32" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
         </div>
         <br>
         <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
@@ -884,9 +1009,9 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
             <span class="form-sub-label-container" style="vertical-align:top">
               <input type="text" class="form-textbox validate[required, Numeric]" id="input_32_donation" name="q32_myProducts[price]" value="00.00" data-component="paymentDonation" aria-labelledby="label_32" />
               <span class="donation_currency">
-                SAR
+                PHP
               </span>
-              <label class="form-sub-label" for="input_32_donation" style="min-height:13px" aria-hidden="false"> Total amount اجمالى المبلغ </label>
+              <label class="form-sub-label" for="input_32_donation" style="min-height:13px" aria-hidden="false"> Total amount </label>
             </span>
           </div>
         </div>
@@ -895,14 +1020,10 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         <div id="cid_2" class="form-input-wide">
           <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
             <button id="input_2" type="submit" class="form-submit-button form-submit-button-simple_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-              ( Confirm reservation ) 
+              Confirm reservation
             </button>
           </div>
         </div>
-      </li>
-      <li style="display:none">
-        Should be Empty:
-        <input type="text" name="website" value="" />
       </li>
     </ul>
   </div>
