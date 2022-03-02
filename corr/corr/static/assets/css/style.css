@@ -12135,8 +12135,8 @@ body {
 .tt-hint, .form-control:focus, .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
 .tt-query:focus,
 .tt-hint:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none; 
+  box-shadow: none;
+  box-shadow: none; 
 }
 
 .form-control, .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
