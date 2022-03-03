@@ -8,3 +8,9 @@ class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = ('title', 'image', 'details', 'price')
+"""
+class DateForm(forms.ModelForm):
+    class Meta:
+        model = Date
+        fields = ('day', 'month', 'year')
+"""
