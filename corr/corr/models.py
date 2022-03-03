@@ -9,3 +9,12 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title
+"""
+class Date(models.Model):
+    day = models.IntegerField()
+    month = models.CharField(max_length=200)
+    year = models.IntegerField()
+
+    class meta:
+        db_table 'Date'
+"""

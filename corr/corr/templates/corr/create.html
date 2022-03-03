@@ -224,103 +224,33 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-sm-flex align-items-center mb-4">
-                      <h4 class="card-title mb-sm-0">User Registration List</h4>
-                      <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all User Registration List</a>
-                    </div>
-                    <div class="table-responsive border rounded p-1">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th class="font-weight-bold">Date</th>
-                            <th class="font-weight-bold">Start Time</th>
-                            <th class="font-weight-bold">End Time</th>
-                            <th class="font-weight-bold">Room Name/No.</th>
-                            <th class="font-weight-bold">Name</th>
-                            <th class="font-weight-bold">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face1.jpg' %}" alt="profile image"> Katie Holmes
-                            </td>
-                            <td>$3621</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>04 Jun 2019</td>
-                            <td>18 Jul 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face2.jpg' %}" alt="profile image"> Minnie Copeland
-                            </td>
-                            <td>$6245</td>
-                            <td><img src="{% static 'corr/images/dashboard/paypal.png' %}" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
-                            <td>25 Sep 2019</td>
-                            <td>07 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-danger p-2">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face3.jpg'%}" alt="profile image"> Rodney Sims
-                            </td>
-                            <td>$9265</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>12 dec 2019</td>
-                            <td>26 Aug 2019</td>
-                            <td>
-                              <div class="badge badge-warning p-2">Failed</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face4.jpg' %}" alt="profile image"> Carolyn Barker
-                            </td>
-                            <td>$2263</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>30 Sep 2019</td>
-                            <td>20 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex mt-4 flex-wrap">
-                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
-                      <nav class="ml-auto">
-                        <ul class="pagination separated pagination-info">
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
-                          <li class="page-item"><a href="#" class="page-link">3</a></li>
-                          <li class="page-item"><a href="#" class="page-link">4</a></li>
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div>
+                <label class="control-labek col-sm-3"> Room Name/No. 
+                    <em>*</em>
+                </label>
+                 <select class="with-statuc-border form-control" name="resource_id", id="resource_id">
+                     <option value="none">---</option>
+                     <option value="">Blue Room&nbsp</option>
+                     <option value="">Orange Room&nbsp</option>
+                     <option value="">White Room&nbsp</option>
+                     <option value="">Black Room&nbsp</option>
+                 </select>
             </div>
-          </div>
-          <!-- content-wrapper ends -->
+            <br>
+            <div id="res_form_buttoms">
+                <div class="col-sm-offset-3 col-sm-8">
+                    <input class="btn btn-primary btn-lg" id="submit_button" name="submit_button" type="submit" value="Make reservation" style="margin-left:-15px">
+                </div>
+                <input type="hidden" calue="true" id="submitted_filled" name="submitted">
+            </div>
+            <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
+              <!--
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
               <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
+            </div>-->
           </footer>
           <!-- partial -->
         </div>
@@ -350,4 +280,3 @@
 
 
 {% endblock content %}
-

@@ -19,6 +19,10 @@ def userReservationList(request):
 def latestReservation(request):
     return render(request, 'corr/latestReservation.html')
 
+def create(request):
+    return render(request, 'corr/create.html')
+
+
 def rooms(request):
     return render(request, 'corr/rooms.html')
 
