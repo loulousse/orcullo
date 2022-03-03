@@ -27,6 +27,7 @@ urlpatterns = [
     path('userReservationList/', views.userReservationList),
     path('latestReservation/', views.latestReservation),
     path('create/', views.create),
+    path('res/', views.res),
     path('index/', views.index),
     path('rooms/', views.rooms),
     path('dashboard/', views.dashboard),

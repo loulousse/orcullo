@@ -22,6 +22,8 @@ def latestReservation(request):
 def create(request):
     return render(request, 'corr/create.html')
 
+def res(request):
+    return render(request, 'corr/res.html')
 
 def rooms(request):
     return render(request, 'corr/rooms.html')
