@@ -13,8 +13,8 @@ from .forms import ImageForm
 def home(request):
     return render(request, 'corr/home.html')
 
-def contact(request):
-    return render(request, 'corr/contact.html')
+def userReservationList(request):
+    return render(request, 'corr/userReservationList.html')
 
 def rooms(request):
     return render(request, 'corr/rooms.html')
@@ -43,6 +43,3 @@ def image_upload_view(request):
     else:
         form = ImageForm()
     return render(request, 'corr/upload.html', {'form': form})
-
-
-
