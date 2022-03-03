@@ -1,3 +1,3 @@
 # orcullo
 
-database name = reverse
+database name = reserve
