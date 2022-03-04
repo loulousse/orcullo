@@ -224,6 +224,44 @@
                 </div>
               </div>
             </div>
+            <div class="container">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+                      <br><br><br><br>
+                        <form action="" method="POST" class="form" role="form">
+                          {% csrf_token %}
+                          <span style="text-align: center;"> 
+                                <input class="form-control" id="id-day" name="day" placeholder="Day" type="text"
+                                    required autofocus />
+                          </span> 
+                        <br>
+                          <span style="text-align: center;">
+                                <input class="form-control" id="id-month" name="month" placeholder="month" type="text" required />
+                          </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                          <input class="form-control" id="id-year" name="year" placeholder="year" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                            <input class="form-control" id="id-startTime" name="startTime" placeholder="startTime" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                            <input class="form-control" id="id-endTime" name="endTime" placeholder="endTime" type="text"/>
+                        </span> 
+                        <br>
+                        <div id="res_form_buttoms">
+                          <div class="col-sm-offset-3 col-sm-8">
+                              <a href="../res" class="btn btn-primary btn-lg" id="submit_button" name="submit_button" type="submit" value="Make reservation" style="margin-left:-10px">Submit</a>
+                          </div>
+                          <input  type="hidden" calue="true" id="submitted_filled" name="submitted">
+                      </div>
+                          </div>
+                        </form>   
+                    </div> 
+                </div>
+            </div>
             <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>

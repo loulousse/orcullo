@@ -24,6 +24,8 @@
     <!--<link rel="stylesheet" href="./css/style.css">-->
     <!-- End layout styles -->
     <link href="{% static 'corr/images/alo.png' %}" rel="icon">
+  
+ 
   </head>
   <body>
     <div class="container-scroller">
@@ -230,71 +232,119 @@
                   <div class="card-body">
                     <div class="d-sm-flex align-items-center mb-4">
                       <h4 class="card-title mb-sm-0">Latest Registration List</h4>
-                      <a href="../create" class="text-dark ml-auto mb-3 mb-sm-0"> Make Reservation</a>
+                      <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
+                      href = "{% url 'reservation_info' %}">
+                      Make Reservation
+                      </a>
                     </div>
                     <div class="table-responsive border rounded p-1">
                       <table class="table">
                         <thead>
                           <tr>
-                            <th class="font-weight-bold">Date</th>
-                            <th class="font-weight-bold">Start Time</th>
-                            <th class="font-weight-bold">End Time</th>
-                            <th class="font-weight-bold">Room Name/No.</th>
-                            <th class="font-weight-bold">Name</th>
-                            <th class="font-weight-bold">Status</th>
+                            <th class = "text-center">Date</th>
+                            <th class = "text-center">Start Time</th>
+                            <th class = "text-center">End Time</th>
+                            <th class = "text-center">Room Name</th>
+                            <th class = "text-center">Name</th>
+                            <th class = "text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face1.jpg' %}" alt="profile image"> Katie Holmes
-                            </td>
-                            <td>$3621</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>04 Jun 2019</td>
-                            <td>18 Jul 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face2.jpg' %}" alt="profile image"> Minnie Copeland
-                            </td>
-                            <td>$6245</td>
-                            <td><img src="{% static 'corr/images/dashboard/paypal.png' %}" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
-                            <td>25 Sep 2019</td>
-                            <td>07 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-danger p-2">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face3.jpg'%}" alt="profile image"> Rodney Sims
-                            </td>
-                            <td>$9265</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>12 dec 2019</td>
-                            <td>26 Aug 2019</td>
-                            <td>
-                              <div class="badge badge-warning p-2">Failed</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face4.jpg' %}" alt="profile image"> Carolyn Barker
-                            </td>
-                            <td>$2263</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>30 Sep 2019</td>
-                            <td>20 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                          {% for d in date %}
+                      <tr>
+                        <td>{{d.month}}/{{d.day}}/{{d.year}}</td>
+                        <td>{{d.startTime}}</td>
+                        <td>{{d.endTime}}</td>
+                       
+                        <td>
+                          <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
+                              VIEW
+                          </a>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{d.id}}">
+                              DELETE
+                          </button>
+                        </td>
+                      </tr>
+                  
+                       <!-- Modal VIEW-->
+                      <div class="modal fade" id="newModal-{{d.id}}" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(115, 255, 255)">
+                                <h5 class="modal-title", style="font-size: large; font-family: Trirong;">VIEW DETAILS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form id="updateForm" method="post" >
+                              {% csrf_token %}
+                              <div class="modal-body">
+                                <input type="text" name="date-Id" value = {{d.day}} hidden>
+                                <div class="row" text-align ="center">
+                                  <div class="col-12" id="startup-tab-1">
+                                    <div class="row">
+                                      <div class = "col-sm-4">
+                                        <input type="text" class="form-control" id="id-day" placeholder="day" name="d-day" value ={{d.day}}>
+                                      </div>
+                                      </div>
+                                      &nbsp;
+                                      <div class="row">
+                                        <div class = "col-sm-4">
+                                          <input type="text" class="form-control" id="id-month" placeholder="month" name="d-month" value ={{d.month}}>
+                                        </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                        <div class = "col-sm-4">
+                                          <input type="text" class="form-control" id="id-year" placeholder="year"  name="d-year" value ={{d.year}}>
+                                        </div>
+                                        <div class = "col-sm-4">
+                                          <input type="text" class="form-control" id="id-startTime" placeholder="startTime"  name="d-startTime" value ={{d.startTime}}>
+                                        </div>
+                                        <div class = "col-sm-4">
+                                          <input type="text" class="form-control" id="id-endTime" placeholder="endTime"  name="d-endTime" value ={{d.endTime}}>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">  
+                                  <button type="submit" id = "btnUpdate" name = "btnUpdate" class="button">UPDATE</button>                                  
+                                  <button type="button" class="button btn-secondary" data-dismiss="modal">CLOSE</button>                          
+                              </div>
+                            </div>
+                          </form>
+                          </div>
+                        </div>
+                      
+                      <!-- Modal DELETE-->
+                      <div class="modal fade" id="exampleModal-{{d.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(115, 255, 255)">
+                                <h5 class="modal-title", style="font-size: large; font-family: Trirong;">DELETE RECORD</h5>
+                                <!--<h5 class="modal-title" id="exampleModalLabel">DELETE RECORD</h5>-->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form id="deleteForm" method="post" >
+                              {% csrf_token %} 
+                              <div class="modal-body">                       
+                                <input type="text" name="ddate-id" value = {{d.id}} hidden>
+                                Are you sure you want to delete this record?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                                <button type="submit" id = "btnDelete" name = "btnDelete" class="btn btn-primary">YES</button>
+                              </div>
+                            </div>
+                          </form>
+                          </div>
+                        </div>   
+                      {% endfor %}   
+                    </tbody>
+                    </table>
                     </div>
                     <div class="d-flex mt-4 flex-wrap">
                       <p class="text-muted">Showing 1 to 10 of 57 entries</p>
@@ -318,9 +368,8 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
             </div>
+          </table>
           </footer>
           <!-- partial -->
         </div>
