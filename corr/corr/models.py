@@ -14,11 +14,19 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title
-"""
+
 class Date(models.Model):
+    id = models.AutoField(primary_key = True)
     day = models.IntegerField()
     month = models.CharField(max_length=200)
     year = models.IntegerField()
+    startTime = models.CharField(max_length=200)
+    endTime = models.CharField(max_length=200)
+    roomName = models.CharField(max_length=200)
+    firstname = models.CharField(max_length=200)
+    middlename = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
+
 
     class meta:
         db_table 'Date'

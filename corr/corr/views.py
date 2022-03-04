@@ -11,17 +11,96 @@ from .forms import ImageForm
 # Create your views here.
 
 def home(request):
+    date = Date.objects.all()
+    context = {
+        'date': date
+    }
     return render(request, 'corr/home.html')
 
 def userReservationList(request):
     return render(request, 'corr/userReservationList.html')
 
-def latestReservation(request):
-    return render(request, 'corr/latestReservation.html')
+class latestReservation(View):
+    
+    def get(self, request):
+        date = Date.objects.all()
+        context = {
+            'date': date
+       }
+        return render(request, 'corr/latestReservation.html', context)
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'btnUpdate' in request.POST:
+                print ('update profile button clicked')
+                did=request.POST.get("date-Id")
+                day=request.POST.get("d-day")
+                month=request.POST.get("d-month")
+                year=request.POST.get("d-year")
+                startTime=request.POST.get("d-startTime")
+                endTime=request.POST.get("d-endTime")
+                roomName=request.POST.get("d-roomName")
+                firstname=request.POST.get("d-firstname")
+                middlename=request.POST.get("d-middlename")
+                lastname=request.POST.get("d-lastname")
+
+                update_date = Date.objects.filter(id=did).update(day=day, month=month, year=year, startTime=startTime, 
+                endTime=endTime, roomName=roomName, firstname=firstname, middlename=middlename, lastname=lastname)
+                print(update_date)
+
+                print('profile updated')
+            elif 'btnDelete' in request.POST:
+                print('delete button clicked')
+                did=request.POST.get("ddate-id")
+                date=Date.objects.filter(id=did).delete()
+                print('recorded deleted')
+
+        return redirect('latest_reservation')
 
 def create(request):
     return render(request, 'corr/create.html')
 
+class res(View):
+    def get(self, request):
+        return render(request, 'corr/res.html')
+    
+    def post(self, request):
+        form = DateForm(request.POST)
+        day = request.POST.get("day")
+        print(day)
+        month = request.POST.get("month")
+        print(month)
+        year = request.POST.get("year")
+        print(year)
+        startTime = request.POST.get("startTime")
+        print(startTime)
+        endTime = request.POST.get("endTime")
+        print(endTime)
+        roomName = request.POST.get("roomName")
+        print(roomName)
+        firstname = request.POST.get("firstname")
+        print(firstname)
+        middlename = request.POST.get("middlename")
+        print(middlename)
+        lastname = request.POST.get("lastname")
+        print(lastname)
+
+        if form.is_valid():
+            day = request.POST.get("day")
+            month = request.POST.get("month")
+            year = request.POST.get("year")
+            startTime = request.POST.get("startTime")
+            endTime = request.POST.get("endTime")
+            roomName = request.POST.get("roomName")
+            firstname = request.POST.get("firstname")
+            middlename = request.POST.get("middlename")
+            lastname = request.POST.get("lastname")
+        
+        form = Date(day = day, month = month, year = year, startTime=startTime, endTime=endTime, roomName=roomName,
+                    firstname=firstname, middlename=middlename, lastname=lastname)
+        form.save()
+
+        return redirect('latest_reservation')
 
 def rooms(request):
     return render(request, 'corr/rooms.html')
