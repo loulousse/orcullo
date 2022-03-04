@@ -100,7 +100,7 @@ class res(View):
                     firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
-        return redirect('reservation_info')
+        return redirect('latest_reservation')
 
 def rooms(request):
     return render(request, 'corr/rooms.html')
