@@ -37,8 +37,15 @@ class latestReservation(View):
                 day=request.POST.get("d-day")
                 month=request.POST.get("d-month")
                 year=request.POST.get("d-year")
-                startTime=request.POST.get("d-start")
-                update_date = Date.objects.filter(id=did).update(day=day, month=month, year=year, startTime=startTime, endTime=endTime)
+                startTime=request.POST.get("d-startTime")
+                endTime=request.POST.get("d-endTime")
+                roomName=request.POST.get("d-roomName")
+                firstname=request.POST.get("d-firstname")
+                middlename=request.POST.get("d-middlename")
+                lastname=request.POST.get("d-lastname")
+
+                update_date = Date.objects.filter(id=did).update(day=day, month=month, year=year, startTime=startTime, 
+                endTime=endTime, roomName=roomName, firstname=firstname, middlename=middlename, lastname=lastname)
                 print(update_date)
 
                 print('profile updated')
@@ -69,13 +76,28 @@ class res(View):
         print(startTime)
         endTime = request.POST.get("endTime")
         print(endTime)
+        roomName = request.POST.get("roomName")
+        print(roomName)
+        firstname = request.POST.get("firstname")
+        print(firstname)
+        middlename = request.POST.get("middlename")
+        print(middlename)
+        lastname = request.POST.get("lastname")
+        print(lastname)
 
         if form.is_valid():
             day = request.POST.get("day")
             month = request.POST.get("month")
             year = request.POST.get("year")
+            startTime = request.POST.get("startTime")
+            endTime = request.POST.get("endTime")
+            roomName = request.POST.get("roomName")
+            firstname = request.POST.get("firstname")
+            middlename = request.POST.get("middlename")
+            lastname = request.POST.get("lastname")
         
-        form = Date(day = day, month = month, year = year, startTime=startTime, endTime=endTime)
+        form = Date(day = day, month = month, year = year, startTime=startTime, endTime=endTime, roomName=roomName,
+                    firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
         return redirect('reservation_info')

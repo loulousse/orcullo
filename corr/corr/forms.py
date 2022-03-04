@@ -12,5 +12,6 @@ class ImageForm(forms.ModelForm):
 class DateForm(forms.ModelForm):
     class Meta:
         model = Date
-        fields = ('id', 'day', 'month', 'year', 'startTime', 'endTime')
+        fields = ('id', 'day', 'month', 'year', 'startTime', 'endTime', 'roomName',
+                    'firstname', 'middlename', 'lastname')
 

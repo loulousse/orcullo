@@ -255,7 +255,8 @@
                         <td>{{d.month}}/{{d.day}}/{{d.year}}</td>
                         <td>{{d.startTime}}</td>
                         <td>{{d.endTime}}</td>
-                       
+                        <td>{{d.roomName}}</td>
+                        <td>{{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
                         <td>
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
                               VIEW
@@ -279,9 +280,9 @@
                               <form id="updateForm" method="post" >
                               {% csrf_token %}
                               <div class="modal-body">
-                                <input type="text" name="date-Id" value = {{d.day}} hidden>
+                                <input type="text" name="date-Id" value = {{d.id}} hidden>
                                 <div class="row" text-align ="center">
-                                  <div class="col-12" id="startup-tab-1">
+                                  <div class="col-12" id="startup-tab-2">
                                     <div class="row">
                                       <div class = "col-sm-4">
                                         <input type="text" class="form-control" id="id-day" placeholder="day" name="d-day" value ={{d.day}}>
@@ -298,13 +299,38 @@
                                         <div class = "col-sm-4">
                                           <input type="text" class="form-control" id="id-year" placeholder="year"  name="d-year" value ={{d.year}}>
                                         </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
                                         <div class = "col-sm-4">
                                           <input type="text" class="form-control" id="id-startTime" placeholder="startTime"  name="d-startTime" value ={{d.startTime}}>
                                         </div>
-                                        <div class = "col-sm-4">
-                                          <input type="text" class="form-control" id="id-endTime" placeholder="endTime"  name="d-endTime" value ={{d.endTime}}>
                                         </div>
-                                      </div>
+                                        &nbsp;
+                                        <div class="row">
+                                          <div class = "col-sm-4">
+                                            <input type="text" class="form-control" id="id-endTime" placeholder="endTime"  name="d-endTime" value ={{d.endTime}}>
+                                          </div>  
+                                        </div> 
+                                        &nbsp;  
+                                        <div class="row">
+                                          <div class = "col-sm-4">
+                                            <input type="text" class="form-control" id="id-firstname" placeholder="firstname" name="d-firstname" value ={{d.firstname}}>
+                                          </div>
+                                          </div>  
+                                          &nbsp;  
+                                        <div class="row">
+                                          <div class = "col-sm-4">
+                                            <input type="text" class="form-control" id="id-middlename" placeholder="middlename" name="d-middlename" value ={{d.middlename}}>
+                                          </div>
+                                          </div>  
+                                          &nbsp;  
+                                        <div class="row">
+                                          <div class = "col-sm-4">
+                                            <input type="text" class="form-control" id="id-lastname" placeholder="lastname" name="d-lastname" value ={{d.lastname}}>
+                                          </div>
+                                          </div>  
+                                          &nbsp;                  
                                   </div>
                                 </div>
                               </div>

@@ -17,6 +17,10 @@ class Date(models.Model):
     year = models.IntegerField()
     startTime = models.CharField(max_length=200)
     endTime = models.CharField(max_length=200)
+    roomName = models.CharField(max_length=200)
+    firstname = models.CharField(max_length=200)
+    middlename = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
 
 
     class meta:
