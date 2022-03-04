@@ -246,18 +246,24 @@
                       <div class="page-header">
                         <div class="row align-items-center">
                           <div class="col">
-                            <h1 class="page-title">Reservations - Latest reservations entered</h1>
+                            <h1 class="page-title">Reservations - Latest reservations entered</h1><br>
                             <ul class="breadcrumb">
                               <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                               <li class="breadcrumb-item active">Employee</li>
                             </ul>
                           </div>
+                          <div class="col-sm-6 col-md-3">  
+                          <button style="margin-left: 250px;" type="submit" name="SearchEmp" class="btn btn-success btn-block"> Search </button>  
+                        </div>
                           <div class="col-auto float-right ml-auto">
-                            <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_employee"><i class="fa fa-plus"></i> Add Employee</a>
-                            <div class="view-icons">
-                              <a href="" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
-                              <a href="" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
-                            </div>
+                            <a href="../create" style="background-color: #fc2d08;
+                            border: 1px solid #ce3c3c;
+                            color: #fff;
+                            border-radius: 2px;
+                            float: left; margin-left: 300px; text-decoration: none;
+                            left: 3px;
+                            font-weight: 600;
+                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;"><i class="fa fa-plus" aria-hidden="true"></i> Add Reservation</a>
                           </div>
                         </div>
                       </div>
@@ -287,10 +293,7 @@
                             <label class="focus-label">Designation</label>
                           </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">  
-                          <button type="submit" name="SearchEmp" class="btn btn-success btn-block"> Search </button>  
-                        </div>
-                                </div>
+                      </div>
                       </form>
                       <!-- Search Filter -->
                       
@@ -318,347 +321,368 @@
                       </div>
                             </div>
                         <!-- Add Employee Modal -->
-				<div id="add_employee" class="modal custom-modal fade" role="dialog">
-					<div class="modal-dialog modal-dialog-centered modal-lg">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Add Employee</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<form method="POST">
-									{% csrf_token %}
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">First Name <span class="text-danger">*</span></label>
-												<input name="firstname_text" class="form-control" type="text">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Last Name <span class="text-danger">*</span></label>
-												<input name="lastname_text" class="form-control" type="text">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Username <span class="text-danger">*</span></label>
-												<input name="username_text" class="form-control" type="text">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Email <span class="text-danger">*</span></label>
-												<input name="email_text" class="form-control" type="email">
-											</div>
-										</div>
-										{% comment %} <div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Password <span class="text-danger">*</span></label>
-												<input name="password_text" id="password" class="form-control" type="password" required>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Confirm Password <span class="text-danger">*</span></label>
-												<input name="password2_text" id="confirm-password" class="form-control" type="password" required>
-											</div>
-										</div> {% endcomment %}
-										<div class="col-sm-6">  
-											<div class="form-group">
-												<label class="col-form-label">Gender <span class="text-danger">*</span></label>
-												<select name="gender_text" class="select">
-													<option>~ Select Gender ~ </option>												
-													<option>Male</option>	
-													<option>Female</option>																						
-												</select>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Phone <span class="text-danger">*</span></label>
-												<input name="phone_text" class="form-control" type="text">
-											</div>
-										</div>
+                        <div id="add_employee" class="modal custom-modal fade" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Add Reservation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form method="POST">
+                                  {% csrf_token %}
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <span class="form-sub-label-container" style="vertical-align:top" data-input-type="country">
+                                          <label class="form-sub-label" for="country_16" id="sublabel_16_country" style="min-height:13px" aria-hidden="false">Room  <span class="form-required">*</span></label>
+                                          <select id="country" name="country" style="width: 400px;">
+                                            <option value="Afganistan">Afghanistan</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="American Samoa">American Samoa</option>
+                                         </select>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                    <div class="row">
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Date <span class="text-danger">*</span></label>
+                                        <input name="RName" class="form-control" type="text">
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                                        <input name="firstname_text" class="form-control" type="text">
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input name="lastname_text" class="form-control" type="text">
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Username <span class="text-danger">*</span></label>
+                                        <input name="username_text" class="form-control" type="text">
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                                        <input name="email_text" class="form-control" type="email">
+                                      </div>
+                                    </div>
+                                    {% comment %} <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Password <span class="text-danger">*</span></label>
+                                        <input name="password_text" id="password" class="form-control" type="password" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Confirm Password <span class="text-danger">*</span></label>
+                                        <input name="password2_text" id="confirm-password" class="form-control" type="password" required>
+                                      </div>
+                                    </div> {% endcomment %}
+                                    <div class="col-sm-6">  
+                                      <div class="form-group">
+                                        <label class="col-form-label">Gender <span class="text-danger">*</span></label>
+                                        <select name="gender_text" class="select">
+                                          <option>~ Select Gender ~ </option>												
+                                          <option>Male</option>	
+                                          <option>Female</option>																						
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <label class="col-form-label">Phone <span class="text-danger">*</span></label>
+                                        <input name="phone_text" class="form-control" type="text">
+                                      </div>
+                                    </div>
 
-										{% comment %} <div class="col-md-6">
-											<div class="form-group">
-												<label>Department <span class="text-danger">*</span></label>
-												<select name="department_text" class="select">
-												{% for depart in dept %}
-													<option>{{depart.department_name}}</option>											
-												{% endfor %}
-												</select>
-											</div>
-										</div> {% endcomment %}
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Designation <span class="text-danger">*</span></label>
-												<select name="designation_text" class="select">
-												{% for designation in desig %}
-													<option value="{{designation.id}}">{{designation.designation_name}}</option>											
-												{% endfor %}
-												</select>
-											</div>
-										</div>
-									</div>
-									
-									<div class="submit-section">
-										<button name="btnSubmitEmployee" class="btn btn-primary submit-btn">Submit</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Add Employee Modal -->
+                                    {% comment %} <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Department <span class="text-danger">*</span></label>
+                                        <select name="department_text" class="select">
+                                        {% for depart in dept %}
+                                          <option>{{depart.department_name}}</option>											
+                                        {% endfor %}
+                                        </select>
+                                      </div>
+                                    </div> {% endcomment %}
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Designation <span class="text-danger">*</span></label>
+                                        <select name="designation_text" class="select">
+                                        {% for designation in desig %}
+                                          <option value="{{designation.id}}">{{designation.designation_name}}</option>											
+                                        {% endfor %}
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="submit-section">
+                                    <button name="btnSubmitEmployee" class="btn btn-primary submit-btn">Submit</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /Add Employee Modal -->
 
-<!-- Edit Employee Modal -->
-{% for employee in empl %}
-<div id="edit_employee{{employee.employee_id}}" class="modal custom-modal fade" role="dialog">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Edit Employee</h5>								
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="POST">
-        {% csrf_token %}
-          <div class="row">
-          <input type="hidden" name="emplID" value="{{employee.employee_id}}">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">First Name <span class="text-danger">*</span></label>
-                <input class="form-control" name="firstname_update" value="{{employee.firstname}}" type="text">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Last Name</label>
-                <input class="form-control" name="lastname_update" value="{{employee.lastname}}" type="text">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Username <span class="text-danger">*</span></label>
-                <input class="form-control" name="username_update" value="{{employee.username}}" type="text">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Email <span class="text-danger">*</span></label>
-                <input class="form-control" name="email_update" value="{{employee.email}}" type="email">
-              </div>
-            </div>
-            {% comment %} <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Password</label>
-                <input class="form-control" value="johndoe" type="password">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Confirm Password</label>
-                <input class="form-control" value="johndoe" type="password">
-              </div>
-            </div> {% endcomment %}
-            <div class="col-sm-6">  
-              <div class="form-group">
-                <label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
-                <input type="text" name="empid_update" value="{{employee.employee_id}}" readonly class="form-control floating">
-              </div>
-            </div>
-            {% comment %} <div class="col-sm-6">  
-              <div class="form-group">
-                <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
-                <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
-              </div>
-            </div> {% endcomment %}
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Phone </label>
-                <input class="form-control" name="phone_update" value="{{employee.phone}}" type="text">
-              </div>
-            </div>
-            {% comment %} <div class="col-sm-6">
-              <div class="form-group">
-                <label class="col-form-label">Company</label>
-                <select class="select">
-                  <option>Global Technologies</option>
-                  <option>Delta Infotech</option>
-                  <option selected>International Software Inc</option>
-                </select>
-              </div>
-            </div> {% endcomment %}
-            {% comment %} <div class="col-md-6">
-              <div class="form-group">
-                <label>Department <span class="text-danger">*</span></label>
-                <select name="department_name" class="select">
-                {% for department in dept %}
-                  <option value="{{department.department_name}}" {% if employee.department == department.department_name %} 
-                    selected="selected"{% endif %}>{{department.department_name}}</option>											
-                {% endfor %}
-                </select>
-              </div>
-            </div> {% endcomment %}
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Designation <span class="text-danger">*</span></label>
-                <select name="designation_name" class="select">
-                {% for designation in desig %}
-                  <option value="{{designation.id}}" {% if employee.designation_name.designation_name == designation.designation_name %} selected="selected"{% endif %}>{{designation.designation_name}}</option>											
-                {% endfor %}
-                </select>
-              </div>
-            </div>
-          </div>
+                    <!-- Edit Employee Modal -->
+                    {% for employee in empl %}
+                    <div id="edit_employee{{employee.employee_id}}" class="modal custom-modal fade" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit Employee</h5>								
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form method="POST">
+                            {% csrf_token %}
+                              <div class="row">
+                              <input type="hidden" name="emplID" value="{{employee.employee_id}}">
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" name="firstname_update" value="{{employee.firstname}}" type="text">
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Last Name</label>
+                                    <input class="form-control" name="lastname_update" value="{{employee.lastname}}" type="text">
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Username <span class="text-danger">*</span></label>
+                                    <input class="form-control" name="username_update" value="{{employee.username}}" type="text">
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                                    <input class="form-control" name="email_update" value="{{employee.email}}" type="email">
+                                  </div>
+                                </div>
+                                {% comment %} <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Password</label>
+                                    <input class="form-control" value="johndoe" type="password">
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Confirm Password</label>
+                                    <input class="form-control" value="johndoe" type="password">
+                                  </div>
+                                </div> {% endcomment %}
+                                <div class="col-sm-6">  
+                                  <div class="form-group">
+                                    <label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
+                                    <input type="text" name="empid_update" value="{{employee.employee_id}}" readonly class="form-control floating">
+                                  </div>
+                                </div>
+                                {% comment %} <div class="col-sm-6">  
+                                  <div class="form-group">
+                                    <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
+                                    <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                                  </div>
+                                </div> {% endcomment %}
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Phone </label>
+                                    <input class="form-control" name="phone_update" value="{{employee.phone}}" type="text">
+                                  </div>
+                                </div>
+                                {% comment %} <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Company</label>
+                                    <select class="select">
+                                      <option>Global Technologies</option>
+                                      <option>Delta Infotech</option>
+                                      <option selected>International Software Inc</option>
+                                    </select>
+                                  </div>
+                                </div> {% endcomment %}
+                                {% comment %} <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label>Department <span class="text-danger">*</span></label>
+                                    <select name="department_name" class="select">
+                                    {% for department in dept %}
+                                      <option value="{{department.department_name}}" {% if employee.department == department.department_name %} 
+                                        selected="selected"{% endif %}>{{department.department_name}}</option>											
+                                    {% endfor %}
+                                    </select>
+                                  </div>
+                                </div> {% endcomment %}
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label>Designation <span class="text-danger">*</span></label>
+                                    <select name="designation_name" class="select">
+                                    {% for designation in desig %}
+                                      <option value="{{designation.id}}" {% if employee.designation_name.designation_name == designation.designation_name %} selected="selected"{% endif %}>{{designation.designation_name}}</option>											
+                                    {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
 
-          <div class="submit-section">
-            <input type="submit" class="btn btn-primary submit-btn" name="btnUpdateEmp" value="Save">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /Edit Employee Modal -->
+                              <div class="submit-section">
+                                <input type="submit" class="btn btn-primary submit-btn" name="btnUpdateEmp" value="Save">
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Edit Employee Modal -->
 
-<!-- Delete Employee Modal -->
-<div class="modal custom-modal fade" id="delete_employee{{employee.employee_id}}" role="dialog">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="form-header">
-          <h3>Delete Employee</h3>
-          <p>Are you sure want to delete <strong>ID: {{employee.employee_id}}</strong> ? </p>
-        </div>
-        <div class="modal-btn delete-action">
-          <div class="row">
-            <div class="col-6">
-              <a href="deleteEmployee/{{employee.employee_id}}" class="btn btn-primary continue-btn">Delete</a>
-            </div>
-            <div class="col-6">
-              <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /Delete Employee Modal -->
-{% endfor %}
+                    <!-- Delete Employee Modal -->
+                    <div class="modal custom-modal fade" id="delete_employee{{employee.employee_id}}" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <div class="form-header">
+                              <h3>Delete Employee</h3>
+                              <p>Are you sure want to delete <strong>ID: {{employee.employee_id}}</strong> ? </p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                              <div class="row">
+                                <div class="col-6">
+                                  <a href="deleteEmployee/{{employee.employee_id}}" class="btn btn-primary continue-btn">Delete</a>
+                                </div>
+                                <div class="col-6">
+                                  <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Delete Employee Modal -->
+                    {% endfor %}
 
                     <!-- /Page Content -->
-           <div class="row purchace-popup">
-              <div class="col-12 stretch-card grid-margin">
-                <div class="card card-secondary">
-                  <!--<span class="card-body d-lg-flex align-items-center">
-                    <p class="mb-lg-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more! </p>
-                    <a href="https://www.bootstrapdash.com/product/stellar-admin/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn btn-warning purchase-button btn-sm my-1 my-sm-0 ml-auto">Upgrade To Pro</a>
-                    <button class="close popup-dismiss ml-2">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </span>-->
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-sm-flex align-items-center mb-4">
-                      <h4 class="card-title mb-sm-0">User Registration List</h4>
-                      <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all User Registration List</a>
+                  <div class="row purchace-popup">
+                      <div class="col-12 stretch-card grid-margin">
+                        <div class="card card-secondary">
+                          <!--<span class="card-body d-lg-flex align-items-center">
+                            <p class="mb-lg-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more! </p>
+                            <a href="https://www.bootstrapdash.com/product/stellar-admin/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn btn-warning purchase-button btn-sm my-1 my-sm-0 ml-auto">Upgrade To Pro</a>
+                            <button class="close popup-dismiss ml-2">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </span>-->
+                        </div>
+                      </div>
                     </div>
-                    <div class="table-responsive border rounded p-1">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th class="font-weight-bold">Date</th>
-                            <th class="font-weight-bold">Start Time</th>
-                            <th class="font-weight-bold">End Time</th>
-                            <th class="font-weight-bold">Room Name/No.</th>
-                            <th class="font-weight-bold">Name</th>
-                            <th class="font-weight-bold">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face1.jpg' %}" alt="profile image"> Katie Holmes
-                            </td>
-                            <td>$3621</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>04 Jun 2019</td>
-                            <td>18 Jul 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face2.jpg' %}" alt="profile image"> Minnie Copeland
-                            </td>
-                            <td>$6245</td>
-                            <td><img src="{% static 'corr/images/dashboard/paypal.png' %}" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
-                            <td>25 Sep 2019</td>
-                            <td>07 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-danger p-2">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face3.jpg'%}" alt="profile image"> Rodney Sims
-                            </td>
-                            <td>$9265</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>12 dec 2019</td>
-                            <td>26 Aug 2019</td>
-                            <td>
-                              <div class="badge badge-warning p-2">Failed</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face4.jpg' %}" alt="profile image"> Carolyn Barker
-                            </td>
-                            <td>$2263</td>
-                            <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>30 Sep 2019</td>
-                            <td>20 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex mt-4 flex-wrap">
-                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
-                      <nav class="ml-auto">
-                        <ul class="pagination separated pagination-info">
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
-                          <li class="page-item"><a href="#" class="page-link">3</a></li>
-                          <li class="page-item"><a href="#" class="page-link">4</a></li>
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
-                        </ul>
-                      </nav>
+                    <div class="row">
+                      <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="d-sm-flex align-items-center mb-4">
+                              <h4 class="card-title mb-sm-0">User Registration List</h4>
+                              <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all User Registration List</a>
+                            </div>
+                            <div class="table-responsive border rounded p-1">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th class="font-weight-bold">Date</th>
+                                    <th class="font-weight-bold">Start Time</th>
+                                    <th class="font-weight-bold">End Time</th>
+                                    <th class="font-weight-bold">Room Name/No.</th>
+                                    <th class="font-weight-bold">Name</th>
+                                    <th class="font-weight-bold">Status</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face1.jpg' %}" alt="profile image"> Katie Holmes
+                                    </td>
+                                    <td>$3621</td>
+                                    <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                                    <td>04 Jun 2019</td>
+                                    <td>18 Jul 2019</td>
+                                    <td>
+                                      <div class="badge badge-success p-2">Paid</div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face2.jpg' %}" alt="profile image"> Minnie Copeland
+                                    </td>
+                                    <td>$6245</td>
+                                    <td><img src="{% static 'corr/images/dashboard/paypal.png' %}" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
+                                    <td>25 Sep 2019</td>
+                                    <td>07 Oct 2019</td>
+                                    <td>
+                                      <div class="badge badge-danger p-2">Pending</div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face3.jpg'%}" alt="profile image"> Rodney Sims
+                                    </td>
+                                    <td>$9265</td>
+                                    <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                                    <td>12 dec 2019</td>
+                                    <td>26 Aug 2019</td>
+                                    <td>
+                                      <div class="badge badge-warning p-2">Failed</div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <img class="img-sm rounded-circle" src="{% static 'corr/images/faces/face4.jpg' %}" alt="profile image"> Carolyn Barker
+                                    </td>
+                                    <td>$2263</td>
+                                    <td><img src="{% static 'corr/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                                    <td>30 Sep 2019</td>
+                                    <td>20 Oct 2019</td>
+                                    <td>
+                                      <div class="badge badge-success p-2">Paid</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="d-flex mt-4 flex-wrap">
+                              <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                              <nav class="ml-auto">
+                                <ul class="pagination separated pagination-info">
+                                  <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                  <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                  <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                  <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                                </ul>
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

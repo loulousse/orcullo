@@ -14,3 +14,8 @@ class DateForm(forms.ModelForm):
         model = Date
         fields = ('day', 'month', 'year')
 """
+
+class ReservationForm(forms.ModelForm):  # Reservation Form
+    class Meta:
+        model = Reservation
+        fields = "__all__"
