@@ -230,6 +230,8 @@
                       <br><br><br><br>
                         <form action="" method="POST" class="form" role="form">
                           {% csrf_token %}
+                          <div class="form-group">
+                            <label for="title">Date</label>
                           <span style="text-align: center;"> 
                                 <input class="form-control" id="id-day" name="day" placeholder="Day" type="text"
                                     required autofocus />
@@ -242,19 +244,62 @@
                         <span style="text-align: center;"> 
                           <input class="form-control" id="id-year" name="year" placeholder="year" type="text"/>
                         </span> 
+                        </div>
                         <br>
+                        <div class="form-group">
+                          <label for="title">Start Time</label>
+                          <select name="startTime" id="id-startTime" class="form-control">
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                              <option value="16:00">16:00</option>
+                              <option value="17:00">17:00</option>
+                              <option value="18:00">18:00</option>
+                          </select>
+                          </div><!--
                         <span style="text-align: center;"> 
                             <input class="form-control" id="id-startTime" name="startTime" placeholder="startTime" type="text"/>
-                        </span> 
-                        <br>
+                        </span> -->
+                       
+                        <div class="form-group">
+                          <label for="title">End Time</label>
+                          <select name="endTime" id="id-endTime" class="form-control">
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                              <option value="16:00">16:00</option>
+                              <option value="17:00">17:00</option>
+                              <option value="18:00">18:00</option>
+                          </select>
+                          </div>
+                          <!--
                         <span style="text-align: center;"> 
                             <input class="form-control" id="id-endTime" name="endTime" placeholder="endTime" type="text"/>
-                        </span> 
+                        </span> -->
                         <br>
+                        <div class="form-group">
+                          <label for="title">Available Rooms</label>
+                          <select name="roomName" id="id-roomName" class="form-control">
+                            <!-- <option style="background-color: #800000;" selected disabled >Vehicle Type</option> -->
+                            <option value="Room B">Blue Room Style</option>
+                            <option value="Room O">Orange Room Squaire Style</option>
+                            <option value="Room W">White Room Style</option>
+                            <option value="Room BL">Black room Style</option>
+                          </select>
+                        </div>
+                        <!--
                         <span style="text-align: center;"> 
                           <input class="form-control" id="id-roomName" name="roomName" placeholder="roomName" type="text"/>
-                        </span> 
+                        </span> -->
                         <br>
+                        <div class="form-group">
+                          <label for="title">Name</label>
                         <span style="text-align: center;"> 
                           <input class="form-control" id="id-firstname" name="firstname" placeholder="firstname" type="text"/>
                         </span> 
@@ -266,6 +311,7 @@
                         <span style="text-align: center;"> 
                           <input class="form-control" id="id-lastname" name="lastname" placeholder="lastname" type="text"/>
                         </span> 
+                        </div>
                         <br>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                           sumbit</button>
