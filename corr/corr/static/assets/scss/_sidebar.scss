@@ -5,6 +5,7 @@
   background: $sidebar-dark-bg;
   font-family: $type1;
   padding: 0;
+  position: fixed;
   width: $sidebar-width-lg;
   z-index: 11;
   transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
@@ -14,6 +15,7 @@
 
   .nav {
     overflow: hidden;
+    position: fixed;
     flex-wrap: nowrap;
     flex-direction: column;
     margin-bottom: 60px;
@@ -156,6 +158,7 @@
 
             .sidebar-mini & {
               margin-right: auto;
+              position: fixed;
             }
 
             .dot-indicator{

@@ -13349,3 +13349,25 @@ dl {
       padding: 0.25rem 0.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
+
+.add-btn {
+	background-color: #f43b48;
+	border: 1px solid #f43b48;
+	border-radius: 50px;
+	color: #fff;
+	float: right;
+	font-weight: 500;
+	min-width: 140px;
+}
+
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
+	background-color: #f10e1d;
+	border: 1px solid #f10e1d;
+	color: #fff;
+}
+
+.add-btn i {
+	margin-right: 5px;
+}
