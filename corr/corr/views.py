@@ -94,6 +94,9 @@ class res(View):
 
         return redirect('latest_reservation')
 
+def upload(request):
+    return render(request, 'corr/upload.html')
+
 def rooms(request):
     return render(request, 'corr/rooms.html')
 
