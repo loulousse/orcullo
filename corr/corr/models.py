@@ -15,11 +15,12 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
-class Date(models.Model):
+class Book(models.Model):
     id = models.AutoField(primary_key = True)
-    day = models.IntegerField()
-    month = models.CharField(max_length=200)
-    year = models.IntegerField()
+#    day = models.IntegerField()
+#    month = models.CharField(max_length=200)
+#    year = models.IntegerField()
+    date =  models.DateField(blank=True, null=True)
     startTime = models.CharField(max_length=200)
     endTime = models.CharField(max_length=200)
     roomName = models.CharField(max_length=200)
@@ -29,6 +30,6 @@ class Date(models.Model):
 
 
     class meta:
-        db_table = 'Date'
+        db_table = 'Book'
 
 

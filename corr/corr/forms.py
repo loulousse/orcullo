@@ -9,10 +9,10 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = ('title', 'image', 'details', 'price')
 
-class DateForm(forms.ModelForm):
+class BookForm(forms.ModelForm):
     class Meta:
-        model = Date
-        fields = ('day', 'month', 'year')
+        model = Book
+        fields = ('date', 'startTime', 'endTime', 'roomName', 'firstname', 'middlename', 'lastname')
 
 
 

@@ -11,9 +11,9 @@ from .forms import ImageForm
 # Create your views here.
 
 def home(request):
-    date = Date.objects.all()
+    book = Book.objects.all()
     context = {
-        'date': date
+        'book': book
     }
     return render(request, 'corr/home.html')
 
@@ -23,9 +23,9 @@ def userReservationList(request):
 class latestReservation(View):
     
     def get(self, request):
-        date = Date.objects.all()
+        book = Book.objects.all()
         context = {
-            'date': date
+            'book': book
        }
         return render(request, 'corr/latestReservation.html', context)
 
@@ -33,10 +33,8 @@ class latestReservation(View):
         if request.method == 'POST':
             if 'btnUpdate' in request.POST:
                 print ('update profile button clicked')
-                did=request.POST.get("date-Id")
-                day=request.POST.get("d-day")
-                month=request.POST.get("d-month")
-                year=request.POST.get("d-year")
+                did=request.POST.get("book-Id")
+                date=request.POST.get("d-date")
                 startTime=request.POST.get("d-startTime")
                 endTime=request.POST.get("d-endTime")
                 roomName=request.POST.get("d-roomName")
@@ -44,15 +42,15 @@ class latestReservation(View):
                 middlename=request.POST.get("d-middlename")
                 lastname=request.POST.get("d-lastname")
 
-                update_date = Date.objects.filter(id=did).update(day=day, month=month, year=year, startTime=startTime, 
+                update_book = Book.objects.filter(id=did).update(date=date, startTime=startTime, 
                 endTime=endTime, roomName=roomName, firstname=firstname, middlename=middlename, lastname=lastname)
-                print(update_date)
+                print(update_book)
 
                 print('profile updated')
             elif 'btnDelete' in request.POST:
                 print('delete button clicked')
-                did=request.POST.get("ddate-id")
-                date=Date.objects.filter(id=did).delete()
+                did=request.POST.get("bbook-id")
+                book=Book.objects.filter(id=did).delete()
                 print('recorded deleted')
 
         return redirect('latest_reservation')
@@ -65,13 +63,9 @@ class res(View):
         return render(request, 'corr/res.html')
     
     def post(self, request):
-        form = DateForm(request.POST)
-        day = request.POST.get("day")
-        print(day)
-        month = request.POST.get("month")
-        print(month)
-        year = request.POST.get("year")
-        print(year)
+        form = BookForm(request.POST)
+        date = request.POST.get("date")
+        print(date)
         startTime = request.POST.get("startTime")
         print(startTime)
         endTime = request.POST.get("endTime")
@@ -86,9 +80,7 @@ class res(View):
         print(lastname)
 
         if form.is_valid():
-            day = request.POST.get("day")
-            month = request.POST.get("month")
-            year = request.POST.get("year")
+            date = request.POST.get("date")
             startTime = request.POST.get("startTime")
             endTime = request.POST.get("endTime")
             roomName = request.POST.get("roomName")
@@ -96,7 +88,7 @@ class res(View):
             middlename = request.POST.get("middlename")
             lastname = request.POST.get("lastname")
         
-        form = Date(day = day, month = month, year = year, startTime=startTime, endTime=endTime, roomName=roomName,
+        form = Book(date = date, startTime=startTime, endTime=endTime, roomName=roomName,
                     firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
