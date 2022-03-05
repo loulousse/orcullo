@@ -22,30 +22,21 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
                       <br><br><br><br>
                         <form action="" method="POST" class="form" role="form">
+                          <h2 style="margin-left: -150px;">Reservation Details</h2>
                           {% csrf_token %}
-                          <div class="form-group">
-                            <label for="title">Rooms</label>
-                            <select name="roomName" id="id-roomName" class="form-control">
-                              <!-- <option style="background-color: #800000;" selected disabled >Vehicle Type</option> -->
-                              <option value="Room B">Blue Room Style</option>
-                              <option value="Room O">Orange Room Squaire Style</option>
-                              <option value="Room W">White Room Style</option>
-                              <option value="Room BL">Black room Style</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
+                          <div class="form-group" style="margin-left: -300px;">
                             <label for="title">Date</label>
                           <span style="text-align: center;"> 
-                                <input class="form-control" id="id-day" name="day" placeholder="Day" type="text"
+                                <input class="form-control" style="width: 700px;" id="id-day" name="day" placeholder="Day" type="text"
                                     required autofocus />
                           </span> 
                         <br>
                           <span style="text-align: center;">
-                                <input class="form-control" id="id-month" name="month" placeholder="month" type="text" required />
+                                <input class="form-control" style="width: 700px;" id="id-month" name="month" placeholder="month" type="text" required />
                           </span> 
                         <br>
                         <span style="text-align: center;"> 
-                          <input class="form-control" id="id-year" name="year" placeholder="year" type="text"/>
+                          <input class="form-control" style="width: 700px;" id="id-year" name="year" placeholder="year" type="text"/>
                         </span> 
                         </div>
                         <br>
@@ -92,6 +83,16 @@
                           <input class="form-control" id="id-roomName" name="roomName" placeholder="roomName" type="text"/>
                         </span> -->
                         <br>
+                        <div class="form-group">
+                          <label for="title">Rooms</label>
+                          <select name="roomName" id="id-roomName" class="form-control">
+                            <!-- <option style="background-color: #800000;" selected disabled >Vehicle Type</option> -->
+                            <option value="Room B">Blue Room Style</option>
+                            <option value="Room O">Orange Room Squaire Style</option>
+                            <option value="Room W">White Room Style</option>
+                            <option value="Room BL">Black room Style</option>
+                          </select>
+                        </div>
                         <div class="form-group">
                           <label for="title">Name</label>
                         <span style="text-align: center;"> 
