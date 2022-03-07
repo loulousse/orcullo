@@ -38,12 +38,13 @@ class latestReservation(View):
                 startTime=request.POST.get("d-startTime")
                 endTime=request.POST.get("d-endTime")
                 roomName=request.POST.get("d-roomName")
+                prefix=request.POST.get("d-prefix")
                 firstname=request.POST.get("d-firstname")
                 middlename=request.POST.get("d-middlename")
                 lastname=request.POST.get("d-lastname")
 
                 update_book = Book.objects.filter(id=did).update(date=date, startTime=startTime, 
-                endTime=endTime, roomName=roomName, firstname=firstname, middlename=middlename, lastname=lastname)
+                endTime=endTime, roomName=roomName, prefix=prefix, firstname=firstname, middlename=middlename, lastname=lastname)
                 print(update_book)
 
                 print('profile updated')
