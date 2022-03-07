@@ -12,7 +12,7 @@ class ImageForm(forms.ModelForm):
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ('date', 'startTime', 'endTime', 'roomName', 'firstname', 'middlename', 'lastname')
+        fields = ('date', 'startTime', 'endTime', 'roomName', 'prefix', 'firstname', 'middlename', 'lastname')
 
 
 

@@ -72,6 +72,8 @@ class res(View):
         print(endTime)
         roomName = request.POST.get("roomName")
         print(roomName)
+        prefix = request.POST.get("prefix")
+        print(prefix)
         firstname = request.POST.get("firstname")
         print(firstname)
         middlename = request.POST.get("middlename")
@@ -84,12 +86,13 @@ class res(View):
             startTime = request.POST.get("startTime")
             endTime = request.POST.get("endTime")
             roomName = request.POST.get("roomName")
+            prefix = request.POST.get("prefix")
             firstname = request.POST.get("firstname")
             middlename = request.POST.get("middlename")
             lastname = request.POST.get("lastname")
         
         form = Book(date = date, startTime=startTime, endTime=endTime, roomName=roomName,
-                    firstname=firstname, middlename=middlename, lastname=lastname)
+                    prefix = prefix, firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
         return redirect('latest_reservation')

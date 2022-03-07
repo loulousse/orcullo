@@ -9,8 +9,15 @@
                     <div class="d-sm-flex align-items-center mb-4">
                       <h4 class="card-title mb-sm-0">Latest Registration List</h4>
                       <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
-                      href = "{% url 'reservation_info' %}">
-                      Make Reservation
+                      style="background-color: #fc2d08;
+                            border: 1px solid #ce3c3c;
+                            color: #fff;
+                            border-radius: 2px;
+                            float: left; margin-left: 300px; text-decoration: none;
+                            left: 3px;
+                            font-weight: 600;
+                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;" href = "../create">
+                      <i class="fa fa-plus" aria-hidden="true"></i>Make Reservation
                       </a>
                     </div>
                     <div class="table-responsive border rounded p-1">
@@ -32,13 +39,13 @@
                         <td>{{d.startTime}}</td>
                         <td>{{d.endTime}}</td>
                         <td>{{d.roomName}}</td>
-                        <td>{{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
+                        <td>{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
                         <td>
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
-                              VIEW
+                            <i class="fa fa-edit"></i>
                           </a>
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{d.id}}">
-                              DELETE
+                             <i class="fa fa-trash"></i>
                           </button>
                         </td>
                       </tr>
@@ -126,6 +133,16 @@
                                           </div>  -->
                                         </div> 
                                         &nbsp;  
+                                        <div class="row">
+                                          <div class="form-group col-sm-4">
+                                            <select name="d-prefix" id="id-prefix" class="form-control" value="{{d.prefix}}" type="text">
+                                             <option  > {{d.prefix}}</option>
+                                             <option value="Mr">Mr.</option>
+                                             <option value="Mrs">Mrs.</option>
+                                            </select>
+                                          </div>
+                                      </div> 
+                                          &nbsp;
                                         <div class="row">
                                           <div class = "col-sm-4">
                                             <input type="text" class="form-control" id="id-firstname" placeholder="firstname" name="d-firstname" value ={{d.firstname}}>
