@@ -12043,35 +12043,39 @@ dl {
 
 /* Tables */
 .table {
-  margin-bottom: 0; }
-  .table thead th {
-    border-top: 0;
-    border-bottom-width: 1px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-weight: initial; }
-    .table thead th i {
-      margin-left: 0.325rem; }
-  .table th,
-  .table td {
-    vertical-align: middle;
-    font-size: 0.875rem;
-    line-height: 1;
-    white-space: nowrap; }
-    .table th img,
-    .table td img {
-      width: 100px;
-      height: 100px;
-      border-radius: 0; }
-    .table th .badge,
-    .table td .badge {
-      margin-bottom: 0; }
-  .table.table-borderless {
-    border: none; }
-    .table.table-borderless tr,
-    .table.table-borderless td,
-    .table.table-borderless th {
-      border: none; }
+  margin-bottom: 0; 
+}
+.table thead th {
+  border-top: 0;
+  border-bottom-width: 1px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-weight: initial; 
+}
+.table thead th i {
+  margin-left: 0.325rem;
+}
+.table th, .table td {
+  vertical-align: middle;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap; 
+}
+.table th img, .table td img {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+}
+.table th .badge,.table td .badge {
+  margin-bottom: 0; 
+}
+.table.table-borderless {
+    border: none; 
+}
+.table.table-borderless tr,
+.table.table-borderless td,
+.table.table-borderless th {
+  border: none; }
 
 /* Preview */
 .preview-list .preview-item {
