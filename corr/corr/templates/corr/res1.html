@@ -1,0 +1,97 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+           <div class="row purchace-popup">
+              <div class="col-12 stretch-card grid-margin">
+                <div class="card card-secondary">
+                  <!--<span class="card-body d-lg-flex align-items-center">
+                    <p class="mb-lg-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more! </p>
+                    <a href="https://www.bootstrapdash.com/product/stellar-admin/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn btn-warning purchase-button btn-sm my-1 my-sm-0 ml-auto">Upgrade To Pro</a>
+                    <button class="close popup-dismiss ml-2">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </span>-->
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-xs-12 col-sm-12 col-md-4 well well-sm" style="margin-top: -100px;">
+                      <br><br><br><br>
+                        <form action="" method="POST" class="form" role="form">
+                          <h2 style="margin-left: -150px;">Personal Details</h2>
+                          {% csrf_token %}
+                        <br>
+                        <div class="form-group" style="margin-left: -300px;">
+                          <label for="title">Continuation</label>
+                          <br>
+                          <br>    
+                          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
+                            <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="gender" name="gender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
+                              <option value="Female"> Female </option>
+                              <option value="Male"> Male </option>
+                            </select>
+                          </span>
+                          <br> 
+                          <br>     
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-age" name="age" placeholder="Age" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-address" name="address" placeholder="Address" type="text"/>
+                        </span> 
+                        </div>
+                        <br>
+                        <h2 style="margin-left: -150px;">Contact  Details</h2>
+                        <br>
+                        <div class="form-group" style="margin-left: -300px;">
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-email" name="email" placeholder="Email" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-number" name="number" placeholder="Number" type="text"/>
+                        </span> 
+                        <br>
+                        </div>
+                        <br>
+                        <button style="margin-bottom: 20px; width: 700px; margin-left: -300px;" class="btn btn-lg btn-primary btn-block" type="submit">
+                          Submit</button>
+                          </div>
+                          <br>
+                          <br>
+                        </form >   
+                    </div> 
+                </div>
+
+              </div>
+              <!-- page-body-wrapper ends -->
+            </div>
+            <!-- container-scroller -->
+            {% endblock content %}
+
+            {% block script %}
+            <!-- plugins:js -->
+            <script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
+            <!-- endinject -->
+            <!-- Plugin js for this page -->
+            <script src="{% static 'assets/vendor/chart.js/Chart.min.js' %}"></script>
+            <script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+            <script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+            <script src="{% static 'assets/vendor/chartist/chartist.min.js' %}"></script>
+            <!-- End plugin js for this page -->
+            <!-- inject:js -->
+            <script src="{% static 'assets/js/off-canvas.js' %}"></script>
+            <script src="{% static 'assets/js/misc.js' %}"></script>
+            <!-- endinject -->
+            <!-- Custom js for this page -->
+            <script src="{% static 'assets/js/dashboard.js' %}"></script>
+            <!-- End custom js for this page -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+            
+            {% endblock script %}

@@ -13,9 +13,11 @@ from .forms import ImageForm
 def home(request):
     book = Book.objects.all()
     image = Image.objects.all()
+    continues = Continue.objects.all()
     context = {
         'book': book,
-        'image': image
+        'image': image,
+        'continue': continues
     }
     return render(request, 'corr/home.html')
 
@@ -122,6 +124,35 @@ class res(View):
         
         form = Book(date = date, startTime=startTime, endTime=endTime, roomName=roomName,
                     prefix = prefix, firstname=firstname, middlename=middlename, lastname=lastname)
+        form.save()
+
+        return redirect('continuation')
+
+class res1(View):
+    def get(self, request):
+        return render(request, 'corr/res1.html')
+    
+    def post(self, request):
+        form = ContinueForm(request.POST)
+        gender = request.POST.get("gender")
+        print(gender)
+        age = request.POST.get("age")
+        print(age)
+        address = request.POST.get("address")
+        print(address)
+        email = request.POST.get("email")
+        print(email)
+        number = request.POST.get("number")
+        print(number)
+
+        if form.is_valid():
+            gender = request.POST.get("gender")
+            age = request.POST.get("age")
+            address = request.POST.get("address")
+            email = request.POST.get("email")
+            number = request.POST.get("number")
+        
+        form = Continue(gender = gender, age=age, address=address, email=email, number = number)
         form.save()
 
         return redirect('latest_reservation')

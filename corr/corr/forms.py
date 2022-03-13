@@ -13,6 +13,11 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = ('date', 'startTime', 'endTime', 'roomName', 'prefix', 'firstname', 'middlename', 'lastname')
 
+class ContinueForm(forms.ModelForm):
+    class Meta:
+        model = Continue
+        fields = ('gender', 'age', 'address', 'email', 'number')
+
 
 
 

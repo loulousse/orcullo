@@ -35,4 +35,16 @@ class Book(models.Model):
     class meta:
         db_table = 'Book'
 
+class Continue(models.Model):
+    id = models.AutoField(primary_key = True)
+    gender = models.CharField(max_length=200)
+    age = models.IntegerField()
+    address = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    number = models.CharField(max_length=200)
+
+    class meta:
+        db_table = 'Continue'
+
+
 
