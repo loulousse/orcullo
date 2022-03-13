@@ -1,0 +1,172 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                      <h4 class="card-title mb-sm-0">Room Details</h4>
+                      <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
+                      style="background-color: #fc2d08;
+                            border: 1px solid #ce3c3c;
+                            color: #fff;
+                            border-radius: 2px;
+                            float: left; margin-left: 300px; text-decoration: none;
+                            left: 3px;
+                            font-weight: 600;
+                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;" href = "../upload">
+                      <i class="fa fa-plus" aria-hidden="true"></i>add room
+                      </a>
+                    </div>
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class = "text-center">Title</th>
+                            <th class = "text-center">Image</th>
+                            <th class = "text-center">Details</th>
+                            <th class = "text-center">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for i in image %}
+                      <tr>
+                        <td>{{i.title}}</td>
+                        <td> <img src="/{{ BASE_DIR }}/{{i.image}}" width="250"/> </td>
+                        <td>{{i.details}}</td>
+                        <td>{{i.price}}</td>
+                        <td>
+                          <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{i.id}}">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{i.id}}">
+                             <i class="fa fa-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                       <!-- Modal VIEW-->
+                      <div class="modal fade" id="newModal-{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(115, 255, 255)">
+                                <h5 class="modal-title", style="font-size: large; font-family: Trirong;">VIEW DETAILS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form id="updateForm" method="post" >
+                              {% csrf_token %}
+                              <div class="modal-body">
+                                <input type="text" name="room-Id" value = {{i.id}} hidden>
+                                <div class="row">
+                                    <div class = "col-sm-4">
+                                      <input type="text" class="form-control" id="id-title" placeholder="title" name="i-title" value ={{i.title}}>
+                                    </div>
+                                    </div>  
+                                    &nbsp;  
+                                  <div class="row">
+                                    <div class = "col-sm-4">
+                                      <input type="text" class="form-control" id="id-details" placeholder="details" name="i-details" value ={{i.details}}>
+                                    </div>
+                                    </div>  
+                                    &nbsp;  
+                                  <div class="row">
+                                    <div class = "col-sm-4">
+                                      <input type="text" class="form-control" id="id-price" placeholder="price" name="i-price" value ={{i.price}}>
+                                    </div>
+                                    </div>  
+                                &nbsp;              
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">  
+                                  <button type="submit" id = "btnUpdate" name = "btnUpdate" class="button">UPDATE</button>                                  
+                                  <button type="button" class="button btn-secondary" data-dismiss="modal">CLOSE</button>                          
+                              </div>
+                            </div>
+                          </form>
+                          </div>
+                        </div>
+                      
+                      <!-- Modal DELETE-->
+                      <div class="modal fade" id="exampleModal-{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(115, 255, 255)">
+                                <h5 class="modal-title", style="font-size: large; font-family: Trirong;">DELETE RECORD</h5>
+                                <!--<h5 class="modal-title" id="exampleModalLabel">DELETE RECORD</h5>-->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form id="deleteForm" method="post" >
+                              {% csrf_token %} 
+                              <div class="modal-body">                       
+                                <input type="text" name="rroom-id" value = {{i.id}} hidden>
+                                Are you sure you want to delete this record?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                                <button type="submit" id = "btnDelete" name = "btnDelete" class="btn btn-primary">YES</button>
+                              </div>
+                            </div>
+                          </form>
+                          </div>
+                        </div>   
+                      {% endfor %}   
+                    </tbody>
+                    </table>
+                    </div>
+                    <div class="d-flex mt-4 flex-wrap">
+                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                      <nav class="ml-auto">
+                        <ul class="pagination separated pagination-info">
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">4</a></li>
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            </div>
+          </table>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'assets/vendor/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/chartist/chartist.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'assets/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+    <!-- End custom js for this page -->
+
+{% endblock content %}
+

@@ -30,6 +30,7 @@ urlpatterns = [
     path('res/', views.res.as_view(), name="reservation_info"),
     path('index/', views.index),
     path('rooms/', views.rooms),
+    path('roomList/', views.roomList.as_view(), name="room_list"),
     path('dashboard/', views.dashboard),
     path('reservation/', views.reservation),
     path('upload/', views.image_upload_view)

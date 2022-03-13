@@ -7,13 +7,16 @@ from django.utils import timezone
 # Create your models here.
 
 class Image(models.Model):
+    id = models.AutoField(primary_key = True)
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image = models.ImageField(upload_to="media")
     details = models.CharField(max_length=200)
     price = models.FloatField(max_length=200)
 
-    def __str__(self):
-        return self.title
+#    def __str__(self):
+#        return self.title
+    class meta:
+        db_table = 'Image'
 
 class Book(models.Model):
     id = models.AutoField(primary_key = True)
@@ -28,7 +31,6 @@ class Book(models.Model):
     firstname = models.CharField(max_length=200)
     middlename = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
-
 
     class meta:
         db_table = 'Book'

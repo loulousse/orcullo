@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.views.generic import View
 from . forms import *
 from . models import *
-
+from .models import Image
 
 from .forms import ImageForm
 
@@ -12,16 +12,17 @@ from .forms import ImageForm
 
 def home(request):
     book = Book.objects.all()
+    image = Image.objects.all()
     context = {
-        'book': book
+        'book': book,
+        'image': image
     }
     return render(request, 'corr/home.html')
 
 def userReservationList(request):
     return render(request, 'corr/userReservationList.html')
 
-class latestReservation(View):
-    
+class latestReservation(View):   
     def get(self, request):
         book = Book.objects.all()
         context = {
@@ -58,6 +59,33 @@ class latestReservation(View):
 
 def create(request):
     return render(request, 'corr/create.html')
+
+class roomList(View):
+    def get(self, request):
+        image = Image.objects.all()
+        return render(request, 'corr/roomList.html', {'image': image})
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'btnUpdate' in request.POST:
+                print ('update profile button clicked')
+                iid=request.POST.get("room-Id")
+                title=request.POST.get("i-title")
+                image=request.POST.get("i-image")
+                details=request.POST.get("i-details")
+                price=request.POST.get("i-price")
+
+                update_image = Image.objects.filter(id=iid).update(title=title, details=details, price=price)
+                print(update_image)
+
+                print('profile updated')
+            elif 'btnDelete' in request.POST:
+                print('delete button clicked')
+                iid=request.POST.get("rroom-id")
+                image=Image.objects.filter(id=iid).delete()
+                print('recorded deleted')
+
+        return redirect('room_list')
 
 class res(View):
     def get(self, request):
@@ -128,3 +156,5 @@ def image_upload_view(request):
     else:
         form = ImageForm()
     return render(request, 'corr/upload.html', {'form': form})
+
+
