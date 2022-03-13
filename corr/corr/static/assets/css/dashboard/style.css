@@ -12060,9 +12060,9 @@ dl {
     white-space: nowrap; }
     .table th img,
     .table td img {
-      width: 36px;
-      height: 36px;
-      border-radius: 100%; }
+      width: 100px;
+      height: 100px;
+      border-radius: 0; }
     .table th .badge,
     .table td .badge {
       margin-bottom: 0; }

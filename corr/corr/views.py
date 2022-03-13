@@ -65,7 +65,7 @@ def create(request):
 class roomList(View):
     def get(self, request):
         image = Image.objects.all()
-        return render(request, 'corr/roomList.html', {'image': image})
+        return render(request, 'corr/roomList.html',{'image': image})
 
     def post(self, request):
         if request.method == 'POST':

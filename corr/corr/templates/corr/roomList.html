@@ -21,7 +21,7 @@
                       </a>
                     </div>
                     <div class="table-responsive border rounded p-1">
-                      <table class="table">
+                      <table class="table table-striped">
                         <thead>
                           <tr>
                             <th class = "text-center">Title</th>
@@ -34,7 +34,7 @@
                           {% for i in image %}
                       <tr>
                         <td>{{i.title}}</td>
-                        <td> <img src="/{{ BASE_DIR }}/{{i.image}}" width="250"/> </td>
+                        <td><img src="{{i.image.url}}" alt="" class="prod-size"/></td>
                         <td>{{i.details}}</td>
                         <td>{{i.price}}</td>
                         <td>
