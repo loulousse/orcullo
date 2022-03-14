@@ -2,6 +2,13 @@
 
 {% load static %}
 {% block content %}
+<div class="main-panel">
+  <div class="content-wrapper">
+            <!-- Page Content -->
+            <div class="content container-fluid">
+              <!--Success message-->
+              <div class="row">
+                      <div class="col-lg-12">
             <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
@@ -35,12 +42,12 @@
                         <tbody>
                           {% for d in book %}
                       <tr>
-                        <td>{{d.date}}</td>
-                        <td>{{d.startTime}}</td>
-                        <td>{{d.endTime}}</td>
-                        <td>{{d.roomName}}</td>
-                        <td>{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
-                        <td>
+                        <td style="text-align:center;">{{d.date}}</td>
+                        <td style="text-align:center;">{{d.startTime}}</td>
+                        <td style="text-align:center;">{{d.endTime}}</td>
+                        <td style="text-align:center;">{{d.roomName}}</td>
+                        <td style="text-align:center;">{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
+                        <td style="text-align:center;">
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
                             <i class="fa fa-edit"></i>
                           </a>

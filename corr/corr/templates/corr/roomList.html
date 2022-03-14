@@ -2,6 +2,13 @@
 
 {% load static %}
 {% block content %}
+<div class="main-panel">
+  <div class="content-wrapper">
+            <!-- Page Content -->
+            <div class="content container-fluid">
+              <!--Success message-->
+              <div class="row">
+                      <div class="col-lg-12">
             <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
@@ -21,23 +28,24 @@
                       </a>
                     </div>
                     <div class="table-responsive border rounded p-1">
-                      <table class="table table-striped">
+                      <table class="table">
                         <thead>
                           <tr>
                             <th class = "text-center">Title</th>
                             <th class = "text-center">Image</th>
                             <th class = "text-center">Details</th>
                             <th class = "text-center">Price</th>
+                            <th class = "text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           {% for i in image %}
                       <tr>
-                        <td>{{i.title}}</td>
-                        <td><img src="{{i.image.url}}" alt="" class="prod-size"/></td>
-                        <td>{{i.details}}</td>
-                        <td>{{i.price}}</td>
-                        <td>
+                        <td style="text-align:center;">{{i.title}}</td>
+                        <td style="text-align:center;" img="width:150px; height:1500px;"><img src="{{i.image.url}}"/></td>
+                        <td style="text-align:center;">{{i.details}}</td>
+                        <td style="text-align:center;">{{i.price}}</td>
+                        <td style="text-align:center;">
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{i.id}}">
                             <i class="fa fa-edit"></i>
                           </a>
