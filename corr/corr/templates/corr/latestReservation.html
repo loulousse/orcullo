@@ -45,7 +45,7 @@
                         <td style="text-align:center;">{{d.date}}</td>
                         <td style="text-align:center;">{{d.startTime}}</td>
                         <td style="text-align:center;">{{d.endTime}}</td>
-                        <td style="text-align:center;">{{d.roomName}}</td>
+                        <td style="text-align:center;">{{d.title_id}}</td>
                         <td style="text-align:center;">{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
                         <td style="text-align:center;">
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
@@ -122,18 +122,19 @@
                                           <div class = "col-sm-4">
                                             <input type="text" class="form-control" id="id-endTime" placeholder="endTime"  name="d-endTime" value ={{d.endTime}}>
                                           </div>  -->
+                                        <!---->
+                                        &nbsp;
+                                        <div class="col-sm-6 col-md-3"> 
+                                          <div class="form-group form-focus select-focus">
+                                            <select name="q3" class="select floating"> 
+                                              <option value="">~ Select Room Name ~</option>
+                                              {% for i in image %}
+                                                <option value="{{i.id}}">{{i.title}}</option>											
+                                              {% endfor %}
+                                            </select>
+                                            <label class="focus-label"></label>
+                                          </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-4">
-                                               <label for="title">Available Rooms</label>
-                                              <select name="d-roomName" id="room" class="form-control">
-                                               <option  > {{d.roomName}}</option>
-                                               <option value="Room B">Blue Room Style</option>
-                                               <option value="Room O">Orange Room Style</option>
-                                               <option value="Room W">White Room Style</option>
-                                               <option value="Room BL">Black Room Style</option>
-                                              </select>
-                                            </div>
                                             <!--
                                           <div class = "col-sm-4">
                                             <input type="text" class="form-control" id="id-roomName" placeholder="roomName"  name="d-roomName" value ={{d.roomName}}>
@@ -145,7 +146,7 @@
                                             <select name="d-prefix" id="id-prefix" class="form-control" value="{{d.prefix}}" type="text">
                                              <option  > {{d.prefix}}</option>
                                              <option value="Mr">Mr.</option>
-                                             <option value="Mrs">Mrs.</option>
+                                             <option value="Ms">Ms.</option>
                                             </select>
                                           </div>
                                       </div> 

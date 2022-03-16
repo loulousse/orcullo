@@ -27,6 +27,38 @@
                       <i class="fa fa-plus" aria-hidden="true"></i>add room
                       </a>
                     </div>
+                    <!-- Search Filter -->
+					<form method="GET">
+            <div class="row filter-row">
+              <div class="col-sm-6 col-md-3">  
+                <div class="form-group form-focus">
+                  <input name="q1" type="search" class="form-control floating">
+                  <label class="focus-label">Book ID</label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">  
+                <div class="form-group form-focus">
+                  <input name="q2" type="search" class="form-control floating">
+                  <label class="focus-label">Applicant Name</label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3"> 
+                <div class="form-group form-focus select-focus">
+                  <select name="q3" class="select floating"> 
+                    <option value="">~ Select Room Name ~</option>
+                    {% for i in image %}
+                      <option value="{{i.id}}">{{i.title}}</option>											
+                    {% endfor %}
+                  </select>
+                  <label class="focus-label"></label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">  
+                <button type="submit" name="SearchBook" class="btn btn-success btn-block"> Search </button>  
+              </div>
+                      </div>
+            </form>
+            <!-- Search Filter -->
                     <div class="table-responsive border rounded p-1">
                       <table class="table">
                         <thead>
@@ -69,10 +101,17 @@
                               <div class="modal-body">
                                 <input type="text" name="room-Id" value = {{i.id}} hidden>
                                 <div class="row">
+                                  <div class="dropdown">
+                                    <a href="" class="btn btn-white btn-sm btn-rounded" data-toggle="dropdown" aria-expanded="false">{{ book.title.title }} </a>
+                                    {% comment %} <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#">{{ book.image }}</a>
+                                    </div> {% endcomment %}
+                                  </div>
+                                  <!--
                                     <div class = "col-sm-4">
                                       <input type="text" class="form-control" id="id-title" placeholder="title" name="i-title" value ={{i.title}}>
                                     </div>
-                                    </div>  
+                                    </div> --> 
                                     &nbsp;  
                                   <div class="row">
                                     <div class = "col-sm-4">

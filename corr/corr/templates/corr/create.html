@@ -1,3 +1,4 @@
+
 {% load static %}
 {% block content %}
 
@@ -229,11 +230,12 @@
                     <em>*</em>
                 </label>
                  <select class="with-statuc-border form-control" name="resource_id", id="resource_id">
-                     <option value="none">---</option>
-                     <option value="">Blue Room&nbsp</option>
-                     <option value="">Orange Room&nbsp</option>
-                     <option value="">White Room&nbsp</option>
-                     <option value="">Black Room&nbsp</option>
+                      <select name="q3" class="select floating"> 
+                        {% for i in image %}
+                          <option value="{{i.id}}">{{i.title}}</option>											
+                        {% endfor %}
+                      </select>
+                      <label class="focus-label"></label>
                  </select>
             </div>
             <br>

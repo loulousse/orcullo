@@ -11,7 +11,7 @@ class ImageForm(forms.ModelForm):
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ('date', 'startTime', 'endTime', 'roomName', 'prefix', 'firstname', 'middlename', 'lastname')
+        fields = "__all__"
 
 class ContinueForm(forms.ModelForm):
     class Meta:

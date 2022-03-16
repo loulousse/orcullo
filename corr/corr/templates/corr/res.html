@@ -73,16 +73,28 @@
                         <span style="text-align: center;"> 
                           <input class="form-control" id="id-roomName" name="roomName" placeholder="roomName" type="text"/>
                         </span> -->
+                        <div class="col-sm-6 col-md-3"> 
+                          <div class="form-group form-focus select-focus">
+                            <select name="q3" class="select floating"> 
+                              <option value="">~ Select Room Name ~</option>
+                              {% for i in image %}
+                                <option value="{{i.id}}">{{i.title}}</option>											
+                              {% endfor %}
+                            </select>
+                            <label class="focus-label">Room Name</label>
+                          </div>
+                        </div>
+                        <!--
                        <div class="form-group" style="margin-left: -300px;">
                           <label for="title">Rooms</label>
                           <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="roomName" id="id-roomName" class="form-control">
-                            <!-- <option style="background-color: #800000;" selected disabled >Vehicle Type</option> -->
+                             <option style="background-color: #800000;" selected disabled >Vehicle Type</option> 
                             <option value="Room B">Blue Room Style</option>
                             <option value="Room O">Orange Room Style</option>
                             <option value="Room W">White Room Style</option>
                             <option value="Room BL">Black room Style</option>
                           </select>
-                        </div>
+                        </div>-->
                         <h2 style="margin-left: -150px;">Personal  Details</h2>
                         <br>
                         <div class="form-group" style="margin-left: -300px;">

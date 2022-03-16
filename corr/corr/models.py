@@ -8,7 +8,7 @@ from django.utils import timezone
 
 class Image(models.Model):
     id = models.AutoField(primary_key = True)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, unique=True)
     image = models.ImageField(upload_to="media")
     details = models.CharField(max_length=200)
     price = models.FloatField(max_length=200)
@@ -26,7 +26,8 @@ class Book(models.Model):
     date =  models.DateField(blank=True, null=True)
     startTime = models.CharField(max_length=200)
     endTime = models.CharField(max_length=200)
-    roomName = models.CharField(max_length=200)
+    title = models.ForeignKey(
+        Image, on_delete=models.CASCADE, null=True)
     prefix = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     middlename = models.CharField(max_length=200)
