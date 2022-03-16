@@ -162,6 +162,8 @@ class res(View):
         print(prefix)
         firstname = request.POST.get("firstname")
         print(firstname)
+        title = request.POST.get("title")
+        print(title)
         middlename = request.POST.get("middlename")
         print(middlename)
         lastname = request.POST.get("lastname")

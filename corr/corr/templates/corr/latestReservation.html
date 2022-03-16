@@ -34,7 +34,7 @@
                             <th class = "text-center">Date</th>
                             <th class = "text-center">Start Time</th>
                             <th class = "text-center">End Time</th>
-                            <th class = "text-center">Room Name</th>
+                            <th class = "text-center">Room ID</th>
                             <th class = "text-center">Name</th>
                             <th class = "text-center">Action</th>
                           </tr>
@@ -126,13 +126,12 @@
                                         &nbsp;
                                         <div class="col-sm-6 col-md-3"> 
                                           <div class="form-group form-focus select-focus">
-                                            <select name="q3" class="select floating"> 
-                                              <option value="">~ Select Room Name ~</option>
-                                              {% for i in image %}
-                                                <option value="{{i.id}}">{{i.title}}</option>											
-                                              {% endfor %}
+                                            <label>Room Name <span class="text-danger">*</span></label>
+                                            <select name="i-title" class="select">
+                                            {% for i in image %}
+                                              <option value="{{i.id}}" {% if book.title.title == i.title %} selected="selected"{% endif %}>{{i.title}}</option>											
+                                            {% endfor %}
                                             </select>
-                                            <label class="focus-label"></label>
                                           </div>
                                         </div>
                                             <!--
