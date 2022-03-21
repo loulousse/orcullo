@@ -27,6 +27,7 @@ urlpatterns = [
     path('userReservationList/', views.userReservationList),
     path('latestReservation/', views.latestReservation.as_view(), name="latest_reservation"),
     path('create/', views.create),
+    path('vacant/', views.vacant.as_view(), name="vacantRoom"),
     path('res/', views.res.as_view(), name="reservation_info"),
     path('res1/', views.res1.as_view(), name="continuation"),
     path('index/', views.index),

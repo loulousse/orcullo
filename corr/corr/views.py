@@ -105,8 +105,72 @@ class latestReservation(View):
 def create(request):
     return render(request, 'corr/create.html')
 
+class vacant(View):
+    def get(self, request):
+        book = Book.objects.all()
+        image = Image.objects.all()
+        context ={
+            'book': book,
+            'image': image
+        }
+
+        titles_to_exclude = [book.title for book in Book.objects.all()]
+        Image.objects.exclude(title__in=titles_to_exclude)
+        
+        return render(request, 'corr/vacant.html', context)
+    
+    def post(self, request):
+        
+
+        return redirect('vacantRoom')
+
 class roomList(View):
     def get(self, request):
+        if 'SearchRoom' in request.GET:
+            q1 = request.GET['q1']
+            q2 = request.GET['q2']
+            q3 = request.GET['q3']
+            print(q3)
+            # multiQ = Q(Q(employee_id__icontains=q) & Q(firstname__icontains=q) )
+
+            if q1 and q2 != '':
+                book = Book.objects.filter(date=q1).filter(
+                    Q(firstname=q2) | Q(lastname=q2))
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            elif q1 and q3 != '':
+                book = Book.objects.filter(
+                    date=q1).filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            elif q2 and q3 != '':
+                book = Book.objects.filter(Q(Q(firstname=q2) | Q(
+                    lastname=q2))).filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            else:
+                if q3 == '':
+                    book = Book.objects.filter(Q(Q(
+                        firstname=q2) | Q(lastname=q2))) or Book.objects.filter(Q(date=q1))
+                else:
+                    book = Book.objects.filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+            # print(employee)
+            # department = Department.objects.all()
+            # designation = Designation.objects.all()
+        else:
+            image = Image.objects.all()
+            #designation = Designation.objects.all()
+            book = Book.objects.all()
+
+        context = {
+            'image': image,
+            'book': book
+        }
         return render(request, 'corr/roomList.html', context)
  #   def get(self, request):
   #      image = Image.objects.all()

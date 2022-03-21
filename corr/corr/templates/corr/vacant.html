@@ -1,0 +1,112 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% block content %}
+<div class="main-panel">
+  <div class="content-wrapper">
+            <!-- Page Content -->
+            <div class="content container-fluid">
+              <!--Success message-->
+              <div class="row">
+                      <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                      <h4 class="card-title mb-sm-0">Vacant Room</h4>
+                      <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
+                      style="background-color: #1bf049;
+                            color: #fff;
+                            border-radius: 2px;
+                            float: left; margin-left: 300px; text-decoration: none;
+                            left: 3px;
+                            font-weight: 600;
+                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;" href = "../roomList">
+                      <i class="" aria-hidden="true"></i>Room List
+                      </a>
+                    </div>
+                    
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class = "text-center">Title</th>
+                            <th class = "text-center">Image</th>
+                            <th class = "text-center">Details</th>
+                            <th class = "text-center">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for i in image %}
+                      <tr>
+                        <td style="text-align:center;">{{i.title}}</td>
+                        <td style="text-align:center;" img="width:150px; height:150px;"><img src="{{i.image.url}}"/></td>
+                        <td style="text-align:center;">{{i.details}}</td>
+                        <td style="text-align:center;">{{i.price}}</td>
+                        <td style="text-align:center;">
+                          <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{i.id}}">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{i.id}}">
+                             <i class="fa fa-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+
+                      {% endfor %}   
+                    </tbody>
+                    </table>
+                    </div>
+                    <div class="d-flex mt-4 flex-wrap">
+                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                      <nav class="ml-auto">
+                        <ul class="pagination separated pagination-info">
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">4</a></li>
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            </div>
+          </table>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'assets/vendor/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/chartist/chartist.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'assets/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+    <!-- End custom js for this page -->
+
+{% endblock content %}
+
