@@ -8,8 +8,66 @@ from .models import Image
 
 from .forms import ImageForm
 
+
+from datetime import datetime
+from django import forms
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.views.generic import View
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+import random
+
+from .forms import AccountAuthenticationForm
+from .models import *
 from django.db.models import Q
+from django.contrib.auth.hashers import make_password
+
+from django.http import HttpResponse
 # Create your views here.
+
+class admin_screen_view(View):
+    def get(self, request):
+        return render(request, 'corr/dashboard.html', {})
+
+
+def logout_screen_view(request):
+    logout(request)
+    return redirect('admin-login')
+
+
+# AUTHENTICATION
+
+def login_screen_view(request):
+    context = {}
+
+    user = request.user
+    if user.is_authenticated:
+        return redirect('admin-dashboard')
+
+    if request.method == 'POST':
+        form = AccountAuthenticationForm(request.POST)
+        if form.is_valid():
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('admin-dashboard')
+
+        else:
+            messages.info(request, 'Email or Password do not match!')
+            return redirect('admin-login')
+    else:
+        form = AccountAuthenticationForm()
+
+    context['form'] = form
+    return render(request, 'corr/index.html', context)
+
+# END AUTHENTICATION
+
 
 def home(request):
     book = Book.objects.all()
@@ -278,8 +336,8 @@ def upload(request):
 def rooms(request):
     return render(request, 'corr/rooms.html')
 
-def dashboard(request):
-    return render(request, 'corr/dashboard.html')
+#def dashboard(request):
+   # return render(request, 'corr/dashboard.html')
 
 def signin(request):
     return render(request, 'corr/signin.html')

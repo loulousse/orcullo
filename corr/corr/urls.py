@@ -20,20 +20,29 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import (
+
+    admin_screen_view,
+    login_screen_view,
+    logout_screen_view,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('dashboard/', admin_screen_view.as_view(), name='admin-dashboard'),
+    path('index/', login_screen_view, name='admin-login'),
+    path('admin-logout', logout_screen_view, name='admin-logout'),
     path('userReservationList/', views.userReservationList),
     path('latestReservation/', views.latestReservation.as_view(), name="latest_reservation"),
     path('create/', views.create),
     path('vacant/', views.vacant.as_view(), name="vacantRoom"),
     path('res/', views.res.as_view(), name="reservation_info"),
     path('res1/', views.res1.as_view(), name="continuation"),
-    path('index/', views.index),
+    #path('index/', views.index),
     path('rooms/', views.rooms),
     path('roomList/', views.roomList.as_view(), name="room_list"),
-    path('dashboard/', views.dashboard),
+    #path('dashboard/', views.dashboard),
     path('reservation/', views.reservation),
     path('upload/', views.image_upload_view)
 ]
