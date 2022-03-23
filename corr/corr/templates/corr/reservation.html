@@ -1,5 +1,8 @@
 {% load static %}
 
+{% load static %}
+{% block content %}
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html class="supernova"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -180,48 +183,10 @@
     /* Injected CSS Code */
 </style>
 
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/buttons/form-submit-button-simple_blue.css?3.3.31421"/>
-<script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
-<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.31421" type="text/javascript"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
-<script type="text/javascript">	JotForm.newDefaultTheme = false;
-	JotForm.extendsNewTheme = false;
-	JotForm.newPaymentUIForNewCreatedForms = false;
 
-	JotForm.init(function(){
-	/*INIT-START*/
-JotForm.setFullNameAutoFocus(16)
-      JotForm.description('input_16', 'Kindly enter your full name correct');
-      setTimeout(function() {
-          $('input_17').hint('ex: myname@example.com');
-       }, 20);
-    if(typeof $('input_18').spinner !== 'undefined') {$('input_18').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '60', maxValue:'4', minValue:'1', allowNegative: false, addAmount: 1, value:'1' });}
-    $('input_18').up(2).setAttribute('tabindex','');
-    if(typeof $('input_31').spinner !== 'undefined') {$('input_31').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '60', maxValue:'6', minValue:'0', allowNegative: false, addAmount: 1, value:'0' });}
-    $('input_31').up(2).setAttribute('tabindex','');
-
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("22", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":false,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("22", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":false,"custom":false,"ranges":false,"start":"","end":""}); });
-if (window.JotForm && JotForm.accessible) $('input_30').setAttribute('tabindex',0);
-	/*INIT-END*/
-	});
-
-   JotForm.prepareCalculationsOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"( Confirm reservation ) تاكيد الحجز ","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,{"name":"byotataAlarabia","qid":"14","text":"BYOTATA AL-ARABIA","type":"control_head"},null,{"description":"Kindly enter your full name correct","name":"adSoyad","qid":"16","text":" ( Name ) الاسم بالكامل","type":"control_fullname"},{"name":"email17","qid":"17","text":"E-mail","type":"control_email"},{"name":"input18","qid":"18","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Guests ) عدد الضيوف","type":"control_spinner"},null,{"name":"Departure20","qid":"20","text":"( Departure Date ) تاريخ المغادرة","type":"control_birthdate"},null,{"name":"Arrival date","qid":"22","text":"( Arrival Date &amp; Time ) تاريخ و ميعاد الوصول","type":"control_datetime"},null,null,null,null,null,null,null,{"name":"mesajinizspecial","qid":"30","text":"( Special Requests ) الطلبات الخاصه","type":"control_textarea"},{"name":"Number","qid":"31","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Childs ) عدد الصغار","type":"control_spinner"},{"name":"myProducts","qid":"32","text":"Payment الدفع","type":"control_payment"}]);
-   setTimeout(function() {
-JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"( Confirm reservation ) تاكيد الحجز ","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,{"name":"byotataAlarabia","qid":"14","text":"BYOTATA AL-ARABIA","type":"control_head"},null,{"description":"Kindly enter your full name correct","name":"adSoyad","qid":"16","text":" ( Name ) الاسم بالكامل","type":"control_fullname"},{"name":"email17","qid":"17","text":"E-mail","type":"control_email"},{"name":"input18","qid":"18","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Guests ) عدد الضيوف","type":"control_spinner"},null,{"name":"Departure20","qid":"20","text":"( Departure Date ) تاريخ المغادرة","type":"control_birthdate"},null,{"name":"Arrival date","qid":"22","text":"( Arrival Date &amp; Time ) تاريخ و ميعاد الوصول","type":"control_datetime"},null,null,null,null,null,null,null,{"name":"mesajinizspecial","qid":"30","text":"( Special Requests ) الطلبات الخاصه","type":"control_textarea"},{"name":"Number","qid":"31","subLabel":"kindly enter the actual number  رجاء ادخال العدد الصحيح","text":"( Number of Childs ) عدد الصغار","type":"control_spinner"},{"name":"myProducts","qid":"32","text":"Payment الدفع","type":"control_payment"}]);}, 20); 
-</script>
 </head>
 <body style="margin-top: -100px;">
-<form class="jotform-form" action="https://submit.jotform.com/submit/220587712224453/" method="post" name="form_220587712224453" id="220587712224453" accept-charset="utf-8" autocomplete="on" style="margin-top: 2px;">
-  <input type="hidden" name="formID" value="220587712224453" />
-  <input type="hidden" id="JWTContainer" value="" />
-  <input type="hidden" id="cardinalOrderNumber" value="" />
+
   <div role="main" class="form-all">
     <ul class="form-section page-section">
       <li id="cid_14" class="form-input-wide" data-type="control_head">
@@ -434,10 +399,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
           </div>
         </div>
       </li>
-      <li class="form-line" data-type="control_button" id="id_2">
-        <div id="cid_2" class="form-input-wide">
-          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">
               Confirm reservation
             </button>
           </div>
@@ -448,5 +410,29 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
   
 </form></body>
 </html>
+</div>
+<!-- container-scroller -->
+{% endblock content %}
 
+{% block script %}
+<!-- plugins:js -->
+<script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="{% static 'assets/vendor/chart.js/Chart.min.js' %}"></script>
+<script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/vendor/chartist/chartist.min.js' %}"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="{% static 'assets/js/off-canvas.js' %}"></script>
+<script src="{% static 'assets/js/misc.js' %}"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="{% static 'assets/js/dashboard.js' %}"></script>
+<!-- End custom js for this page -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+{% endblock script %}
 

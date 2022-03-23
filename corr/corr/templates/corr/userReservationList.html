@@ -1,119 +1,64 @@
 {% extends 'main.html' %}
+
 {% load static %}
 {% block content %}
-        <div class="main-panel">
-          <div class="content-wrapper">
-            				<!-- Page Content -->
-                    <div class="content container-fluid">
-                      <!--Success message-->
-                      <div class="row">
-                              <div class="col-lg-12">
-            
-                          {% if messages %}
-                          {% for message in messages %}
-                          <br>
-                            <div class="alert alert-success shadow fade show" role="alert"
-                              style="border-left:#155724 5px solid; border-radius: 0px">
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true" style="color:#155724">&times;</span>
-                              </button>
-                              <div class="row">
-                                <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check"
-                                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd"
-                                    d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
-                                </svg>
-                                <p style="font-size:18px" class="mb-0 font-weight-light"><span
-                                    class="mr-1 font-weight-bold">Success!</span> {{message}}</p>
-                              </div>
-                            </div>
-                            <br>
-                            {% endfor %}
-                            {% endif %}
-            
-                        </div>
-                      </div>
-                      <!--end of success message-->				
-                      <!-- Page Header -->
-                      <div class="page-header">
-                        <div class="row align-items-center">
-                          <div class="col">
-                            <h1 class="page-title">Reservations - Latest reservations entered</h1><br>
-                            <ul class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                              <li class="breadcrumb-item active">Employee</li>
-                            </ul>
-                          </div>
-                          <div class="col-sm-6 col-md-3">  
-                          <button style="margin-left: 250px;" type="submit" name="SearchEmp" class="btn btn-success btn-block"> Search </button>  
-                        </div>
-                          <div class="col-auto float-right ml-auto">
-                            <a href="../create" style="background-color: #fc2d08;
+<div class="main-panel">
+  <div class="content-wrapper">
+            <!-- Page Content -->
+            <div class="content container-fluid">
+              <!--Success message-->
+              <div class="row">
+                      <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                      <h4 class="card-title mb-sm-0">Latest Registration List</h4>
+                      <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
+                      style="background-color: #fc2d08;
                             border: 1px solid #ce3c3c;
-                            color: rgb(0, 0, 0);
+                            color: #fff;
                             border-radius: 2px;
                             float: left; margin-left: 300px; text-decoration: none;
                             left: 3px;
                             font-weight: 600;
-                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;"><i class="fa fa-plus" aria-hidden="true"></i> Add Reservation</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /Page Header -->
-                      
-                      <!-- Search Filter -->
-                      <form method="GET">
-                      <div class="row filter-row">
-                        <div class="col-sm-6 col-md-3">  
-                          <div class="form-group form-focus">
-                            <input name="q1" type="search" class="form-control floating">
-                            <label class="focus-label">Employee ID</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">  
-                          <div class="form-group form-focus">
-                            <input name="q2" type="search" class="form-control floating">
-                            <label class="focus-label">Employee Name</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3"> 
-                          <div class="form-group form-focus select-focus">
-                            <select name="q3" class="select floating"> 
-                              <option value="">~ Select Designation ~</option>
-
-                            </select>
-                            <label class="focus-label">Designation</label>
-                          </div>
-                        </div>
-                      </div>
-                      </form>
-                      <!-- Search Filter -->
-                      
-                      <div class="row staff-grid-row">
-            
-                        {% for employee in empl  %}
-                        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
-                          <div class="profile-widget">
-                            <div class="profile-img">
-                              <a href="" class="avatar" name="Profile"><img src="https://picsum.photos/200" alt=""></a>
-                            </div>
-                            <div class="dropdown profile-action">
-                              <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#edit_employee{{employee.employee_id}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#delete_employee{{employee.employee_id}}"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                              </div>
-                            </div>
-                            <h4 class="user-name m-t-10 mb-0 text-ellipsis"><a name="Profile" href="profile/{{employee.employee_id}}">{{employee.firstname}} {{employee.lastname}}</a></h4>
-                            <div class="small text-muted">{{employee.designation_name.designation_name}}</div>
-                          </div>
-                        </div>
-                        {% endfor %}
-            
-                      </div>
-                            </div>
-
-                    <!-- /Page Content -->
+                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;" href = "../create">
+                      <i class="fa fa-plus" aria-hidden="true"></i>Make Reservation
+                      </a>
+                    </div>
+                    <!-- Search Filter -->
+					<form method="GET">
+            <div class="row filter-row">
+              <div class="col-sm-6 col-md-3">  
+                <div class="form-group form-focus">
+                  <input name="q1" type="date" class="form-control floating">
+                  <label class="focus-label">Date</label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">  
+                <div class="form-group form-focus">
+                  <input name="q2" type="search" class="form-control floating">
+                  <label class="focus-label">Applicant Name</label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3"> 
+                <div class="form-group form-focus">
+                  <select name="q3" type="search" class="select floating"> 
+                    <option value="">Select Room ID/Name</option>
+                    {% for i in image %}
+                      <option value="{{i.id}}">{{i.id}}/{{i.title}}</option>										
+                    {% endfor %}
+                  </select>
+                  <label class="focus-label"></label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">  
+                <button type="submit" name="SearchBook" class="btn btn-success btn-block"> Search </button>  
+              </div>
+            </div>
+            </form>
+            <!-- Search Filter -->
                     <div class="table-responsive border rounded p-1">
                       <table class="table">
                         <thead>
@@ -121,7 +66,7 @@
                             <th class = "text-center">Date</th>
                             <th class = "text-center">Start Time</th>
                             <th class = "text-center">End Time</th>
-                            <th class = "text-center">Room Name</th>
+                            <th class = "text-center">Room ID</th>
                             <th class = "text-center">Name</th>
                             <th class = "text-center">Action</th>
                           </tr>
@@ -129,12 +74,12 @@
                         <tbody>
                           {% for d in book %}
                       <tr>
-                        <td>{{d.date}}</td>
-                        <td>{{d.startTime}}</td>
-                        <td>{{d.endTime}}</td>
-                        <td>{{d.roomName}}</td>
-                        <td>{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
-                        <td>
+                        <td style="text-align:center;">{{d.date}}</td>
+                        <td style="text-align:center;">{{d.startTime}}</td>
+                        <td style="text-align:center;">{{d.endTime}}</td>
+                        <td style="text-align:center;">{{d.title_id}}</td>
+                        <td style="text-align:center;">{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
+                        <td style="text-align:center;">
                           <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
                             <i class="fa fa-edit"></i>
                           </a>
@@ -209,18 +154,18 @@
                                           <div class = "col-sm-4">
                                             <input type="text" class="form-control" id="id-endTime" placeholder="endTime"  name="d-endTime" value ={{d.endTime}}>
                                           </div>  -->
+                                        <!---->
+                                        &nbsp;
+                                        <div class="col-sm-6 col-md-3"> 
+                                          <div class="form-group form-focus select-focus">
+                                            <label>Room Name <span class="text-danger">*</span></label>
+                                            <select name="i-title" class="select">
+                                            {% for i in image %}
+                                              <option value="{{i.id}}" {% if book.title.title == i.title %} selected="selected"{% endif %}>{{i.id}}/{{i.title}}</option>											
+                                            {% endfor %}
+                                            </select>
+                                          </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-4">
-                                               <label for="title">Available Rooms</label>
-                                              <select name="d-roomName" id="room" class="form-control">
-                                               <option  > {{d.roomName}}</option>
-                                               <option value="Room B">Blue Room Style</option>
-                                               <option value="Room O">Orange Room Style</option>
-                                               <option value="Room W">White Room Style</option>
-                                               <option value="Room BL">Black Room Style</option>
-                                              </select>
-                                            </div>
                                             <!--
                                           <div class = "col-sm-4">
                                             <input type="text" class="form-control" id="id-roomName" placeholder="roomName"  name="d-roomName" value ={{d.roomName}}>
@@ -228,13 +173,14 @@
                                         </div> 
                                         &nbsp;  
                                         <div class="row">
-                                          <div class = "col-sm-4">
-                                            <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="prefix" value ={{d.prefix}} name="d-prefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" aria-labelledby="label_16 sublabel_16_prefix" autoComplete="section-input_16 honorific-prefix">
-                                              <option value ={{d.prefix}}> Mr. </option>
-                                              <option value ={{d.prefix}}> Mrs. </option>
+                                          <div class="form-group col-sm-4">
+                                            <select name="d-prefix" id="id-prefix" class="form-control" value="{{d.prefix}}" type="text">
+                                             <option  > {{d.prefix}}</option>
+                                             <option value="Mr">Mr.</option>
+                                             <option value="Ms">Ms.</option>
                                             </select>
                                           </div>
-                                        </div> 
+                                      </div> 
                                           &nbsp;
                                         <div class="row">
                                           <div class = "col-sm-4">
@@ -294,44 +240,39 @@
                       {% endfor %}   
                     </tbody>
                     </table>
-                    </div>                            
+                    </div>
                     <div class="d-flex mt-4 flex-wrap">
-                        <p class="text-muted">Showing 1 to 10 of 57 entries</p>
-                          <nav class="ml-auto">
-                            <ul class="pagination separated pagination-info">
-                              <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
-                              <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                              <li class="page-item"><a href="#" class="page-link">2</a></li>
-                              <li class="page-item"><a href="#" class="page-link">3</a></li>
-                              <li class="page-item"><a href="#" class="page-link">4</a></li>
-                              <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
-                            </ul>
-                          </nav>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                      <nav class="ml-auto">
+                        <ul class="pagination separated pagination-info">
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">4</a></li>
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                        </ul>
+                      </nav>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
-          <!--<footer class="footer">
+          <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
             </div>
-          </footer>-->
+          </table>
+          </footer>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
-
       </div>
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    {% endblock content %}
-
-    {% block script %}
     <!-- plugins:js -->
     <script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
     <!-- endinject -->
@@ -348,7 +289,6 @@
     <!-- Custom js for this page -->
     <script src="{% static 'assets/js/dashboard.js' %}"></script>
     <!-- End custom js for this page -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-{% endblock script %}
+
+{% endblock content %}
 
