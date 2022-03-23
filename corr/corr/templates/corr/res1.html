@@ -95,3 +95,447 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
             
             {% endblock script %}
+<!--
+  {% load static %}
+
+{% load static %}
+{% block content %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="supernova"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=https%3A%2F%2Fform.jotform.com%2F220587712224453" title="oEmbed Form">
+<link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F220587712224453" title="oEmbed Form">
+<meta property="og:title" content="Reservation Form" >
+<meta property="og:url" content="https://form.jotform.com/220587712224453" >
+<meta property="og:description" content="Please click the link to complete this form." >
+<meta name="slack-app-id" content="AHNMASS8M">
+<link href="{% static 'corr/images/alo.png' %}" rel="icon">
+<link rel="canonical" href="https://form.jotform.com/220587712224453" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+<meta name="HandheldFriendly" content="true" />
+<title>Reservation Form</title>
+<link href="https://cdn01.jotfor.ms/static/formCss.css?3.3.31421" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/pastel.css?3.3.31421" />
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/nova.css?3.3.31421" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/57dc7e749a11c7e0598b4567.css?themeRevisionID=58eff0c27dc758db6018c271"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.31421" />
+<!--<link href="{% static 'assets/css/pastel.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/calendar.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/form-submit.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/form.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/nova.css' %}" rel="stylesheet"> -->
+
+
+<style type="text/css" id="form-designer-style">
+  /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+  .form-all {
+    font-family: Trebuchet MS, sans-serif;
+  }
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-family: Trebuchet MS, sans-serif;
+  }
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-family: Trebuchet MS, sans-serif;
+  }
+  .form-header-group {
+    font-family: Trebuchet MS, sans-serif;
+  }
+  .form-label {
+    font-family: Trebuchet MS, sans-serif;
+  }
+
+  .form-label.form-label-auto {
+    
+  display: block;
+  float: none;
+  text-align: left;
+  width: 100%;
+
+  }
+
+  .form-line {
+    margin-top: 12px 36px 12px 36px px;
+    margin-bottom: 12px 36px 12px 36px px;
+  }
+
+  .form-all {
+    width: 590px;
+  }
+
+  .form-label-left,
+  .form-label-right,
+  .form-label-left.form-label-auto,
+  .form-label-right.form-label-auto {
+    width: 150px;
+  }
+
+  .form-all {
+    font-size: 13px
+  }
+  .form-all .qq-upload-button,
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-size: 13px
+  }
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-size: 13px
+  }
+
+  .supernova .form-all, .form-all {
+    background-color: rgba(248, 248, 248, 0.68);
+    border: 1px solid transparent;
+  }
+
+  .form-all {
+    color: rgb(109, 77, 77);
+  }
+  .form-header-group .form-header {
+    color: rgb(109, 77, 77);
+  }
+  .form-header-group .form-subHeader {
+    color: rgb(109, 77, 77);
+  }
+  .form-label-top,
+  .form-label-left,
+  .form-label-right,
+  .form-html,
+  .form-checkbox-item label,
+  .form-radio-item label {
+    color: rgb(5, 0, 0);
+  }
+  .form-sub-label {
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .supernova {
+    background-color: undefined;
+  }
+  .supernova body {
+    background: transparent;
+  }
+
+  .form-textbox,
+  .form-textarea,
+  .form-radio-other-input,
+  .form-checkbox-other-input,
+  .form-captcha input,
+  .form-spinner input {
+    background-color: rgba(255, 255, 255, 0.71);
+  }
+
+    .supernova {
+      height: 100%;
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-position: center top;
+    }
+    .supernova {
+      background-image: url("{% static 'corr/images/r.jpg' %}");
+      background-size: cover;
+      position: relative;
+      padding-top: 82px;
+      background-repeat:no-repeat;
+      /*background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");*/
+    }
+    #stage {
+      background-image: url("{% static 'corr/images/r.jpg' %}");
+      background-size: cover;
+      position: relative;
+      padding-top: 82px;
+      background-repeat:no-repeat;
+      /*background-image: url("https://www.jotform.com/uploads/leeyen/form_files/tr.jpeg");*/
+    }
+    
+    .form-all {
+      background-image: url("//www.jotform.com/images/noises/noise.png");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+  
+.ie-8 .form-all:before { display: none; }
+.ie-8 {
+  margin-top: auto;
+  margin-top: initial;
+}
+
+/*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/.form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    
+  
+    }
+  /* Injected CSS Code */
+</style>
+
+
+</head>
+<body style="margin-top: -100px;">
+
+<div role="main" class="form-all">
+  <ul class="form-section page-section">
+    <li id="cid_14" class="form-input-wide" data-type="control_head">
+      <div class="form-header-group  header-default">
+        <div class="header-text httal htvam">
+          <h2 id="header_14" class="form-header" data-component="header">
+          ALO CONFERENCE ROOM RESERVATION
+          </h2>
+          <div id="subHeader_14" class="form-subHeader">
+            Reservation Details
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="form-line jf-required allowTime" data-type="control_datetime" id="id_22">
+      <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+        Date
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <div id="cid_22" class="form-input-wide jf-required">
+        <div data-wrapper-react="true" class="extended notLiteMode">
+          <span style="text-align: center;"> 
+            <input class="form-textbox" style="min-height:13px" id="id-date" name="udate" placeholder="date" type="date"
+                required autofocus />
+          </span> 
+          <br><br>
+          <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+            Start Time
+            <span class="form-required">
+              *
+            </span>
+            <select style="min-height:13px" name="ustartTime" id="id-startTime" class="form-textbox">
+                <option value=" "> </option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
+      <!--
+          <span style="text-align: center;"> 
+              <input class="form-control" id="id-startTime" name="startTime" placeholder="startTime" type="text"/>
+          </span> -->
+          <br><br>
+          <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+            End Time
+            <span class="form-required">
+              *
+            </span>
+            <select style="min-height:13px" name="uendTime" id="id-endTime" class="form-textbox">
+                <option value=""> </option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
+  
+            <br><br>
+          <label class="form-label form-label-top form-label-auto" id="label_22" for="day_22">
+            Room Name
+            <span class="form-required">
+              *
+            </span>
+            <br>
+              <select name="title" style="min-height:13px" id="id-title" class="form-textbox"> 
+                <option value="">Room Name</option>
+                {% for i in image %}
+                  <option value="{{i.id}}">{{i.title}}</option>											
+                {% endfor %}
+              </select>
+             
+          </div>
+      </div>
+    </li>
+    <li class="form-line jf-required" data-type="control_fullname" id="id_16" data-compound-hint=",,">
+      <div id="subHeader_14" class="form-subHeader" style="font-size: large; font-weight: bolder;">
+        Personal Information
+      </div>
+      <br>
+      <label class="form-label form-label-top" id="label_16" for="prefix_16">
+        Name
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <div id="cid_16" class="form-input-wide jf-required">
+        <div data-wrapper-react="true" class="extended">
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
+            <label class="form-sub-label" for="prefix_16" id="sublabel_16_prefix" style="min-height:13px" aria-hidden="false"> Prefix </label>
+            <select data-component="prefix" name="uprefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" type="text">
+              <option value="Mr."> Mr. </option>
+              <option value="Ms."> Ms. </option>
+            </select>
+          </span>
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+        <label class="form-sub-label" for="first_16" id="sublabel_16_first" style="min-height:13px" aria-hidden="false"> First Name </label>
+            <input class="form-textbox" id="id-firstname" name="ufirstname" type="text" data-defaultvalue="" autoComplete="section-input_16 given-name" size="10" value="" data-component="first" aria-labelledby="label_16 sublabel_16_first" required="" />
+          </span>
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
+            <label class="form-sub-label" for="middle_16" id="sublabel_16_middle" style="min-height:13px" aria-hidden="false"> Middle Name </label>
+            <input class="form-textbox" id="id-middlename" name="umiddlename" type="text" data-defaultvalue="" autoComplete="section-input_16 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_16 sublabel_16_middle" />
+          </span>
+          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="Last">
+            <label class="form-sub-label" for="last_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> Last Name </label>
+            <input class="form-textbox" id="id-lastname" name="ulastname" type="text" data-defaultvalue="" autoComplete="section-input_16 family-name" size="10" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+          </span>
+        <br>
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <label class="form-sub-label" for="age_16" id="sublabel_16_age" style="min-height:13px" aria-hidden="false"> Age <span class="form-required">*</span></label>
+            <input class="form-textbox" id="id-age" name="uage" style="min-height:13px" type="number"/>
+          </span>
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <label class="form-sub-label" for="gender_16" id="sublabel_16_gender" style="min-height:13px" aria-hidden="false"> Gender <span class="form-required">*</span></label>
+            <select data-component="gender" name="ugender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
+              <option selected="" value="F"> F </option>
+              <option value="M"> M </option>
+            </select>
+            <label class="form-sub-label" for="ampm_22" id="sublabel_22_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> F/M Option </label>
+          </span>
+        <br>
+        <label class="form-sub-label" for="address_16" id="sublabel_16_address" style="min-height:13px" aria-hidden="false"> Address <span class="form-required">*</span></label>
+        <span class="form-sub-label-container" style="vertical-align:top" data-input-type="address">
+          <input class="form-textbox" id="id-address" name="address"  type="text" size="51" required="" />
+        </span>
+       
+        </div>
+      </div>
+    </li>
+    <li class="form-line jf-required" data-type="control_email" id="id_17">
+      <div id="subHeader_14" class="form-subHeader" style="font-size: large; font-weight: bolder;">
+        Contact Information
+      </div>
+      <br>
+      <label class="form-label form-label-top" id="label_16" for="prefix_16">
+        Email Address
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <div id="cid_17" class="form-input-wide jf-required">
+        <input size="52px" class="form-textbox" id="id-email" name="uemail" type="email"placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
+      </div>
+      <br>
+      <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
+        Mobile Number:
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <div id="cid_31" class="form-input-wide jf-required">
+        <span class="form-sub-label-container" style="vertical-align:top">
+          <input type="number" class="form-textbox" id="id-number" name="unumber" required="" />
+          <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"></label>
+        </span>
+      </div>
+    </li>
+    <li class="form-line" data-type="control_textarea" id="id_30">
+      <label class="form-label form-label-top form-label-auto" id="label_30" for="input_30">Additional Inquiry</label>
+      <div id="cid_30" class="form-input-wide">
+        <textarea id="input_30" class="form-textarea" name="q30_mesajinizspecial" cols="40" rows="6" data-component="textarea" aria-labelledby="label_30"></textarea>
+      </div>
+    </li>
+    <li class="form-line jf-required" data-type="control_payment" id="id_32" data-payment="true">
+      <label class="form-label form-label-top form-label-auto" id="label_32" for="input_32">
+        Payment
+        <span class="form-required">
+          *
+        </span>
+      </label>
+      <br>
+     
+      <div id="cid_32" class="form-input-wide jf-required">
+        <div data-wrapper-react="true" class="product-container-wrapper">
+          <div class="filter-container">
+          </div>
+          <input type="hidden" name="simple_fpc" data-payment_type="payment" data-component="payment1" value="32" />
+          <input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+          <div id="image-overlay" class="overlay-content" style="display:none">
+            <img id="current-image" />
+            <span class="lb-prev-button">
+              prev
+            </span>
+            <span class="lb-next-button">
+              next
+            </span>
+            <span class="lb-close-button">
+              ( X )
+            </span>
+            <span class="image-overlay-product-container">
+            </span>
+          </div>
+          <!--
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="text" class="form-textbox " id="id-price" name="price" value="00.00" data-component="paymentDonation" aria-labelledby="label_32" />
+            <span class="donation_currency">
+              PHP
+            </span>
+            <label class="form-sub-label" for="input_32_donation" style="min-height:13px" aria-hidden="false"> Total amount </label>
+          </span>-->
+        </div>
+      </div>
+    </li>
+    <li>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">
+        Confirm reservation
+      </button>
+    </li>
+      </div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+</form></body>
+</html>
+</div>
+<!-- container-scroller -->
+{% endblock content %}
+
+{% block script %}
+<!-- plugins:js -->
+<script src="{% static 'assets/vendor/js/vendor.bundle.base.js' %}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="{% static 'assets/vendor/chart.js/Chart.min.js' %}"></script>
+<script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/vendor/chartist/chartist.min.js' %}"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="{% static 'assets/js/off-canvas.js' %}"></script>
+<script src="{% static 'assets/js/misc.js' %}"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="{% static 'assets/js/dashboard.js' %}"></script>
+<!-- End custom js for this page -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+{% endblock script %}
+
+
+-->

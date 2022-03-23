@@ -340,7 +340,7 @@ class reservation(View):
         print(ugender)
         uaddress = request.POST.get("uaddress")
         print(uaddress)
-        uemail = request.POST.get("uaemail")
+        uemail = request.POST.get("uemail")
         print(uemail)
         unumber = request.POST.get("unumber")
         print(unumber)
