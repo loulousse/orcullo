@@ -14,11 +14,11 @@ from django.db.models import Q
 def home(request):
     book = Book.objects.all()
     image = Image.objects.all()
-    continues = Continue.objects.all()
+    user = User.objects.all()
     context = {
         'book': book,
         'image': image,
-        'continue': continues
+        'user': user
     }
     return render(request, 'corr/home.html')
 
@@ -216,16 +216,26 @@ class res(View):
         print(startTime)
         endTime = request.POST.get("endTime")
         print(endTime)
+        title = request.POST.get("title")
+        print(title)
         prefix = request.POST.get("prefix")
         print(prefix)
         firstname = request.POST.get("firstname")
         print(firstname)
-        title = request.POST.get("title")
-        print(title)
         middlename = request.POST.get("middlename")
         print(middlename)
         lastname = request.POST.get("lastname")
         print(lastname)
+        gender = request.POST.get("gender")
+        print(gender)
+        age = request.POST.get("age")
+        print(age)
+        address = request.POST.get("address")
+        print(address)
+        email = request.POST.get("email")
+        print(email)
+        number = request.POST.get("number")
+        print(number)
 
         if form.is_valid():
             date = request.POST.get("date")
@@ -236,14 +246,21 @@ class res(View):
             firstname = request.POST.get("firstname")
             middlename = request.POST.get("middlename")
             lastname = request.POST.get("lastname")
+            gender = request.POST.get("gender")
+            age = request.POST.get("age")
+            address = request.POST.get("address")
+            email = request.POST.get("email")
+            number = request.POST.get("number")
         
-        form = Book(date = date, startTime=startTime, endTime=endTime, title_id=title,
-                    prefix = prefix, firstname=firstname, middlename=middlename, lastname=lastname)
+        form = Book(date = date, startTime=startTime, endTime=endTime, title_id=title, prefix = prefix, 
+                    firstname=firstname, middlename=middlename, lastname=lastname, gender = gender, 
+                    age = age, address = address, email = email, number = number)
         form.save()
 
-        return redirect('continuation')
+        return redirect('latest_reservation')
 
 class res1(View):
+    
     def get(self, request):
         return render(request, 'corr/res1.html')
     
@@ -287,8 +304,72 @@ def signin(request):
 def index(request):
     return render(request, 'corr/index.html')
 
-def reservation(request):
-    return render(request, 'corr/reservation.html')
+class reservation(View):
+    def get(self, request):
+        book = Book.objects.all()
+        image = Image.objects.all()
+        user = User.objects.all()
+        context = {
+            'book': book,
+            'image': image,
+            'user': user
+        }
+        return render(request, 'corr/reservation.html', context)
+    
+    def post(self, request):
+        form = UserForm(request.POST)
+        udate = request.POST.get("udate")
+        print(udate)
+        ustartTime = request.POST.get("ustartTime")
+        print(ustartTime)
+        uendTime = request.POST.get("uendTime")
+        print(uendTime)
+        title = request.POST.get("title")
+        print(title)
+        uprefix = request.POST.get("uprefix")
+        print(uprefix)
+        ufirstname = request.POST.get("ufirstname")
+        print(ufirstname)
+        umiddlename = request.POST.get("umiddlename")
+        print(umiddlename)
+        ulastname = request.POST.get("ulastname")
+        print(ulastname)
+        uage = request.POST.get('uage')
+        print(uage)
+        ugender = request.POST.get("ugender")
+        print(ugender)
+        uaddress = request.POST.get("uaddress")
+        print(uaddress)
+        uemail = request.POST.get("uaemail")
+        print(uemail)
+        unumber = request.POST.get("unumber")
+        print(unumber)
+        price = request.POST.get("price")
+        print(price)
+
+        if form.is_valid():
+            udate = request.POST.get("udate")
+            ustartTime = request.POST.get("ustartTime")
+            uendTime = request.POST.get("uendTime")
+            title = request.POST.get("title")
+            uprefix = request.POST.get("uprefix")
+            ufirstname = request.POST.get("ufirstname")
+            umiddlename = request.POST.get("umiddlename")
+            ulastname = request.POST.get("ulastname")
+            uage = request.POST.get("uage")
+            ugender = request.POST.get("ugender")
+            uaddress = request.POST.get("uaddress")
+            uemail = request.POST.get("uemail")
+            unumber = request.POST.get("unumber")
+            price = request.POST.get("price")
+
+        form = User(udate = udate, ustartTime=ustartTime, uendTime=endTime, title_id_id=title,
+                    uprefix = prefix, ufirstname=firstname, umiddlename=middlename, ulastname=lastname,
+                    uage = uage, ugender = ugender, uaddress = uaddress, uemail = uemail, 
+                    unumber = unumber, price_id = price)
+        form.save()
+
+        return redirect('reservation_user')
 
 def image_upload_view(request):
     """Process images uploaded by users"""

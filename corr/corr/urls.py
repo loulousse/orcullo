@@ -34,7 +34,7 @@ urlpatterns = [
     path('rooms/', views.rooms),
     path('roomList/', views.roomList.as_view(), name="room_list"),
     path('dashboard/', views.dashboard),
-    path('reservation/', views.reservation),
+    path('reservation/', views.reservation.as_view(), name="reservation_user"),
     path('upload/', views.image_upload_view)
 ]
 

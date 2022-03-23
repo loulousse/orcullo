@@ -246,7 +246,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         <div id="cid_22" class="form-input-wide jf-required">
           <div data-wrapper-react="true" class="extended notLiteMode">
             <span style="text-align: center;"> 
-              <input class="form-control" style="min-height:13px" id="id-date" name="date" placeholder="date" type="date"
+              <input class="form-textbox" style="min-height:13px" id="id-date" name="udate" placeholder="date" type="date"
                   required autofocus />
             </span> 
             <br><br>
@@ -255,8 +255,8 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
               <span class="form-required">
                 *
               </span>
-              <select style="min-height:13px" name="startTime" id="id-startTime" class="form-control">
-                  <option value=""> </option>
+              <select style="min-height:13px" name="ustartTime" id="id-startTime" class="form-textbox">
+                  <option value=" "> </option>
                   <option value="09:00">09:00</option>
                   <option value="10:00">10:00</option>
                   <option value="11:00">11:00</option>
@@ -277,7 +277,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
               <span class="form-required">
                 *
               </span>
-              <select style="min-height:13px" name="endTime" id="id-endTime" class="form-control">
+              <select style="min-height:13px" name="uendTime" id="id-endTime" class="form-textbox">
                   <option value=""> </option>
                   <option value="09:00">09:00</option>
                   <option value="10:00">10:00</option>
@@ -297,7 +297,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
                 *
               </span>
               <br>
-                <select name="title" style="min-height:13px" id="id-title" class="form-control"> 
+                <select name="title" style="min-height:13px" id="id-title" class="form-textbox"> 
                   <option value="">Room Name</option>
                   {% for i in image %}
                     <option value="{{i.id}}">{{i.title}}</option>											
@@ -322,31 +322,31 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
           <div data-wrapper-react="true" class="extended">
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
               <label class="form-sub-label" for="prefix_16" id="sublabel_16_prefix" style="min-height:13px" aria-hidden="false"> Prefix </label>
-              <select data-component="prefix" name="prefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" type="text">
+              <select data-component="prefix" name="uprefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" type="text">
                 <option value="Mr."> Mr. </option>
                 <option value="Ms."> Ms. </option>
               </select>
             </span>
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
           <label class="form-sub-label" for="first_16" id="sublabel_16_first" style="min-height:13px" aria-hidden="false"> First Name </label>
-              <input class="form-textbox" id="id-firstname" name="firstname" type="text" data-defaultvalue="" autoComplete="section-input_16 given-name" size="10" value="" data-component="first" aria-labelledby="label_16 sublabel_16_first" required="" />
+              <input class="form-textbox" id="id-firstname" name="ufirstname" type="text" data-defaultvalue="" autoComplete="section-input_16 given-name" size="10" value="" data-component="first" aria-labelledby="label_16 sublabel_16_first" required="" />
             </span>
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
               <label class="form-sub-label" for="middle_16" id="sublabel_16_middle" style="min-height:13px" aria-hidden="false"> Middle Name </label>
-              <input class="form-textbox" id="id-middlename" name="middlename" type="text" data-defaultvalue="" autoComplete="section-input_16 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_16 sublabel_16_middle" />
+              <input class="form-textbox" id="id-middlename" name="umiddlename" type="text" data-defaultvalue="" autoComplete="section-input_16 additional-name" size="10" value="" data-component="middle" aria-labelledby="label_16 sublabel_16_middle" />
             </span>
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="Last">
               <label class="form-sub-label" for="last_16" id="sublabel_16_last" style="min-height:13px" aria-hidden="false"> Last Name </label>
-              <input class="form-textbox" id="id-lastname" name="lastname" type="text" data-defaultvalue="" autoComplete="section-input_16 family-name" size="10" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
+              <input class="form-textbox" id="id-lastname" name="ulastname" type="text" data-defaultvalue="" autoComplete="section-input_16 family-name" size="10" value="" data-component="last" aria-labelledby="label_16 sublabel_16_last" required="" />
             </span>
           <br>
             <span class="form-sub-label-container" style="vertical-align:top">
               <label class="form-sub-label" for="age_16" id="sublabel_16_age" style="min-height:13px" aria-hidden="false"> Age <span class="form-required">*</span></label>
-              <input class="form-textbox" id="id-age" name="age" style="min-height:13px" type="number"/>
+              <input class="form-textbox" id="id-age" name="uage" style="min-height:13px" type="number"/>
             </span>
             <span class="form-sub-label-container" style="vertical-align:top">
               <label class="form-sub-label" for="gender_16" id="sublabel_16_gender" style="min-height:13px" aria-hidden="false"> Gender <span class="form-required">*</span></label>
-              <select data-component="gender" name="gender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
+              <select data-component="gender" name="ugender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
                 <option selected="" value="F"> F </option>
                 <option value="M"> M </option>
               </select>
@@ -373,7 +373,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
           </span>
         </label>
         <div id="cid_17" class="form-input-wide jf-required">
-          <input size="52px" class="form-textbox" id="id-email" name="email" type="email"placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
+          <input size="52px" class="form-textbox" id="id-email" name="uemail" type="email"placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_17" required="" />
         </div>
         <br>
         <label class="form-label form-label-top form-label-auto" id="label_31" for="input_31">
@@ -384,7 +384,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         </label>
         <div id="cid_31" class="form-input-wide jf-required">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="number" class="form-textbox" id="id-number" name="number" required="" />
+            <input type="number" class="form-textbox" id="id-number" name="unumber" required="" />
             <label class="form-sub-label" for="input_31" id="sublabel_input_31" style="min-height:13px" aria-hidden="false"></label>
           </span>
         </div>
@@ -402,6 +402,8 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
             *
           </span>
         </label>
+        <br>
+       
         <div id="cid_32" class="form-input-wide jf-required">
           <div data-wrapper-react="true" class="product-container-wrapper">
             <div class="filter-container">
@@ -435,7 +437,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
       <li class="form-line" data-type="control_button" id="id_2">
         <div id="cid_2" class="form-input-wide">
           <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-            <button id="input_2" type="submit" class="form-submit-button form-submit-button-simple_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
               Confirm reservation
             </button>
           </div>
@@ -443,21 +445,8 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
       </li>
     </ul>
   </div>
-  <script>
-  JotForm.showJotFormPowered = "new_footer";
-  </script>
   
-  <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="220587712224453" />
-  <script type="text/javascript">
-  var all_spc = document.querySelectorAll("form[id='220587712224453'] .si" + "mple" + "_spc");
-for (var i = 0; i < all_spc.length; i++)
-{
-  all_spc[i].value = "220587712224453-220587712224453";
-}
-  </script>
-  <div class="formFooter-heightMask">
-  </div>
 </form></body>
 </html>
-<script type="text/javascript">JotForm.ownerView=true;</script>
+
 

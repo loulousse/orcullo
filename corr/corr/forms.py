@@ -13,10 +13,10 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = "__all__"
 
-class ContinueForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = Continue
-        fields = ('gender', 'age', 'address', 'email', 'number')
+        model = User
+        fields = "__all__"
 
 
 

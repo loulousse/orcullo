@@ -122,8 +122,44 @@
                         </span> 
                         </div>
                         <br>
-                        <button style="margin-bottom: 20px; width: 700px; margin-left: -300px;" class="btn btn-lg btn-primary btn-block" type="submit">
-                          Continue</button>
+                        <h2 style="margin-left: -150px;">Personal Details</h2>
+                          {% csrf_token %}
+                        <br>
+                        <div class="form-group" style="margin-left: -300px;">
+                          <br>
+                          <br>    
+                          <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
+                            <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="gender" name="gender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
+                              <option value="Female"> Female </option>
+                              <option value="Male"> Male </option>
+                            </select>
+                          </span>
+                          <br> 
+                          <br>     
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-age" name="age" placeholder="Age" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-address" name="address" placeholder="Address" type="text"/>
+                        </span> 
+                        </div>
+                        <br>
+                        <h2 style="margin-left: -150px;">Contact  Details</h2>
+                        <br>
+                        <div class="form-group" style="margin-left: -300px;">
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-email" name="email" placeholder="Email" type="text"/>
+                        </span> 
+                        <br>
+                        <span style="text-align: center;"> 
+                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-number" name="number" placeholder="Number" type="text"/>
+                        </span> 
+                        <br> 
+                        </div>
+                        <br>
+                        <button style="margin-bottom: 20px; width: 700px; margin-left: -300px;" class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">
+                          Submit</button>
                           </div>
                           <br>
                           <br>
