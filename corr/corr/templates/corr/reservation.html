@@ -172,7 +172,15 @@
                         <span style="text-align: center;"> 
                           <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-number" name="unumber" placeholder="Number" type="text"/>
                         </span> 
+                        </div>
                         <br> 
+                        <h2 style="margin-left: -150px;">Price</h2>
+                        <div class="form-group" style="margin-left: -300px;">
+                        <span style="text-align: center;" name="price"> 
+                          {% for i in image %}
+                            <input value="{{i.title}}">{{i.price}}</input>											
+                          {% endfor %}
+                        </span>
                         </div>
                         <br>
                         <button style="margin-bottom: 20px; width: 700px; margin-left: -300px;" class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">

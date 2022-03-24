@@ -14,18 +14,8 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-sm-flex align-items-center mb-4">
-                      <h4 class="card-title mb-sm-0">Latest Registration List</h4>
-                      <a class = "text-dark ml-auto mb-3 mb-sm-0" id = "id_signin" 
-                      style="background-color: #fc2d08;
-                            border: 1px solid #ce3c3c;
-                            color: #fff;
-                            border-radius: 2px;
-                            float: left; margin-left: 300px; text-decoration: none;
-                            left: 3px;
-                            font-weight: 600;
-                            min-width: 200px; height: 45px;	margin-right: 5px; text-align: center; padding: 11px;" href = "../create">
-                      <i class="fa fa-plus" aria-hidden="true"></i>Make Reservation
-                      </a>
+                      <h4 class="card-title mb-sm-0">User Registration List</h4>
+                      
                     </div>
                     <!-- Search Filter -->
 					<form method="GET">
@@ -54,7 +44,7 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-3">  
-                <button type="submit" name="SearchBook" class="btn btn-success btn-block"> Search </button>  
+                <button type="submit" name="SearchUser" class="btn btn-success btn-block"> Search </button>  
               </div>
             </div>
             </form>
@@ -72,25 +62,25 @@
                           </tr>
                         </thead>
                         <tbody>
-                          {% for d in book %}
+                          {% for u in user %}
                       <tr>
-                        <td style="text-align:center;">{{d.date}}</td>
-                        <td style="text-align:center;">{{d.startTime}}</td>
-                        <td style="text-align:center;">{{d.endTime}}</td>
-                        <td style="text-align:center;">{{d.title_id}}</td>
-                        <td style="text-align:center;">{{d.prefix}} {{d.lastname}},{{d.firstname}} {{d.middlename}}</td>
+                        <td style="text-align:center;">{{u.udate}}</td>
+                        <td style="text-align:center;">{{u.ustartTime}}</td>
+                        <td style="text-align:center;">{{u.uendTime}}</td>
+                        <td style="text-align:center;">{{u.title_id}}</td>
+                        <td style="text-align:center;">{{u.uprefix}} {{u.ulastname}},{{u.ufirstname}} {{u.umiddlename}}</td>
                         <td style="text-align:center;">
-                          <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{d.id}}">
+                          <a type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#newModal-{{u.id}}">
                             <i class="fa fa-edit"></i>
                           </a>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{d.id}}">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{u.id}}">
                              <i class="fa fa-trash"></i>
                           </button>
                         </td>
                       </tr>
                   
                        <!-- Modal VIEW-->
-                      <div class="modal fade" id="newModal-{{d.id}}" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="newModal-{{u.id}}" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                               <div class="modal-header" style="background-color:rgb(115, 255, 255)">
@@ -102,19 +92,19 @@
                               <form id="updateForm" method="post" >
                               {% csrf_token %}
                               <div class="modal-body">
-                                <input type="text" name="book-Id" value = {{d.id}} hidden>
+                                <input type="text" name="user-Id" value = {{u.id}} hidden>
                                 <div class="row" text-align ="center">
                                   <div class="col-12" id="startup-tab-2">
                                     <div class="row">
                                       <div class = "col-sm-4">
-                                        <input type="date" class="form-control" id="id-date" placeholder="date" name="d-date" value ={{d.date}}>
+                                        <input type="date" class="form-control" id="id-date" placeholder="date" name="u-udate" value ={{u.udate}}>
                                       </div>
                                       </div>
                                       &nbsp;
                                         <div class="row">
                                           <div class="form-group col-sm-4">
                                             <label for="title">Start Time</label>
-                                              <select name="d-startTime" id="time" class="form-control">
+                                              <select name="u-ustartTime" id="time" class="form-control">
                                                 <option  > {{d.startTime}}</option>
                                                 <option value="09:00">09:00</option>
                                                 <option value="10:00">10:00</option>
@@ -137,7 +127,7 @@
                                         <div class="row">
                                           <div class="form-group col-sm-4">
                                             <label for="title">End time</label>
-                                              <select name="d-endTime" id="time" class="form-control">
+                                              <select name="u-uendTime" id="time" class="form-control">
                                                 <option  > {{d.endTime}}</option>
                                                 <option value="09:00">09:00</option>
                                                 <option value="10:00">10:00</option>
@@ -174,7 +164,7 @@
                                         &nbsp;  
                                         <div class="row">
                                           <div class="form-group col-sm-4">
-                                            <select name="d-prefix" id="id-prefix" class="form-control" value="{{d.prefix}}" type="text">
+                                            <select name="u-uprefix" id="id-prefix" class="form-control" value="{{u.uprefix}}" type="text">
                                              <option  > {{d.prefix}}</option>
                                              <option value="Mr">Mr.</option>
                                              <option value="Ms">Ms.</option>
@@ -184,19 +174,19 @@
                                           &nbsp;
                                         <div class="row">
                                           <div class = "col-sm-4">
-                                            <input type="text" class="form-control" id="id-firstname" placeholder="firstname" name="d-firstname" value ={{d.firstname}}>
+                                            <input type="text" class="form-control" id="id-firstname" placeholder="firstname" name="u-ufirstname" value ={{u.ufirstname}}>
                                           </div>
                                           </div>  
                                           &nbsp;  
                                         <div class="row">
                                           <div class = "col-sm-4">
-                                            <input type="text" class="form-control" id="id-middlename" placeholder="middlename" name="d-middlename" value ={{d.middlename}}>
+                                            <input type="text" class="form-control" id="id-middlename" placeholder="middlename" name="u-umiddlename" value ={{u.umiddlename}}>
                                           </div>
                                           </div>  
                                           &nbsp;  
                                         <div class="row">
                                           <div class = "col-sm-4">
-                                            <input type="text" class="form-control" id="id-lastname" placeholder="lastname" name="d-lastname" value ={{d.lastname}}>
+                                            <input type="text" class="form-control" id="id-lastname" placeholder="lastname" name="u-ulastname" value ={{u.lastname}}>
                                           </div>
                                           </div>  
                                           &nbsp;                  
@@ -213,7 +203,7 @@
                         </div>
                       
                       <!-- Modal DELETE-->
-                      <div class="modal fade" id="exampleModal-{{d.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="exampleModal-{{u.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header" style="background-color:rgb(115, 255, 255)">
@@ -226,7 +216,7 @@
                               <form id="deleteForm" method="post" >
                               {% csrf_token %} 
                               <div class="modal-body">                       
-                                <input type="text" name="bbook-id" value = {{d.id}} hidden>
+                                <input type="text" name="uuser-id" value = {{u.id}} hidden>
                                 Are you sure you want to delete this record?
                               </div>
                               <div class="modal-footer">

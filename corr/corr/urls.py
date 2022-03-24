@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
-    path('userReservationList/', views.userReservationList),
+    path('userReservationList/', views.userReservationList.as_view(), name="user_list"),
     path('latestReservation/', views.latestReservation.as_view(), name="latest_reservation"),
     path('create/', views.create),
     path('vacant/', views.vacant.as_view(), name="vacantRoom"),

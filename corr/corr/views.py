@@ -22,8 +22,82 @@ def home(request):
     }
     return render(request, 'corr/home.html')
 
-def userReservationList(request):
-    return render(request, 'corr/userReservationList.html')
+class userReservationList(View):
+    def get(self, request):
+        if 'SearchUser' in request.GET:
+            q1 = request.GET['q1']
+            q2 = request.GET['q2']
+            q3 = request.GET['q3']
+            print(q3)
+            # multiQ = Q(Q(employee_id__icontains=q) & Q(firstname__icontains=q) )
+
+            if q1 and q2 != '':
+                user = User.objects.filter(udate=q1).filter(
+                    Q(ufirstname=q2) | Q(ulastname=q2))
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            elif q1 and q3 != '':
+                user = User.objects.filter(
+                    udate=q1).filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            elif q2 and q3 != '':
+                user = User.objects.filter(Q(Q(ufirstname=q2) | Q(
+                    ulastname=q2))).filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+
+            else:
+                if q3 == '':
+                    user = User.objects.filter(Q(Q(
+                        ufirstname=q2) | Q(ulastname=q2))) or User.objects.filter(Q(udate=q1))
+                else:
+                    user = User.objects.filter(title=q3)
+                image = Image.objects.all()
+                #designation = Designation.objects.all()
+            # print(employee)
+            # department = Department.objects.all()
+            # designation = Designation.objects.all()
+        else:
+            image = Image.objects.all()
+            #designation = Designation.objects.all()
+            user = User.objects.all()
+
+        context = {
+            'image': image,
+            'user': user,
+        }
+
+        return render(request, 'corr/userReservationList.html', context)
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'btnUpdate' in request.POST:
+                print ('update profile button clicked')
+                did=request.POST.get("user-Id")
+                date=request.POST.get("u-udate")
+                startTime=request.POST.get("u-ustartTime")
+                endTime=request.POST.get("u-uendTime")
+                title=request.POST.get("i-title")
+                prefix=request.POST.get("u-uprefix")
+                firstname=request.POST.get("u-ufirstname")
+                middlename=request.POST.get("u-umiddlename")
+                lastname=request.POST.get("u-ulastname")
+
+                update_book = Book.objects.filter(id=did).update(udate=date, ustartTime=startTime, 
+                uendTime=endTime, title=title, uprefix=prefix, ufirstname=firstname, umiddlename=middlename, ulastname=lastname)
+                print(update_book)
+
+                print('profile updated')
+            elif 'btnDelete' in request.POST:
+                print('delete button clicked')
+                did=request.POST.get("uuser-id")
+                book=Book.objects.filter(id=did).delete()
+                print('recorded deleted')
+
+        return redirect('user_list')
 
 class latestReservation(View):   
     def get(self, request):
@@ -363,8 +437,8 @@ class reservation(View):
             unumber = request.POST.get("unumber")
             price = request.POST.get("price")
 
-        form = User(udate = udate, ustartTime=ustartTime, uendTime=endTime, title_id_id=title,
-                    uprefix = prefix, ufirstname=firstname, umiddlename=middlename, ulastname=lastname,
+        form = User(udate = udate, ustartTime=ustartTime, uendTime=uendTime, title_id=title,
+                    uprefix = uprefix, ufirstname=ufirstname, umiddlename=umiddlename, ulastname=ulastname,
                     uage = uage, ugender = ugender, uaddress = uaddress, uemail = uemail, 
                     unumber = unumber, price_id = price)
         form.save()
