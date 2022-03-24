@@ -44,13 +44,13 @@
                           <div class="form-group" style="margin-left: -300px;">
                             <label for="title">Date</label>
                           <span style="text-align: center;"> 
-                                <input class="form-control" style="width: 700px; height: 10px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-date" name="udate" placeholder="date" type="date"
+                                <input class="form-control" style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-date" name="udate" placeholder="date" type="date"
                                     required autofocus />
                           </span> 
                         </div>
                         <div class="form-group" style="margin-left: -300px;">
                           <label for="title">Start Time</label>
-                          <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="ustartTime" id="id-startTime" class="form-control">
+                          <select style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="ustartTime" id="id-startTime" class="form-control">
                               <option value="09:00">09:00</option>
                               <option value="10:00">10:00</option>
                               <option value="11:00">11:00</option>
@@ -68,7 +68,7 @@
                        
                         <div class="form-group" style="margin-left: -300px;">
                           <label for="title">End Time</label>
-                          <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="uendTime" id="id-endTime" class="form-control">
+                          <select style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="uendTime" id="id-endTime" class="form-control">
                               <option value="09:00">09:00</option>
                               <option value="10:00">10:00</option>
                               <option value="11:00">11:00</option>
@@ -92,7 +92,7 @@
                         </span> -->
                        
                           <div class="form-group" style="margin-left: -300px;">
-                            <select name="title" style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-title" class="form-control"> 
+                            <select name="title" style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-title" class="form-control"> 
                               <option value="">Room Name</option>
                               {% for i in image %}
                                 <option value="{{i.id}}">{{i.title}}</option>											
@@ -139,10 +139,7 @@
                         </span> 
                         </div>
                         <br>
-                       
-                       
                         <div class="form-group" style="margin-left: -300px;">
-                        
                           <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
                             <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="gender" name="ugender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
                               <option value="Female"> Female </option>
@@ -150,7 +147,7 @@
                             </select>
                           </span>
                           <br> 
-                          <br>     
+                          <br> 
                         <span style="text-align: center;"> 
                           <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-age" name="uage" placeholder="Age" type="text"/>
                         </span> 
