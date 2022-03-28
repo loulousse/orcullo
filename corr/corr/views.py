@@ -8,96 +8,80 @@ from .models import Image
 
 from .forms import ImageForm
 
+
+from datetime import datetime
+from django import forms
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.views.generic import View
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+import random
+
+from .forms import AccountAuthenticationForm
+from .models import *
 from django.db.models import Q
+from django.contrib.auth.hashers import make_password
+
+from django.http import HttpResponse
 # Create your views here.
+
+class admin_screen_view(View):
+    def get(self, request):
+        return render(request, 'corr/dashboard.html', {})
+
+
+def logout_screen_view(request):
+    logout(request)
+    return redirect('admin-login')
+
+
+# AUTHENTICATION
+
+def login_screen_view(request):
+    context = {}
+
+    user = request.user
+    if user.is_authenticated:
+        return redirect('admin-dashboard')
+
+    if request.method == 'POST':
+        form = AccountAuthenticationForm(request.POST)
+        if form.is_valid():
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('admin-dashboard')
+
+        else:
+            messages.info(request, 'Email or Password do not match!')
+            return redirect('admin-login')
+    else:
+        form = AccountAuthenticationForm()
+
+    context['form'] = form
+    return render(request, 'corr/index.html', context)
+
+# END AUTHENTICATION
+
 
 def home(request):
     book = Book.objects.all()
     image = Image.objects.all()
-    user = User.objects.all()
+    continues = Continue.objects.all()
     context = {
         'book': book,
         'image': image,
-        'user': user
+        'continue': continues
     }
     return render(request, 'corr/home.html')
 
-class userReservationList(View):
-    def get(self, request):
-        if 'SearchUser' in request.GET:
-            q1 = request.GET['q1']
-            q2 = request.GET['q2']
-            q3 = request.GET['q3']
-            print(q3)
-            # multiQ = Q(Q(employee_id__icontains=q) & Q(firstname__icontains=q) )
-
-            if q1 and q2 != '':
-                user = User.objects.filter(udate=q1).filter(
-                    Q(ufirstname=q2) | Q(ulastname=q2))
-                image = Image.objects.all()
-                #designation = Designation.objects.all()
-
-            elif q1 and q3 != '':
-                user = User.objects.filter(
-                    udate=q1).filter(title=q3)
-                image = Image.objects.all()
-                #designation = Designation.objects.all()
-
-            elif q2 and q3 != '':
-                user = User.objects.filter(Q(Q(ufirstname=q2) | Q(
-                    ulastname=q2))).filter(title=q3)
-                image = Image.objects.all()
-                #designation = Designation.objects.all()
-
-            else:
-                if q3 == '':
-                    user = User.objects.filter(Q(Q(
-                        ufirstname=q2) | Q(ulastname=q2))) or User.objects.filter(Q(udate=q1))
-                else:
-                    user = User.objects.filter(title=q3)
-                image = Image.objects.all()
-                #designation = Designation.objects.all()
-            # print(employee)
-            # department = Department.objects.all()
-            # designation = Designation.objects.all()
-        else:
-            image = Image.objects.all()
-            #designation = Designation.objects.all()
-            user = User.objects.all()
-
-        context = {
-            'image': image,
-            'user': user,
-        }
-
-        return render(request, 'corr/userReservationList.html', context)
-
-    def post(self, request):
-        if request.method == 'POST':
-            if 'btnUpdate' in request.POST:
-                print ('update profile button clicked')
-                did=request.POST.get("user-Id")
-                date=request.POST.get("u-udate")
-                startTime=request.POST.get("u-ustartTime")
-                endTime=request.POST.get("u-uendTime")
-                title=request.POST.get("i-title")
-                prefix=request.POST.get("u-uprefix")
-                firstname=request.POST.get("u-ufirstname")
-                middlename=request.POST.get("u-umiddlename")
-                lastname=request.POST.get("u-ulastname")
-
-                update_book = Book.objects.filter(id=did).update(udate=date, ustartTime=startTime, 
-                uendTime=endTime, title=title, uprefix=prefix, ufirstname=firstname, umiddlename=middlename, ulastname=lastname)
-                print(update_book)
-
-                print('profile updated')
-            elif 'btnDelete' in request.POST:
-                print('delete button clicked')
-                did=request.POST.get("uuser-id")
-                book=Book.objects.filter(id=did).delete()
-                print('recorded deleted')
-
-        return redirect('user_list')
+def userReservationList(request):
+    return render(request, 'corr/userReservationList.html')
 
 class latestReservation(View):   
     def get(self, request):
@@ -290,26 +274,16 @@ class res(View):
         print(startTime)
         endTime = request.POST.get("endTime")
         print(endTime)
-        title = request.POST.get("title")
-        print(title)
         prefix = request.POST.get("prefix")
         print(prefix)
         firstname = request.POST.get("firstname")
         print(firstname)
+        title = request.POST.get("title")
+        print(title)
         middlename = request.POST.get("middlename")
         print(middlename)
         lastname = request.POST.get("lastname")
         print(lastname)
-        gender = request.POST.get("gender")
-        print(gender)
-        age = request.POST.get("age")
-        print(age)
-        address = request.POST.get("address")
-        print(address)
-        email = request.POST.get("email")
-        print(email)
-        number = request.POST.get("number")
-        print(number)
 
         if form.is_valid():
             date = request.POST.get("date")
@@ -320,21 +294,14 @@ class res(View):
             firstname = request.POST.get("firstname")
             middlename = request.POST.get("middlename")
             lastname = request.POST.get("lastname")
-            gender = request.POST.get("gender")
-            age = request.POST.get("age")
-            address = request.POST.get("address")
-            email = request.POST.get("email")
-            number = request.POST.get("number")
         
-        form = Book(date = date, startTime=startTime, endTime=endTime, title_id=title, prefix = prefix, 
-                    firstname=firstname, middlename=middlename, lastname=lastname, gender = gender, 
-                    age = age, address = address, email = email, number = number)
+        form = Book(date = date, startTime=startTime, endTime=endTime, title_id=title,
+                    prefix = prefix, firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
-        return redirect('latest_reservation')
+        return redirect('continuation')
 
 class res1(View):
-    
     def get(self, request):
         return render(request, 'corr/res1.html')
     
@@ -369,8 +336,8 @@ def upload(request):
 def rooms(request):
     return render(request, 'corr/rooms.html')
 
-def dashboard(request):
-    return render(request, 'corr/dashboard.html')
+#def dashboard(request):
+   # return render(request, 'corr/dashboard.html')
 
 def signin(request):
     return render(request, 'corr/signin.html')
@@ -378,72 +345,8 @@ def signin(request):
 def index(request):
     return render(request, 'corr/index.html')
 
-class reservation(View):
-    def get(self, request):
-        book = Book.objects.all()
-        image = Image.objects.all()
-        user = User.objects.all()
-        context = {
-            'book': book,
-            'image': image,
-            'user': user
-        }
-        return render(request, 'corr/reservation.html', context)
-    
-    def post(self, request):
-        form = UserForm(request.POST)
-        udate = request.POST.get("udate")
-        print(udate)
-        ustartTime = request.POST.get("ustartTime")
-        print(ustartTime)
-        uendTime = request.POST.get("uendTime")
-        print(uendTime)
-        title = request.POST.get("title")
-        print(title)
-        uprefix = request.POST.get("uprefix")
-        print(uprefix)
-        ufirstname = request.POST.get("ufirstname")
-        print(ufirstname)
-        umiddlename = request.POST.get("umiddlename")
-        print(umiddlename)
-        ulastname = request.POST.get("ulastname")
-        print(ulastname)
-        uage = request.POST.get('uage')
-        print(uage)
-        ugender = request.POST.get("ugender")
-        print(ugender)
-        uaddress = request.POST.get("uaddress")
-        print(uaddress)
-        uemail = request.POST.get("uemail")
-        print(uemail)
-        unumber = request.POST.get("unumber")
-        print(unumber)
-        price = request.POST.get("price")
-        print(price)
-
-        if form.is_valid():
-            udate = request.POST.get("udate")
-            ustartTime = request.POST.get("ustartTime")
-            uendTime = request.POST.get("uendTime")
-            title = request.POST.get("title")
-            uprefix = request.POST.get("uprefix")
-            ufirstname = request.POST.get("ufirstname")
-            umiddlename = request.POST.get("umiddlename")
-            ulastname = request.POST.get("ulastname")
-            uage = request.POST.get("uage")
-            ugender = request.POST.get("ugender")
-            uaddress = request.POST.get("uaddress")
-            uemail = request.POST.get("uemail")
-            unumber = request.POST.get("unumber")
-            price = request.POST.get("price")
-
-        form = User(udate = udate, ustartTime=ustartTime, uendTime=uendTime, title_id=title,
-                    uprefix = uprefix, ufirstname=ufirstname, umiddlename=umiddlename, ulastname=ulastname,
-                    uage = uage, ugender = ugender, uaddress = uaddress, uemail = uemail, 
-                    unumber = unumber, price_id = price)
-        form.save()
-
-        return redirect('reservation_user')
+def reservation(request):
+    return render(request, 'corr/reservation.html')
 
 def image_upload_view(request):
     """Process images uploaded by users"""
