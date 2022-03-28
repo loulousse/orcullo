@@ -37,7 +37,7 @@
           <a class="navbar-brand brand-logo" href="index.html">
             <img src="{% static 'corr/images/alo.png' %}" alt="logo" style="height: 50px; width:50px;" class="logo-dark" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'corr/images/logo-mini.svg' %}" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../dashboard"><img src="{% static 'corr/images/logo-mini.svg' %}" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
           <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome ALO dashboard!</h5>
@@ -108,18 +108,24 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle ml-2" src="{% static 'corr/images/faces/face8.jpg' %}" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
+                <img class="img-xs rounded-circle ml-2" src="{% static 'corr/images/faces/face8.jpg' %}" alt="Profile image"> <span class="font-weight-normal"> {% if request.user.is_authenticated %}
+                  <span>{{request.user.first_name}}</span>
+                  {% endif %}</span></a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   <img class="img-md rounded-circle" src="{% static 'corr/images/faces/face8.jpg' %}" alt="Profile image">
-                  <p class="mb-1 mt-3">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                  <p class="mb-1 mt-3">{% if request.user.is_authenticated %}
+                    <span>{{request.user.first_name}}</span>
+                    {% endif %}</p>
+                  <p class="font-weight-light text-muted mb-0">{% if request.user.is_authenticated %}
+                    <span>{{request.user.email}}</span>
+                    {% endif %}</span></p>
                 </div>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
-                <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+                <a class="dropdown-item"  href="{% url 'admin-logout' %}"><i class="dropdown-item-icon icon-power text-primary"></i>Logout</a>
               </div>
             </li>
           </ul>
@@ -142,7 +148,11 @@
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name">Hannah Suarez</p>
+                  <p class="profile-name">{% if request.user.is_authenticated %}
+                    <span>
+                      {{request.user.first_name}}
+                    </span>
+                    {% endif %}</p>
                   <p class="designation">Administrator</p>
                 </div>
                 <div class="icon-container">
