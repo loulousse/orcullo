@@ -25,12 +25,23 @@ from django.db.models import Q
 from django.contrib.auth.hashers import make_password
 
 from django.http import HttpResponse
+
+from django.db.models import Count
 # Create your views here.
 
 class admin_screen_view(View):
     def get(self, request):
-        return render(request, 'corr/dashboard.html', {})
+        count= Book.objects.all().count()
+        theanswer = Book.objects.values('date').annotate(Count('date'))
+        room = Image.objects.all().count
+        
+        context= {
+            'count': count,
+            'theanswer': theanswer, 
+            'room': room
 
+        }
+        return render(request, 'corr/dashboard.html', context)
 
 def logout_screen_view(request):
     logout(request)
@@ -299,7 +310,7 @@ class res(View):
                     prefix = prefix, firstname=firstname, middlename=middlename, lastname=lastname)
         form.save()
 
-        return redirect('continuation')
+        return redirect('latest_reservation')
 
 class res1(View):
     def get(self, request):

@@ -17,6 +17,52 @@
                 </div>
               </div>
             </div>
+            <div>
+              <body>
+                <h4 class="card-title">There are {{ count }} reserve rooms currently in the database</h4>
+                <h4 class="card-title">There are {{ room }} rooms currently in the database</h4>
+                <h4 class="card-title">{{ theanswer }}</h4>
+              </body>
+            </div>
+              <!-- Search Filter -->
+					<form method="GET">
+            <div class="row filter-row">
+              <div class="col-sm-6 col-md-3">  
+                <div class="form-group form-focus">
+                  <input name="q1" type="date" class="form-control floating">
+                  <label class="focus-label">Date</label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">  
+                <button type="submit" name="SearchDash" class="btn btn-success btn-block"> Search </button>  
+              </div>
+            </div>
+            </form>
+            <!-- Search Filter -->
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class = "text-center">Vacant Rooms</th>
+                            <th class = "text-center">Date</th>
+                            <th class = "text-center">Most reserve rooms</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for d in book %}
+                      <tr>
+                        <td style="text-align:center;">{{d.vacant}}</td>
+                        <td style="text-align:center;">{{d.date}}</td>
+                        <td style="text-align:center;">{{d.mostBook}}</td>
+                      </tr>
+                    </form>
+                  </div>
+                </div> 
+              {% endfor %}   
+            </tbody>
+            </table>
+            </div>
+            <br>
             <div class="row">
               <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
