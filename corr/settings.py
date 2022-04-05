@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0ive^_1v(zrvk4^z@x@w8ylm@zd-(xjk@+)aac0hwu3%y#=57$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = TRUE
 
-ALLOWED_HOSTS = [group9-aloconferenceroomreservationsystem.azurewebsites.net]
+ALLOWED_HOSTS = ['group9-aloconferenceroomreservationsystem.azurewebsites.net']
 
 
 # Application definition
