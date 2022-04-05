@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0ive^_1v(zrvk4^z@x@w8ylm@zd-(xjk@+)aac0hwu3%y#=57$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = FALSE
 
-ALLOWED_HOSTS = ['group9-aloconferenceroomreservationsystem.azurewebsites.net']
+ALLOWED_HOSTS = [group9-aloconferenceroomreservationsystem.azurewebsites.net]
 
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'corr.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'g1group09',
+        'NAME': 'group9',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'g1group09.postgres.database.azure.com',
+        'HOST': 'group09.postgres.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {"sslmode": "required"},
     }
