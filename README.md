@@ -1,3 +1,3 @@
 # orcullo
 
-database name = reserve, g1group9
+database name = reserve
