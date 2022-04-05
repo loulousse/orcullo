@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0ive^_1v(zrvk4^z@x@w8ylm@zd-(xjk@+)aac0hwu3%y#=57$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = FALSE
 
-ALLOWED_HOSTS = [group9-aloconferenceroomreservationsystem.azurewebsites.net]
+ALLOWED_HOSTS = ['group9-aloconferenceroomreservationsystem.azurewebsites.net']
 
 
 # Application definition
@@ -82,11 +82,9 @@ DATABASES = {
         'NAME': 'reserve',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'HOST': 'g1group9.postgres.database.azure.com',
         'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
-        },
+        'OPTIONS': {"sslmode": "required"},
     }
 }
 
