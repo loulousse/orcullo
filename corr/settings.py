@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'corr.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'group9',
+        'NAME': 'reserve',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'group9.postgres.database.azure.com',
