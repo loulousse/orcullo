@@ -1,10 +1,17 @@
+
 {% load static %}
 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
+<style>
+  body {
+    background-color: aquamarine;
+  }
+</style>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -12,12 +19,13 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  </head>
   <!-- Favicons 
   <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
   <link href="static/corr/images/alo.png" rel="icon">
-  
 
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -39,18 +47,18 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 well well-sm" style="margin-top: -100px;">
                       <br><br><br><br>
                         <form action="" method="POST" class="form" role="form">
-                          <h2 style="margin-left: -150px;">Reservation Details</h2>
+                          <h2 style=" margin-left: -10px; margin-top: 40px;">Reservation Details</h2>
                           {% csrf_token %}
-                          <div class="form-group" style="margin-left: -300px;">
+                          <div class="form-group" style="margin-left: -100px;">
                             <label for="title">Date</label>
                           <span style="text-align: center;"> 
-                                <input class="form-control" style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-date" name="udate" placeholder="date" type="date"
+                                <input class="form-control" style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-date" name="udate" placeholder="date" type="date"
                                     required autofocus />
                           </span> 
                         </div>
-                        <div class="form-group" style="margin-left: -300px;">
+                        <div class="form-group" style="margin-left: -100px;">
                           <label for="title">Start Time</label>
-                          <select style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="ustartTime" id="id-startTime" class="form-control">
+                          <select style="width: 500px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="ustartTime" id="id-startTime" class="form-control">
                               <option value="09:00">09:00</option>
                               <option value="10:00">10:00</option>
                               <option value="11:00">11:00</option>
@@ -66,9 +74,9 @@
                             <input class="form-control" id="id-startTime" name="startTime" placeholder="startTime" type="text"/>
                         </span> -->
                        
-                        <div class="form-group" style="margin-left: -300px;">
+                        <div class="form-group" style="margin-left: -100px;">
                           <label for="title">End Time</label>
-                          <select style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="uendTime" id="id-endTime" class="form-control">
+                          <select style="width: 500px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" name="uendTime" id="id-endTime" class="form-control">
                               <option value="09:00">09:00</option>
                               <option value="10:00">10:00</option>
                               <option value="11:00">11:00</option>
@@ -91,8 +99,8 @@
                           <input class="form-control" id="id-roomName" name="roomName" placeholder="roomName" type="text"/>
                         </span> -->
                        
-                          <div class="form-group" style="margin-left: -300px;">
-                            <select name="title" style="width: 700px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-title" class="form-control"> 
+                          <div class="form-group" style="margin-left: -100px;">
+                            <select name="title" style="width: 500px; height: 40px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" id="id-title" class="form-control"> 
                               <option value="">Room Name</option>
                               {% for i in image %}
                                 <option value="{{i.id}}">{{i.title}}</option>											
@@ -112,14 +120,14 @@
                             <option value="Room BL">Black room Style</option>
                           </select>
                         </div>-->
-                        <h2 style="margin-left: -150px;">Personal  Details</h2>
+                        <h2 style="margin-left: -10px; margin-top: 20px;">Personal  Details</h2>
                         <br>
-                        <div class="form-group" style="margin-left: -300px;">
+                        <div class="form-group" style="margin-left: -100px; margin-bottom: -5px;">
                           <label for="title">Name</label>
                           <br>
                           <br>    
                           <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
-                            <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="prefix" name="uprefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" type="text">
+                            <select style="width: 500px; margin-top: -2px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="prefix" name="uprefix" id="id-prefix" class="dropdown-match-height form-dropdown validate[required]" type="text">
                               <option value="Mr."> Mr. </option>
                               <option value="Ms."> Ms. </option>
                             </select>
@@ -127,21 +135,21 @@
                           <br> 
                           <br>     
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-firstname" name="ufirstname" placeholder="Firstname" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-firstname" name="ufirstname" placeholder="Firstname" type="text"/>
                         </span> 
                         <br>
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-middlename" name="umiddlename" placeholder="Middlename" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-middlename" name="umiddlename" placeholder="Middlename" type="text"/>
                         </span> 
                         <br>
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-lastname" name="ulastname" placeholder="Lastname" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-lastname" name="ulastname" placeholder="Lastname" type="text"/>
                         </span> 
                         </div>
                         <br>
-                        <div class="form-group" style="margin-left: -300px;">
+                        <div class="form-group" style="margin-left: -100px;">
                           <span class="form-sub-label-container" style="vertical-align:top" data-input-type="prefix">
-                            <select style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="gender" name="ugender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
+                            <select style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000; font-size: 14px;" data-component="gender" name="ugender" id="id-gender" class="dropdown-match-height form-dropdown validate[required]" type="text">
                               <option value="Female"> Female </option>
                               <option value="Male"> Male </option>
                             </select>
@@ -149,28 +157,28 @@
                           <br> 
                           <br> 
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-age" name="uage" placeholder="Age" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-age" name="uage" placeholder="Age" type="text"/>
                         </span> 
                         <br>
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-address" name="uaddress" placeholder="Address" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-address" name="uaddress" placeholder="Address" type="text"/>
                         </span> 
                         </div>
                         <br>
-                        <h2 style="margin-left: -150px;">Contact  Details</h2>
+                        <h2 style="margin-left: -1px;">Contact  Details</h2>
                         <br>
-                        <div class="form-group" style="margin-left: -300px;">
+                        <div class="form-group" style="margin-left: -100px;">
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-email" name="uemail" placeholder="Email" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-email" name="uemail" placeholder="Email" type="text"/>
                         </span> 
                         <br>
                         <span style="text-align: center;"> 
-                          <input style="width: 700px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-number" name="unumber" placeholder="Number" type="text"/>
+                          <input style="width: 500px; height: 30px; border-radius: 3px; box-shadow: inset 0 0 3px #000000;" class="form-control" id="id-number" name="unumber" placeholder="Number" type="text"/>
                         </span> 
                         </div>
                         <br> 
-                        <h2 style="margin-left: -150px;">Price</h2>
-                        <div class="form-group" style="margin-left: -300px;">
+                        <h2 style="margin-right: -1px;">Price</h2>
+                        <div class="form-group" style="margin-left: -100px;">
                         <span style="text-align: center;" name="price"> 
                           {% for i in image %}
                             <input value="{{i.title}}">{{i.price}}</input>											
@@ -178,7 +186,7 @@
                         </span>
                         </div>
                         <br>
-                        <button style="margin-bottom: 20px; width: 700px; margin-left: -300px;" class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">
+                        <button style="margin-bottom: 20px; width: 400px; margin-left: -50px;" class="btn btn-lg btn-primary btn-block" type="submit" name="btnSUbmit">
                           Submit</button>
                           </div>
                           <br>
