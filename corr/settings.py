@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'corr.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'g1group9',
+        'NAME': 'g1group09',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'g1group9.postgres.database.azure.com',
+        'HOST': 'g1group09.postgres.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {"sslmode": "required"},
     }
