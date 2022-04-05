@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'group9',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'group09.postgres.database.azure.com',
+        'HOST': 'group9.postgres.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {"sslmode": "required"},
     }
