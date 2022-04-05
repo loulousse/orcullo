@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0ive^_1v(zrvk4^z@x@w8ylm@zd-(xjk@+)aac0hwu3%y#=57$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [group9-aloconferenceroomreservationsystem.azurewebsites.net]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleWare',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,15 +78,13 @@ WSGI_APPLICATION = 'corr.wsgi.application'
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reserve',
-        'USER': 'root',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alo9conference',
+        'USER': 'MaryAlissaOrcullo',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'HOST': 'alo9conference.postgres.database.azure.com',
         'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
-        },
+        'OPTIONS': {"sslmode": "required"},
     }
 }
 
@@ -125,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR/'staticfiles'
 
 MEDIA_URL = '/images/'
 
