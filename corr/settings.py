@@ -84,7 +84,7 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'reserve.postgres.database.azure.com',
         'PORT': '3306',
-        'OPTIONS': {"sslmode": "required"},
+        'OPTIONS': {"sslmode": "require"},
     }
 }
 
