@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'corr.wsgi.application'
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'reserve',
-        'USER': 'root',
+        'USER': 'alocorr',
         'PASSWORD': '',
         'HOST': 'reserve.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {"sslmode": "require"},
+        'PORT': '3306',
+        'OPTIONS': {"sslmode": "required"},
     }
 }
 
